@@ -1,0 +1,209 @@
+# Sveltia CMS configuration — https://github.com/sveltia/sveltia-cms
+# Every save becomes a Git commit on `main`, which triggers the GitHub Actions
+# deploy. Each language is a separate field group, so editing one language never
+# touches the others. Tick "Translation needs update" on the OTHER languages when
+# you change the meaning of a text; `npm run check` (and every deploy) lists them.
+
+backend:
+  name: github
+  repo: Kaydarap/KaydarapCodm
+  branch: main
+  # Optional "Sign in with GitHub" button (otherwise use "Sign in with token"):
+  # base_url: https://sveltia-cms-auth.<your-account>.workers.dev
+
+site_url: https://www.kaydarap.com
+display_url: https://www.kaydarap.com
+media_folder: public/uploads
+public_folder: /uploads
+
+# ── Reusable field groups ─────────────────────────────────────────────────────
+x-outdated: &outdated
+  { name: outdated, label: 'Translation needs update', widget: boolean, required: false, default: false }
+
+x-rule-head: &rule_head
+  - { name: title, label: Title, widget: string }
+  - { name: closing, label: Closing text, widget: string }
+  - *outdated
+
+x-step-lang: &step_lang
+  - { name: title, label: Step title, widget: string }
+  - name: body
+    label: Step text
+    widget: text
+    hint: 'Use **double asterisks** to highlight a term, and `backticks` for a copyable word (e.g. `cod`).'
+  - *outdated
+
+x-rule-fields: &rule_fields
+  - { name: platform, label: Platform, widget: hidden }
+  - { name: version, label: Rules version, widget: string, hint: 'e.g. 1.0, 1.1 — shown on the page' }
+  - { name: updatedAt, label: Last updated, widget: datetime, time_format: false, date_format: YYYY-MM-DD, format: YYYY-MM-DD }
+  - { name: fa, label: فارسی — page, widget: object, fields: *rule_head }
+  - { name: en, label: English — page, widget: object, fields: *rule_head }
+  - { name: ar, label: العربية — page, widget: object, fields: *rule_head }
+  - name: steps
+    label: Steps
+    widget: list
+    summary: '{{fields.en.title}}'
+    fields:
+      - { name: id, label: 'Step ID (letters, numbers, dashes — keep it stable, progress is saved by it)', widget: string, pattern: ['^[a-z0-9-]+$', 'Lowercase letters, numbers and dashes only'] }
+      - name: icon
+        label: Icon
+        widget: select
+        options: [serial, version, shield, vpn, search, game, dns, hidden, check, bolt, eye, link]
+      - name: badges
+        label: Highlight badges
+        widget: list
+        required: false
+        summary: '{{fields.text}}'
+        fields:
+          - { name: text, label: 'Badge text (same in all languages, e.g. DNS: OFF)', widget: string }
+          - { name: tone, label: Type, widget: select, options: [{ label: 'Required (green)', value: ok }, { label: 'Must be OFF (red)', value: off }, { label: 'Not allowed (striped red)', value: ban }] }
+      - name: links
+        label: Store buttons
+        widget: list
+        required: false
+        summary: '{{fields.kind}}'
+        fields:
+          - { name: kind, label: Type, widget: select, options: [{ label: Google Play, value: googleplay }, { label: Myket, value: myket }] }
+          - { name: url, label: 'URL, or @name of a link in Site settings (e.g. @integrityCheck)', widget: string }
+      - { name: fa, label: فارسی, widget: object, fields: *step_lang }
+      - { name: en, label: English, widget: object, fields: *step_lang }
+      - { name: ar, label: العربية, widget: object, fields: *step_lang }
+
+x-tri-text: &tri_text
+  - { name: fa, label: فارسی, widget: text, required: false }
+  - { name: en, label: English, widget: text, required: false }
+  - { name: ar, label: العربية, widget: text, required: false }
+
+x-tri-string: &tri_string
+  - { name: fa, label: فارسی, widget: string }
+  - { name: en, label: English, widget: string }
+  - { name: ar, label: العربية, widget: string }
+
+x-faq-lang: &faq_lang
+  - { name: q, label: Question, widget: string }
+  - { name: a, label: Answer, widget: text }
+  - *outdated
+
+x-home-lang: &home_lang
+  - { name: eyebrow, label: Small label above the title, widget: string }
+  - { name: title, label: Hero title, widget: string }
+  - { name: subtitle, label: Hero text, widget: text }
+  - *outdated
+
+collections:
+  - name: rules
+    label: Rules
+    files:
+      - name: android
+        label: Android rules
+        file: src/data/rules-android.json
+        format: json
+        fields: *rule_fields
+      - name: ios
+        label: iOS rules
+        file: src/data/rules-ios.json
+        format: json
+        fields: *rule_fields
+
+  - name: rooms
+    label: Open rooms
+    files:
+      - name: rooms
+        label: Rooms & announcements
+        file: src/data/rooms.json
+        format: json
+        fields:
+          - name: rooms
+            label: Rooms
+            widget: list
+            required: false
+            summary: '{{fields.title.en}} — {{fields.start}}'
+            fields:
+              - { name: id, label: ID, widget: string, pattern: ['^[a-z0-9-]+$', 'Lowercase letters, numbers and dashes only'] }
+              - { name: title, label: Title, widget: object, fields: *tri_string }
+              - { name: mode, label: 'Mode (optional, e.g. 5v5 S&D)', widget: string, required: false }
+              - { name: start, label: Start time, widget: datetime, hint: 'Visitors see it converted to their own time zone.' }
+              - { name: end, label: End time (optional), widget: datetime, required: false }
+              - name: registration
+                label: Registration status
+                widget: select
+                options: [{ label: Open, value: open }, { label: Closed, value: closed }, { label: Full, value: full }, { label: Coming soon, value: soon }]
+              - { name: capacity, label: Capacity (optional — leave empty if unknown), widget: number, value_type: int, required: false }
+              - { name: registered, label: Registered so far (optional — only real numbers), widget: number, value_type: int, required: false }
+              - { name: link, label: Registration link (optional), widget: string, required: false }
+              - { name: note, label: Note, widget: object, required: false, fields: *tri_text }
+          - name: announcements
+            label: Announcements
+            widget: list
+            required: false
+            summary: '{{fields.date}} — {{fields.en}}'
+            fields:
+              - { name: date, label: Date, widget: datetime, time_format: false, date_format: YYYY-MM-DD, format: YYYY-MM-DD }
+              - { name: fa, label: فارسی, widget: text }
+              - { name: en, label: English, widget: text }
+              - { name: ar, label: العربية, widget: text }
+
+  - name: faq
+    label: FAQ
+    files:
+      - name: faq
+        label: Questions
+        file: src/data/faq.json
+        format: json
+        fields:
+          - name: items
+            label: Questions
+            widget: list
+            summary: '{{fields.en.q}}'
+            fields:
+              - { name: id, label: 'ID (used as #anchor)', widget: string, pattern: ['^[a-z0-9-]+$', 'Lowercase letters, numbers and dashes only'] }
+              - { name: fa, label: فارسی, widget: object, fields: *faq_lang }
+              - { name: en, label: English, widget: object, fields: *faq_lang }
+              - { name: ar, label: العربية, widget: object, fields: *faq_lang }
+
+  - name: home
+    label: Home page
+    files:
+      - name: home
+        label: Home page
+        file: src/data/home.json
+        format: json
+        fields:
+          - { name: heroImage, label: Hero background image (optional), widget: image, required: false }
+          - name: notice
+            label: Notice banner
+            widget: object
+            fields:
+              - { name: enabled, label: Show banner, widget: boolean, default: false }
+              - { name: fa, label: فارسی, widget: string, required: false }
+              - { name: en, label: English, widget: string, required: false }
+              - { name: ar, label: العربية, widget: string, required: false }
+          - { name: fa, label: فارسی, widget: object, fields: *home_lang }
+          - { name: en, label: English, widget: object, fields: *home_lang }
+          - { name: ar, label: العربية, widget: object, fields: *home_lang }
+
+  - name: settings
+    label: Site settings & links
+    files:
+      - name: settings
+        label: Links
+        file: src/data/settings.json
+        format: json
+        fields:
+          - { name: siteUrl, label: Site URL, widget: string }
+          - name: champion
+            label: Champion Rules
+            widget: object
+            fields:
+              - { name: url, label: Link opened by the Champion Rules card, widget: string }
+              - { name: shareUrl, label: Original share link (reference only), widget: string, required: false }
+              - { name: title, label: Destination page title (reference only), widget: string, required: false }
+          - name: links
+            label: App & contact links (empty = button hidden)
+            widget: object
+            fields:
+              - { name: integrityCheck, label: 'Integrity Check — Google Play (@integrityCheck)', widget: string, required: false }
+              - { name: myket, label: 'Call of Duty: Mobile on Myket (@myket)', widget: string, required: false }
+              - { name: checkHost, label: 'Check host website (@checkHost, not used yet)', widget: string, required: false }
+              - { name: contact, label: Contact link (footer), widget: string, required: false }

@@ -1,0 +1,58 @@
+---
+// Open rooms come only from src/data/rooms.json (managed in /admin).
+// No data → an explicit empty state; nothing is ever invented.
+import Icon from './Icon.astro';
+import rooms from '../data/rooms.json';
+import { UI, LANG_META, num } from '../lib/i18n.js';
+
+interface Props { lang: 'fa' | 'en' | 'ar'; limit?: number }
+const { lang, limit } = Astro.props;
+const t = UI[lang];
+const list = [...rooms.rooms]
+  .filter((r) => r.start && !Number.isNaN(Date.parse(r.start)))
+  .sort((a, b) => Date.parse(a.start) - Date.parse(b.start));
+// With `limit`, the client hides ended rooms and keeps the next `limit` ones.
+const shown = list;
+const utc = (iso) =>
+  new Intl.DateTimeFormat(LANG_META[lang].locale, { dateStyle: 'medium', timeStyle: 'short', timeZone: 'UTC' }).format(new Date(iso)) + ' UTC';
+---
+{shown.length === 0 ? (
+  <div class="empty neon reveal">
+    <Icon name="rooms" size={40} />
+    <p class="empty-title">{t.rooms.empty}</p>
+    <p class="muted small">{t.rooms.emptyHint}</p>
+  </div>
+) : (
+  <ul class="rooms" role="list" data-rooms data-limit={limit ?? ''} data-empty-text={t.rooms.empty}>
+    {shown.map((r) => (
+      <li class="room neon reveal" data-room data-start={r.start} data-end={r.end || ''}>
+        <div class="room-top">
+          <span class={`tag tag-${r.registration || 'soon'}`}>{t.rooms.reg[r.registration] ?? t.rooms.reg.soon}</span>
+          {r.mode && <span class="tag tag-plain" dir="auto">{r.mode}</span>}
+        </div>
+        <h3 class="room-title">{r.title?.[lang] || r.title?.en}</h3>
+        <p class="room-time">
+          <Icon name="rooms" size={18} />
+          <time datetime={r.start} data-local-time>{utc(r.start)}</time>
+        </p>
+        <p class="room-count" data-countdown
+          data-label-in={t.rooms.startsIn} data-label-started={t.rooms.started} data-label-ended={t.rooms.ended}
+          data-u={JSON.stringify(t.rooms.units)}></p>
+        {(r.capacity != null && r.capacity !== '') && (
+          <p class="room-cap">
+            <Icon name="users" size={18} />
+            {r.registered != null && r.registered !== ''
+              ? <span>{t.rooms.registered}: <bdi>{num(lang, r.registered)} / {num(lang, r.capacity)}</bdi></span>
+              : <span>{t.rooms.capacity}: <bdi>{num(lang, r.capacity)}</bdi></span>}
+          </p>
+        )}
+        {r.note?.[lang] && <p class="muted small">{r.note[lang]}</p>}
+        {r.link && (
+          <a class="btn btn-primary btn-sm" href={r.link} target="_blank" rel="noopener noreferrer">
+            {t.rooms.join} <Icon name="external" size={16} label={t.external} />
+          </a>
+        )}
+      </li>
+    ))}
+  </ul>
+)}

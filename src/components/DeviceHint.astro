@@ -1,0 +1,27 @@
+---
+// Optional suggestion based on a rough user-agent guess. Never redirects.
+import Icon from './Icon.astro';
+import { UI, url } from '../lib/i18n.js';
+
+interface Props { lang: 'fa' | 'en' | 'ar' }
+const { lang } = Astro.props;
+const t = UI[lang];
+---
+<aside class="device-hint neon" data-device-hint hidden>
+  <span class="device-hint-icon" data-device-icon></span>
+  <div class="device-hint-body">
+    <p class="device-hint-text">
+      <span data-device-text="android" hidden>{t.device.android}</span>
+      <span data-device-text="ios" hidden>{t.device.ios}</span>
+    </p>
+    <p class="muted small">{t.device.manual}</p>
+  </div>
+  <a class="btn btn-primary btn-sm" data-device-link data-href-android={url(lang, 'rules/android/')} data-href-ios={url(lang, 'rules/ios/')} href={url(lang, 'rules/')}>
+    {t.device.open}
+  </a>
+  <button class="icon-btn" type="button" data-device-dismiss aria-label={t.device.dismiss}>
+    <Icon name="close" size={18} />
+  </button>
+  <template data-icon-android><Icon name="android" size={26} /></template>
+  <template data-icon-ios><Icon name="ios" size={26} /></template>
+</aside>
