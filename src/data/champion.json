@@ -1,0 +1,422 @@
+{
+  "source": "https://www.callofduty.com/mobile/esports/esports-settings",
+  "season": "Call of Duty: Mobile 2026",
+  "sourceUpdatedAt": "2026-09-24",
+  "checkedAt": "2026-10-22",
+  "sections": [
+    {
+      "id": "settings",
+      "icon": "settings",
+      "fa": { "title": "تنظیمات بازی", "summary": "تنظیمات لابی خصوصی برای Hardpoint، Control و Search & Destroy." },
+      "en": { "title": "Game Settings", "summary": "Custom lobby settings for Hardpoint, Control and Search & Destroy." },
+      "ar": { "title": "إعدادات اللعب", "summary": "إعدادات الغرفة الخاصة لأطوار Hardpoint وControl وSearch & Destroy." },
+      "blocks": [
+        { "type": "text",
+          "fa": "لیدر تیمی که لابی خصوصی (Custom Lobby) را می‌سازد، باید مطمئن شود هر بازی دقیقاً با تنظیمات زیر ساخته شده است.",
+          "en": "The team leader who creates the custom lobby must make sure every game uses exactly the settings below.",
+          "ar": "على قائد الفريق الذي ينشئ الغرفة الخاصة (Custom Lobby) التأكد من أن كل مباراة تستخدم الإعدادات التالية بالضبط." },
+        { "type": "settings", "mode": "Hardpoint", "rows": [
+          { "game": "Round Score Limit", "k": { "fa": "سقف امتیاز راند", "en": "Round Score Limit", "ar": "حد نقاط الجولة" }, "v": 250 },
+          { "game": "Time Limit", "k": { "fa": "محدودیت زمان", "en": "Time Limit", "ar": "الحد الزمني" }, "v": 600 },
+          { "game": "Number of Spectators Allowed", "k": { "fa": "تعداد تماشاگر مجاز", "en": "Number of Spectators Allowed", "ar": "عدد المشاهدين المسموح" }, "v": "N/A" },
+          { "game": "Room Password", "k": { "fa": "رمز روم", "en": "Room Password", "ar": "كلمة مرور الغرفة" }, "v": "N/A" },
+          { "game": "Allow Invite", "k": { "fa": "اجازه دعوت", "en": "Allow Invite", "ar": "السماح بالدعوة" }, "v": "yes" }
+        ] },
+        { "type": "settings", "mode": "Control", "rows": [
+          { "game": "Round Score Limit", "k": { "fa": "سقف امتیاز راند", "en": "Round Score Limit", "ar": "حد نقاط الجولة" }, "v": 3 },
+          { "game": "Round Time Limit", "k": { "fa": "زمان هر راند", "en": "Round Time Limit", "ar": "زمن الجولة" }, "v": 90 },
+          { "game": "Number of Spectators Allowed", "k": { "fa": "تعداد تماشاگر مجاز", "en": "Number of Spectators Allowed", "ar": "عدد المشاهدين المسموح" }, "v": "N/A" },
+          { "game": "Room Password", "k": { "fa": "رمز روم", "en": "Room Password", "ar": "كلمة مرور الغرفة" }, "v": "N/A" },
+          { "game": "Allow Invite", "k": { "fa": "اجازه دعوت", "en": "Allow Invite", "ar": "السماح بالدعوة" }, "v": "yes" }
+        ] },
+        { "type": "settings", "mode": "Search & Destroy", "rows": [
+          { "game": "Round Win Limit", "k": { "fa": "تعداد راند برای برد", "en": "Round Win Limit", "ar": "عدد الجولات للفوز" }, "v": 9 },
+          { "game": "Round Time Limit", "k": { "fa": "زمان هر راند", "en": "Round Time Limit", "ar": "زمن الجولة" }, "v": 120 },
+          { "game": "Number of Spectators Allowed", "k": { "fa": "تعداد تماشاگر مجاز", "en": "Number of Spectators Allowed", "ar": "عدد المشاهدين المسموح" }, "v": "N/A" },
+          { "game": "Room Password", "k": { "fa": "رمز روم", "en": "Room Password", "ar": "كلمة مرور الغرفة" }, "v": "N/A" },
+          { "game": "Allow Invite", "k": { "fa": "اجازه دعوت", "en": "Allow Invite", "ar": "السماح بالدعوة" }, "v": "yes" },
+          { "game": "Overtime", "k": { "fa": "وقت اضافه", "en": "Overtime", "ar": "الوقت الإضافي" }, "v": "yes" },
+          { "game": "Overtime Cap", "k": { "fa": "سقف وقت اضافه", "en": "Overtime Cap", "ar": "حد الوقت الإضافي" }, "v": 20 }
+        ] }
+      ]
+    },
+    {
+      "id": "maps",
+      "icon": "map",
+      "fa": { "title": "مپ‌پول مسابقات", "summary": "مپ‌های رسمی هر مود و قانون Keep 7, Change 6." },
+      "en": { "title": "Esports Map Pool", "summary": "Official maps for each mode and the Keep 7, Change 6 rule." },
+      "ar": { "title": "مجموعة خرائط البطولة", "summary": "الخرائط الرسمية لكل طور وقاعدة Keep 7, Change 6." },
+      "blocks": [
+        { "type": "text",
+          "fa": "همه مسابقه‌ها از Stage 2 تا فینال World Championship روی مپ‌های «Esports Map Pool» برگزار می‌شوند. مپ‌پول برای هر کدام از سه مود رقابتی، جداگانه است.",
+          "en": "Every match from Stage 2 through the World Championship Finals is played on a map from the Esports Map Pool. The pool is split into three separate pools, one for each competitive mode.",
+          "ar": "تُلعب جميع المباريات من Stage 2 حتى نهائيات World Championship على خرائط «Esports Map Pool». وتنقسم المجموعة إلى ثلاث مجموعات منفصلة، واحدة لكل طور تنافسي." },
+        { "type": "names", "mode": "Hardpoint", "tone": "map", "items": ["Summit", "Hacienda", "Combine", "Takeoff", "Arsenal"] },
+        { "type": "names", "mode": "Search & Destroy", "tone": "map", "items": ["Tunisia", "Firing Range", "Coastal", "Slums", "Meltdown"] },
+        { "type": "names", "mode": "Control", "tone": "map", "items": ["Raid", "Standoff", "Crossroads Strike"] },
+        { "type": "points", "title": { "fa": "مپ‌پول چطور عوض می‌شود؟", "en": "How the pool changes", "ar": "كيف تتغيّر المجموعة؟" }, "items": [
+          { "fa": "مپ‌پول هر سال یک بار با رأی مستقیم همه شرکت‌کنندگان فینال World Championship به‌روز می‌شود. تساوی‌ها و شرایط خاص را مدیریت مسابقات (Tournament Administration) تعیین می‌کند.",
+            "en": "The pool is updated once a year by a direct vote of all World Championship Finals participants. Ties and special cases are decided by Tournament Administration.",
+            "ar": "تُحدَّث المجموعة مرة كل عام بتصويت مباشر من جميع المشاركين في نهائيات World Championship، وتحسم إدارة البطولة (Tournament Administration) حالات التعادل والظروف الخاصة." },
+          { "fa": "قانون **Keep 7, Change 6**: هفت مپ از سال قبل می‌مانند، سه مپ به مود دیگری منتقل می‌شوند و سه مپ جدید (که سال قبل نبودند) اضافه می‌شوند.",
+            "en": "**Keep 7, Change 6** rule: 7 maps stay from the previous year, 3 maps move to a different mode, and 3 maps that were not in last year’s pool are added.",
+            "ar": "قاعدة **Keep 7, Change 6**: تبقى 7 خرائط من العام السابق، وتنتقل 3 خرائط إلى طور آخر، وتُضاف 3 خرائط جديدة لم تكن في مجموعة العام الماضي." },
+          { "fa": "مدیریت مسابقات در صورت لزوم می‌تواند در طول سال مپ‌پول را تغییر دهد، ولی فقط در شرایط استثنایی.",
+            "en": "Tournament Administration may change the pool during the year when necessary, but only in exceptional circumstances.",
+            "ar": "يمكن لإدارة البطولة تغيير المجموعة خلال العام عند الضرورة، ولكن في الظروف الاستثنائية فقط." }
+        ] }
+      ]
+    },
+    {
+      "id": "format",
+      "icon": "steps",
+      "fa": { "title": "ترتیب مود و مپ", "summary": "فرمت Best of 5، ترتیب مودها و فینال بزرگ." },
+      "en": { "title": "Mode & Map Order", "summary": "Best-of-5 format, mode order and the Grand Finals." },
+      "ar": { "title": "ترتيب الأطوار والخرائط", "summary": "نظام Best of 5 وترتيب الأطوار والنهائي الكبير." },
+      "blocks": [
+        { "type": "text",
+          "fa": "همه مسابقه‌های Summer Split، Fall Split و فینال World Championship به‌صورت **Best of 5** (سه برد از پنج مپ) برگزار می‌شوند. تیمی که سید بالاتری دارد باید لابی را بسازد و مطمئن شود مپ و مود هر بازی درست انتخاب شده است.",
+          "en": "All matches in the Summer Split, Fall Split and World Championship Finals are **Best of 5**. The higher-seeded team hosts the lobby and must make sure the correct map and mode are selected for every map of the series.",
+          "ar": "تُلعب جميع مباريات Summer Split وFall Split ونهائيات World Championship بنظام **Best of 5**. ويستضيف الفريق صاحب التصنيف الأعلى الغرفة، وعليه التأكد من اختيار الخريطة والطور الصحيحين لكل خريطة في السلسلة." },
+        { "type": "order", "title": { "fa": "ترتیب مودها در Best of 5", "en": "Mode order in a Best of 5", "ar": "ترتيب الأطوار في Best of 5" },
+          "items": ["Hardpoint", "Search & Destroy", "Control", "Hardpoint", "Search & Destroy"] },
+        { "type": "points", "items": [
+          { "fa": "مپ و سمت شروع هر بازی را خود تیم‌ها با روند **Pick & Ban (وتو)** تعیین می‌کنند؛ جزئیات در بخش «وتو».",
+            "en": "The map and starting side for each game are decided by the two teams through a **picks and bans (veto)** process — see the Veto section.",
+            "ar": "يحدّد الفريقان الخريطة وجهة البداية لكل مباراة عبر عملية **الاختيار والحظر (Veto)** — التفاصيل في قسم الفيتو." },
+          { "fa": "همه مسابقه‌ها به‌جز فینال بزرگ Best of 5 هستند. **فینال بزرگ (Grand Finals) Best of 7** است و تیمی که از فینال Winner’s Bracket می‌آید یک مپ امتیاز (1 Map Advantage) دارد.",
+            "en": "Every match except the Grand Finals is Best of 5. The **Grand Finals are Best of 7**, with a 1-map advantage for the team coming from the Winner’s Finals.",
+            "ar": "جميع المباريات بنظام Best of 5 باستثناء النهائي الكبير؛ إذ يُلعب **النهائي الكبير (Grand Finals) بنظام Best of 7** مع أفضلية خريطة واحدة للفريق القادم من نهائي الفائزين." }
+        ] }
+      ]
+    },
+    {
+      "id": "veto",
+      "icon": "ban",
+      "fa": { "title": "وتو (Pick & Ban)", "summary": "مرحله‌به‌مرحله بن و پیک مپ‌ها برای Bo3، Bo5 و Bo7." },
+      "en": { "title": "Veto Process", "summary": "Step-by-step map bans and picks for Bo3, Bo5 and Bo7." },
+      "ar": { "title": "عملية الفيتو", "summary": "حظر واختيار الخرائط خطوة بخطوة لـ Bo3 وBo5 وBo7." },
+      "blocks": [
+        { "type": "points", "items": [
+          { "fa": "در Summer Split، Fall Split و فینال World Championship، ترتیب مپ‌ها، سمت شروع و **Operator Skill اختصاصی هر بازیکن** با روند وتو تعیین می‌شود. وتو در کانال Discordی انجام می‌شود که مدیریت در اختیار تیم‌ها می‌گذارد.",
+            "en": "In the Summer Split, Fall Split and World Championship Finals, the map order, starting sides and **each player’s unique Operator Skill** are decided by a veto held in a Discord channel provided by the Administration.",
+            "ar": "في Summer Split وFall Split ونهائيات World Championship يُحدَّد ترتيب الخرائط وجهات البداية و**مهارة المشغّل (Operator Skill) الخاصة بكل لاعب** عبر عملية فيتو تُجرى في قناة Discord توفّرها الإدارة." },
+          { "fa": "تیمی که سید بالاتری دارد انتخاب می‌کند **تیم ۱** باشد یا **تیم ۲**.",
+            "en": "The higher-seeded team chooses whether to be **Team 1** or **Team 2**.",
+            "ar": "يختار الفريق صاحب التصنيف الأعلى أن يكون **الفريق 1** أو **الفريق 2**." },
+          { "fa": "مپی که یک بار بن یا پیک شد، دیگر قابل انتخاب نیست.",
+            "en": "Once a map has been banned or picked, it cannot be selected again.",
+            "ar": "بمجرد حظر خريطة أو اختيارها، لا يمكن اختيارها مرة أخرى." }
+        ] },
+        { "type": "veto", "title": { "fa": "وتو در Best of 5", "en": "Best of 5 veto", "ar": "الفيتو في Best of 5" }, "phases": [
+          { "mode": "Hardpoint", "steps": [{ "a": "ban", "t": 1 }, { "a": "ban", "t": 2 }, { "a": "pick", "t": 1, "m": 1 }, { "a": "pick", "t": 2, "m": 4 }] },
+          { "mode": "Search & Destroy", "steps": [{ "a": "ban", "t": 2 }, { "a": "ban", "t": 1 }, { "a": "pick", "t": 2, "m": 2 }, { "a": "pick", "t": 1, "m": 5 }] },
+          { "mode": "Control", "steps": [{ "a": "ban", "t": 1 }, { "a": "ban", "t": 2 }, { "a": "last", "m": 3, "s": 1 }] }
+        ] },
+        { "type": "veto", "title": { "fa": "وتو فینال بزرگ — Best of 7 با یک مپ امتیاز", "en": "Grand Finals — Best of 7 with map advantage", "ar": "النهائي الكبير — Best of 7 مع أفضلية خريطة" },
+          "note": { "fa": "تیمی که از فینال Winner’s Bracket آمده، یک مپ امتیاز دارد.", "en": "The team coming from the Winner’s Finals starts with a 1-map advantage.", "ar": "يبدأ الفريق القادم من نهائي الفائزين بأفضلية خريطة واحدة." },
+          "phases": [
+          { "mode": "Hardpoint", "steps": [{ "a": "ban", "t": 1 }, { "a": "ban", "t": 2 }, { "a": "pick", "t": 1, "m": 1 }, { "a": "pick", "t": 2, "m": 4 }] },
+          { "mode": "Search & Destroy", "steps": [{ "a": "ban", "t": 2 }, { "a": "ban", "t": 1 }, { "a": "pick", "t": 2, "m": 2 }, { "a": "pick", "t": 1, "m": 6 }] },
+          { "mode": "Control", "steps": [{ "a": "pick", "t": 1, "m": 3 }, { "a": "pick", "t": 2, "m": 5 }] }
+        ] },
+        { "type": "veto", "title": { "fa": "وتو در Best of 3", "en": "Best of 3 veto", "ar": "الفيتو في Best of 3" }, "phases": [
+          { "mode": "Hardpoint", "steps": [{ "a": "ban", "t": 1 }, { "a": "ban", "t": 2 }, { "a": "ban", "t": 1 }, { "a": "ban", "t": 2 }, { "a": "last", "m": 1, "s": 1 }] },
+          { "mode": "Search & Destroy", "steps": [{ "a": "ban", "t": 2 }, { "a": "ban", "t": 1 }, { "a": "ban", "t": 2 }, { "a": "ban", "t": 1 }, { "a": "last", "m": 2, "s": 2 }] },
+          { "mode": "Control", "steps": [{ "a": "ban", "t": 1 }, { "a": "ban", "t": 2 }, { "a": "last", "m": 3, "s": 1 }] }
+        ] },
+        { "type": "veto", "title": { "fa": "وتو در Best of 7", "en": "Best of 7 veto", "ar": "الفيتو في Best of 7" }, "phases": [
+          { "mode": "Hardpoint", "steps": [{ "a": "ban", "t": 1 }, { "a": "ban", "t": 2 }, { "a": "pick", "t": 1, "m": 1 }, { "a": "pick", "t": 2, "m": 4 }] },
+          { "mode": "Search & Destroy", "steps": [{ "a": "ban", "t": 2 }, { "a": "ban", "t": 1 }, { "a": "pick", "t": 2, "m": 2 }, { "a": "pick", "t": 1, "m": 5 }, { "a": "last", "m": 7, "s": 2 }] },
+          { "mode": "Control", "steps": [{ "a": "pick", "t": 1, "m": 3 }, { "a": "pick", "t": 2, "m": 6 }] }
+        ] }
+      ]
+    },
+    {
+      "id": "operator-skills",
+      "icon": "bolt",
+      "fa": { "title": "Operator Skill‌ها", "summary": "اسکیل‌های مجاز و قانون اسکیل تکراری در یک تیم." },
+      "en": { "title": "Operator Skills", "summary": "Allowed skills and the unique-skill rule." },
+      "ar": { "title": "مهارات المشغّل", "summary": "المهارات المسموحة وقاعدة عدم تكرار المهارة." },
+      "blocks": [
+        { "type": "names", "title": { "fa": "Operator Skill‌های مجاز", "en": "Allowed Operator Skills", "ar": "مهارات المشغّل المسموحة" }, "tone": "ok",
+          "note": { "fa": "هر Operator Skill دیگری غیر از این فهرست ممنوع است.", "en": "Every Operator Skill not on this list is restricted.", "ar": "كل مهارة مشغّل غير موجودة في هذه القائمة محظورة." },
+          "items": ["Annihalator", "Claw", "Death Machine", "Equalizer", "Gravity Spikes", "Gravity Vortex Gun", "Purifier", "Sparrow", "Tempest", "War Machine"] },
+        { "type": "points", "title": { "fa": "قانون اسکیل اختصاصی (Unique Operator Skills)", "en": "Unique Operator Skills rule", "ar": "قاعدة المهارة الفريدة (Unique Operator Skills)" }, "items": [
+          { "fa": "در طول مسابقه، دو بازیکن یک تیم نباید هم‌زمان یک Operator Skill یکسان استفاده کنند یا روی کلاسشان داشته باشند.",
+            "en": "During a match, no two players on the same team may use or have equipped the same Operator Skill at the same time.",
+            "ar": "خلال المباراة، لا يجوز للاعبَين من الفريق نفسه استخدام مهارة المشغّل نفسها أو تجهيزها في الوقت نفسه." },
+          { "fa": "حتی اگر اسکیل فعال نشود، اسپاون شدن با اسکیلی که هم‌تیمیِ زنده یا اسپاون‌شده‌ات هم دارد، تخلف حساب می‌شود.",
+            "en": "Even if the skill is never activated, spawning in with the same Operator Skill as a teammate who has spawned in and/or is alive counts as using it and breaks the rule.",
+            "ar": "حتى لو لم تُفعَّل المهارة، فإن الظهور (Spawn) بمهارة مشغّل يملكها زميل ظهر في المباراة و/أو ما زال حيًّا يُعدّ استخدامًا لها ومخالفة للقاعدة." },
+          { "fa": "استثنا: اگر با اسکیلی اسپاون شوی که یک هم‌تیمیِ کشته‌شده در حال عوض کردنش است، تخلف نکرده‌ای.",
+            "en": "Exception: spawning with the same skill as a dead teammate who is in the middle of changing their Operator Skill is not a violation.",
+            "ar": "استثناء: الظهور بالمهارة نفسها التي يملكها زميل ميت وهو في أثناء تغيير مهارته لا يُعدّ مخالفة." },
+          { "fa": "هر زمان در طول مپ می‌توانی اسکیلت را عوض کنی، به شرطی که این قانون رعایت شود؛ موقع عوض کردن اسکیل با هم‌تیمی‌ها هماهنگ باشید.",
+            "en": "You may switch your Operator Skill at any time during a map as long as this rule is respected — coordinate with your teammates when switching.",
+            "ar": "يمكنك تغيير مهارتك في أي وقت خلال الخريطة ما دامت القاعدة محترمة، وتنسّق مع زملائك عند التغيير." },
+          { "fa": "**جریمه:** تیم متخلف مپی را که تخلف در آن رخ داده، واگذار شده (باخت) حساب می‌کند.",
+            "en": "**Penalty:** a team that breaks this rule forfeits the map on which the violation happened.",
+            "ar": "**العقوبة:** يخسر الفريق المخالف الخريطة التي وقعت فيها المخالفة." }
+        ] }
+      ]
+    },
+    {
+      "id": "loadout",
+      "icon": "shield",
+      "fa": { "title": "قوانین کلی لودات", "summary": "قانون ۲۱ روزه محتوای جدید، جریمه‌ها و ضبط بازی." },
+      "en": { "title": "Loadout Rules", "summary": "The 21-day rule for new content, penalties and recording." },
+      "ar": { "title": "قواعد العتاد العامة", "summary": "قاعدة الـ 21 يومًا للمحتوى الجديد والعقوبات وتسجيل المباريات." },
+      "blocks": [
+        { "type": "points", "items": [
+          { "fa": "استفاده از هر آیتمِ فهرست‌های ممنوعه (اسلحه‌ها، اتچمنت‌ها، تجهیزات، پرک‌ها و…) در هر لحظه از مسابقه، بعد از مرحله Team Qualifier داخل بازی، ممنوع است.",
+            "en": "Using any item on the restriction lists (weapons, attachments, utility, perks and more) at any point during a match beyond the in-game Team Qualifier is prohibited.",
+            "ar": "يُمنع استخدام أي عنصر من قوائم الحظر (الأسلحة والملحقات والمعدات والمهارات وغيرها) في أي لحظة من المباراة بعد مرحلة Team Qualifier داخل اللعبة." },
+          { "fa": "فقط **اسکوراستریک‌های مجاز** را می‌توان روی کلاس داشت.",
+            "en": "Players may only have the **allowed scorestreaks** equipped.",
+            "ar": "لا يُسمح للاعبين إلا بتجهيز **سلاسل النقاط (Scorestreaks) المسموحة** فقط." },
+          { "fa": "**قانون ۲۱ روز:** هر محتوای کاربردیِ تازه اضافه‌شده (اسلحه، Operator Skill، پرک، تجهیزات، اسکوراستریک، اتچمنت) تا دقیقاً ۳ هفته (۲۱ روز) بعد از روزی که برای همه بازیکنان دنیا در بازی در دسترس قرار می‌گیرد ممنوع است. بعد از آن مجاز می‌شود، مگر اینکه به فهرست ممنوعه اضافه شده باشد.",
+            "en": "**21-day rule:** any newly added functional content (weapons, Operator Skills, perks, utility, scorestreaks, attachments) is restricted until exactly 3 weeks (21 days) after the day it becomes available to all players worldwide. After that it is unrestricted unless it has been added to the restriction list.",
+            "ar": "**قاعدة الـ 21 يومًا:** أي محتوى وظيفي يُضاف حديثًا (الأسلحة، مهارات المشغّل، المهارات، المعدات، سلاسل النقاط، الملحقات) يبقى محظورًا حتى مرور 3 أسابيع (21 يومًا) بالضبط من يوم توفّره لجميع اللاعبين حول العالم، ثم يصبح مسموحًا ما لم يُضَف إلى قائمة الحظر." },
+          { "fa": "مدیریت مسابقات این قانون ۳ هفته‌ای را به صلاحدید خود اجرا می‌کند و می‌تواند محتوایی را زودتر یا دیرتر ممنوع یا آزاد کند.",
+            "en": "Tournament Administration enforces the 3-week guideline at its discretion and may restrict or unrestrict content earlier or later than 3 weeks.",
+            "ar": "تطبّق إدارة البطولة قاعدة الأسابيع الثلاثة وفق تقديرها، ويمكنها حظر محتوى أو السماح به قبل هذه المدة أو بعدها." },
+          { "fa": "اگر درباره مجاز بودن یک آیتم مطمئن نیستی، **قبل از استفاده** از مدیریت مسابقات بپرس.",
+            "en": "If you are unsure about any functional content, ask Tournament Administration **before using it**.",
+            "ar": "إذا لم تكن متأكدًا من أي محتوى، فاسأل إدارة البطولة **قبل استخدامه**." },
+          { "fa": "**جریمه:** رعایت نکردن این فهرست می‌تواند به باخت همان بازی یا کل مسابقه و/یا حذف از تورنمنت منجر شود.",
+            "en": "**Penalty:** not following the list may lead to forfeiting the game or the match and/or disqualification from the tournament.",
+            "ar": "**العقوبة:** عدم الالتزام بالقائمة قد يؤدي إلى خسارة المباراة أو السلسلة و/أو الاستبعاد من البطولة." },
+          { "fa": "توصیه می‌شود همه بازی‌هایت را ضبط کنی تا اگر حریف به استفاده از آیتم ممنوعه متهم شد، مدرک داشته باشی.",
+            "en": "All players are encouraged to record every match so they have evidence for an Administrator if an opponent is accused of using a restricted item.",
+            "ar": "يُنصح جميع اللاعبين بتسجيل كل مبارياتهم ليكون لديهم دليل يقدّمونه للإدارة إذا اتُّهم الخصم باستخدام عنصر محظور." }
+        ] }
+      ]
+    },
+    {
+      "id": "weapons",
+      "icon": "target",
+      "fa": { "title": "اسلحه‌های ممنوع", "summary": "اسلحه‌های اصلی و فرعی ممنوع در مسابقات." },
+      "en": { "title": "Restricted Weapons", "summary": "Primary and secondary weapons that are not allowed." },
+      "ar": { "title": "الأسلحة المحظورة", "summary": "الأسلحة الرئيسية والثانوية غير المسموحة." },
+      "blocks": [
+        { "type": "groups", "title": { "fa": "اسلحه‌های اصلی (Primary)", "en": "Primary Weapons", "ar": "الأسلحة الرئيسية (Primary)" }, "tone": "ban", "groups": [
+          { "name": { "fa": "شاتگان‌ها", "en": "Shotguns", "ar": "البنادق الخرطوشية" }, "items": ["Argus", "R9-0"] },
+          { "name": { "fa": "اسنایپرها", "en": "Snipers", "ar": "القنّاصات" }, "items": ["M21 EBR", "NA-45", "SO14", "SVD", "XPR"] },
+          { "name": { "fa": "مسلسل‌های سبک (SMG)", "en": "Sub-Machine Guns", "ar": "الرشاشات الخفيفة (SMG)" }, "items": ["FSS Hurricane", "Static HV", "Sten"] }
+        ] },
+        { "type": "groups", "title": { "fa": "اسلحه‌های فرعی (Secondary)", "en": "Secondary Weapons", "ar": "الأسلحة الثانوية (Secondary)" }, "tone": "ban", "groups": [
+          { "name": { "fa": "لانچرها", "en": "Launchers", "ar": "القاذفات" }, "items": ["D13 Sector", "FHJ-18", "SMRS", "Thumper"] },
+          { "name": { "fa": "کلت‌ها", "en": "Pistols", "ar": "المسدسات" }, "items": [".50 GS", "MW11", "Shorty"] }
+        ] }
+      ]
+    },
+    {
+      "id": "attachments",
+      "icon": "attach",
+      "fa": { "title": "اتچمنت‌های ممنوع", "summary": "اتچمنت‌ها و مهمات ممنوع برای همه یا بعضی اسلحه‌ها." },
+      "en": { "title": "Restricted Attachments", "summary": "Attachments and ammo banned on all or specific guns." },
+      "ar": { "title": "الملحقات المحظورة", "summary": "الملحقات والذخائر المحظورة على كل الأسلحة أو بعضها." },
+      "blocks": [
+        { "type": "groups", "title": { "fa": "برای همه اسلحه‌ها", "en": "All guns", "ar": "لكل الأسلحة" }, "tone": "ban", "groups": [
+          { "name": { "fa": "Weapon Perkها (همه اسلحه‌ها)", "en": "Weapon Perks (all guns)", "ar": "Weapon Perks (كل الأسلحة)" }, "items": ["Akimbo", "Disabled"] },
+          { "name": { "fa": "مهمات (همه اسلحه‌ها)", "en": "Ammo (all guns)", "ar": "الذخيرة (كل الأسلحة)" }, "items": [
+            { "fa": "همه مهمات Thermite، Dragon’s Breath، Explosive و Incendiary", "en": "All Thermite, Dragon’s Breath, Explosive and Incendiary ammo", "ar": "كل ذخائر Thermite وDragon’s Breath وExplosive وIncendiary" }
+          ] },
+          { "name": { "fa": "همه شاتگان‌ها", "en": "All shotguns", "ar": "كل البنادق الخرطوشية" }, "items": ["Slug Ammo"] }
+        ] },
+        { "type": "groups", "title": { "fa": "برای اسلحه‌های مشخص", "en": "Specific guns", "ar": "لأسلحة محدّدة" }, "tone": "ban", "groups": [
+          { "name": "3-Line Rifle", "items": ["EMPRESS 514MM F01 Barrel", "Bipod", "KOVALEVSKAYA S01 Stock"] },
+          { "name": ".50 GS", "items": ["Lightweight Trigger", "Match Grade Trigger"] },
+          { "name": "AS VAL", "items": ["15 Round FMG Mag"] },
+          { "name": "BP-50", "items": ["Leroy 438mm", "Recoil Booster"] },
+          { "name": "CR AMAX", "items": ["M67 Ammo"] },
+          { "name": "Cronen Squall", "items": ["Semi Automatic Fire"] },
+          { "name": "Crossbow", "items": ["Thermite, Gas, and Sticky Grenade Bolts"] },
+          { "name": "CX9", "items": ["9mm Hollow Point Rounds"] },
+          { "name": "DLQ", "items": ["Concussion Ammo"] },
+          { "name": "DRH", "items": ["OTM Mag"] },
+          { "name": "Hades", "items": ["Heartseeker"] },
+          { "name": "HS0405", "items": ["Thunder Rounds"] },
+          { "name": "HVK", "items": ["Large Caliber Mag"] },
+          { "name": "LAG 53", "items": ["13.0” OSW Para Barrel"] },
+          { "name": "M4", "items": ["Underbarrel Launcher"] },
+          { "name": "Machine Pistol", "items": ["VDD 35MM Short Barrel"] },
+          { "name": "MG42", "items": ["KRAUSNICK 355MM Rapid", "6.5 ARISAKA 125 Round Drums", "Recoil Booster"] },
+          { "name": "Oden", "items": ["OWC Ranger Barrel", "OWC Marksman Barrel"] },
+          { "name": "QQ9", "items": ["10MM 30 Round Reload"] },
+          { "name": "Ram7", "items": ["FORGE TAC Eclipse Barrell"] },
+          { "name": "RPD", "items": ["Infinite Ammo"] },
+          { "name": "SKS", "items": ["Tactical Foregrip A", "Granulated Grip Tape"] },
+          { "name": "Type 19", "items": ["Hi-Accuracy Sniper Ammo"] },
+          { "name": "Type 63", "items": ["Airborne Elastic Wrap Grip", "Firm Grip Tape", "16.4” Rapid Fire Barrel", "16.4” Titanium Barrel", "18.3” Strike Team Barrel"] },
+          { "name": "Tundra", "items": ["26.5” Hammer Forged Barrel", "28.2” Tiger Team Barrel"] },
+          { "name": "USS-9", "items": ["Carbine Pro Barrel", "16.6” Factory Carbine Barrel", "13.1” First Responder Barrel", ".41 AE 32-Round Mags"] }
+        ] }
+      ]
+    },
+    {
+      "id": "utility",
+      "icon": "grenade",
+      "fa": { "title": "تجهیزات ممنوع", "summary": "نارنجک‌ها و تجهیزات Lethal و Tactical ممنوع." },
+      "en": { "title": "Restricted Utility", "summary": "Banned lethal and tactical equipment." },
+      "ar": { "title": "المعدات المحظورة", "summary": "المعدات القاتلة والتكتيكية المحظورة." },
+      "blocks": [
+        { "type": "names", "title": { "fa": "تجهیزات Lethal", "en": "Lethal Utility", "ar": "المعدات القاتلة (Lethal)" }, "tone": "ban",
+          "items": ["C4", "Cluster Grenade", "Contact Grenade", "Drill Charge", "Molotov Cocktail", "Thermite", "Trip Mine"] },
+        { "type": "names", "title": { "fa": "تجهیزات Tactical", "en": "Tactical Utility", "ar": "المعدات التكتيكية (Tactical)" }, "tone": "ban",
+          "items": ["Cryo Bomb", "Decoy Grenade", "Douser Grenade", "Echo Grenade", "Flash Charge", "Flash Drone", "Gas Grenades", "Heartbeat Sensor", "Inflatable Decoy", "Stim Shot", "Storm Ball", "Trip Sensor"] }
+      ]
+    },
+    {
+      "id": "perks",
+      "icon": "perk",
+      "fa": { "title": "پرک‌ها و Wildcard‌ها", "summary": "پرک‌های ممنوع قرمز، سبز و آبی؛ همه Wildcard‌ها ممنوع." },
+      "en": { "title": "Perks & Wildcards", "summary": "Restricted red, green and blue perks; all Wildcards banned." },
+      "ar": { "title": "المهارات وWildcards", "summary": "المهارات المحظورة الحمراء والخضراء والزرقاء؛ وكل Wildcards محظورة." },
+      "blocks": [
+        { "type": "groups", "title": { "fa": "پرک‌های ممنوع", "en": "Restricted Perks", "ar": "المهارات (Perks) المحظورة" }, "tone": "ban", "groups": [
+          { "name": { "fa": "قرمز (Red)", "en": "Red", "ar": "الأحمر (Red)" }, "color": "red", "items": ["Martyrdom", "Overclock", "Pinpoint", "Restock", "Slide Stabilizers", "Tactician"] },
+          { "name": { "fa": "سبز (Green)", "en": "Green", "ar": "الأخضر (Green)" }, "color": "green", "items": ["Quick Fix", "Recon", "Tracker", "Vulture"] },
+          { "name": { "fa": "آبی (Blue)", "en": "Blue", "ar": "الأزرق (Blue)" }, "color": "blue", "items": ["Alert", "Assassin", "Engineer", "Hardline", "High Alert", "Persistence", "Unit Support", "Demo Expert", "Shrapnel"] }
+        ] },
+        { "type": "alert", "tone": "ban", "title": "Wildcards",
+          "fa": "**همه Wildcard‌ها ممنوع هستند.**", "en": "**All Wildcards are restricted.**", "ar": "**جميع Wildcards محظورة.**" }
+      ]
+    },
+    {
+      "id": "scorestreaks",
+      "icon": "streak",
+      "fa": { "title": "اسکوراستریک‌ها", "summary": "فقط سه اسکوراستریک مجاز است." },
+      "en": { "title": "Scorestreaks", "summary": "Only three scorestreaks are allowed." },
+      "ar": { "title": "سلاسل النقاط", "summary": "ثلاث سلاسل نقاط فقط مسموحة." },
+      "blocks": [
+        { "type": "names", "title": { "fa": "اسکوراستریک‌های مجاز", "en": "Allowed Scorestreaks", "ar": "سلاسل النقاط المسموحة" }, "tone": "ok", "big": true,
+          "items": ["Hunter Killer Drone", "Predator Missile", "EMP"] },
+        { "type": "alert", "tone": "ban",
+          "fa": "**هر اسکوراستریک دیگری ممنوع است** و فقط اسکوراستریک‌های بالا را می‌توان روی کلاس داشت.",
+          "en": "**Every other scorestreak is restricted** — only the scorestreaks above may be equipped.",
+          "ar": "**كل سلاسل النقاط الأخرى محظورة**، ولا يجوز تجهيز سوى السلاسل المذكورة أعلاه." }
+      ]
+    },
+    {
+      "id": "cosmetics",
+      "icon": "skin",
+      "fa": { "title": "اسکین‌ها و ایموت‌ها", "summary": "اسکین‌های اپراتور، اسکین تجهیزات و ایموت‌های ممنوع." },
+      "en": { "title": "Cosmetic Restrictions", "summary": "Banned operator skins, utility skins and emotes." },
+      "ar": { "title": "قيود المظاهر", "summary": "أزياء المشغّلين وأشكال المعدات والإيموتات المحظورة." },
+      "blocks": [
+        { "type": "points", "items": [
+          { "fa": "محدودیت آیتم‌های ظاهری برای هر Stage از تورنمنت جداگانه تعیین می‌شود. فهرست زیر برای Summer Split، Fall Split و فینال World Championship سال ۲۰۲۶ است.",
+            "en": "Cosmetics are restricted per tournament stage. The list below applies to the Summer Split, Fall Split and World Championship Finals of CODM WC 2026.",
+            "ar": "تُحدَّد قيود المظاهر لكل مرحلة من البطولة على حدة، والقائمة التالية تنطبق على Summer Split وFall Split ونهائيات World Championship لعام 2026." },
+          { "fa": "به اطلاعیه‌های تیم برگزاری درباره محدودیت‌های هر Stage توجه کن.",
+            "en": "Follow tournament staff announcements about which cosmetics are restricted in each stage.",
+            "ar": "تابع إعلانات طاقم البطولة بشأن المظاهر المحظورة في كل مرحلة." },
+          { "fa": "برای آیتم‌های ظاهری تازه اضافه‌شده دوره انتظار (Cooldown) وجود ندارد.",
+            "en": "There is no cooldown for newly added cosmetic content.",
+            "ar": "لا توجد فترة انتظار (Cooldown) للمظاهر المضافة حديثًا." }
+        ] },
+        { "type": "alert", "tone": "ban", "title": "Emotes",
+          "fa": "**همه ایموت‌ها** در هر لحظه از مسابقه ممنوع هستند.", "en": "**All emotes** are restricted at every point of a match.", "ar": "**جميع الإيموتات** محظورة في أي لحظة من المباراة." },
+        { "type": "alert", "tone": "ban", "title": "Lethal & Tactical Utility Skins",
+          "fa": "**همه اسکین‌های Legendary تجهیزات** (Lethal و Tactical) ممنوع هستند.", "en": "**All Legendary utility skins** (lethal and tactical) are restricted.", "ar": "**جميع أشكال المعدات من فئة Legendary** (القاتلة والتكتيكية) محظورة." },
+        { "type": "names", "title": { "fa": "اسکین‌های اپراتور ممنوع", "en": "Restricted Operator Skins", "ar": "أزياء المشغّلين المحظورة" }, "tone": "ban",
+          "items": ["Cosmic Silverback", "Death Angel Alice - Trench", "Death Angel Alice - Shrouded Maiden", "Florence - Night Terror", "Golem - Everglade", "Grinch - Night Fang", "Grinch - Wreath Havoc", "Grinch - The Lionheart", "Roze - Murk", "Roze - Rook", "Zombie - Wicht Warden"] }
+      ]
+    },
+    {
+      "id": "roles",
+      "icon": "users",
+      "fa": { "title": "نقش کلاس اسلحه", "summary": "هر بازیکن دو نقش؛ سهمیه نقش‌ها برای هر تیم." },
+      "en": { "title": "Weapon Class Roles", "summary": "Two roles per player and each team’s role pool." },
+      "ar": { "title": "أدوار فئات الأسلحة", "summary": "دوران لكل لاعب وحصة الأدوار لكل فريق." },
+      "blocks": [
+        { "type": "points", "items": [
+          { "fa": "در Summer Split، Fall Split و فینال World Championship، کلاس اسلحه‌ای که هر بازیکن می‌تواند استفاده کند محدود است. هر تیم به هر بازیکن **۲ نقش** از سهمیه نقش‌ها می‌دهد.",
+            "en": "In the Summer Split, Fall Split and World Championship Finals, the weapon classes each player may use are limited. Each team assigns **2 weapon class roles** to each player from a pool of roles.",
+            "ar": "في Summer Split وFall Split ونهائيات World Championship تكون فئات الأسلحة المتاحة لكل لاعب محدودة؛ إذ يعيّن كل فريق **دورَين** لكل لاعب من حصة الأدوار." },
+          { "fa": "هر تیم در شروع سری، نقش‌های هر بازیکن را به حریف و مدیریت مسابقات اعلام می‌کند. تیمی که Operator Skill‌هایش را **دوم** اعلام کرده، نقش‌ها را **اول** اعلام می‌کند.",
+            "en": "Each team states every player’s roles to the opponent and Tournament Administration at the start of the series. The team that declared its Operator Skills **second** declares its roles **first**.",
+            "ar": "يعلن كل فريق أدوار لاعبيه للخصم ولإدارة البطولة في بداية السلسلة، والفريق الذي أعلن مهارات المشغّل **ثانيًا** يعلن الأدوار **أولًا**." },
+          { "fa": "در کل سری، بازیکن نمی‌تواند لوداتی داشته باشد که اسلحه اصلی‌اش خارج از نقش‌های خودش باشد. هر ترکیبی از نقش‌ها مجاز است، ولی دو نقش یکسان نه.",
+            "en": "For the whole series, a player may not equip a loadout whose primary weapon is outside their roles. Any combination is allowed, but not the same role twice.",
+            "ar": "طوال السلسلة لا يجوز للاعب تجهيز عتاد سلاحه الرئيسي خارج أدواره. يُسمح بأي تركيبة من الأدوار، ولكن ليس الدور نفسه مرتين." },
+          { "fa": "این نقش‌ها شامل اسلحه فرعی و اسلحه‌ای که از روی زمین (از بازیکن کشته‌شده) برمی‌داری نمی‌شود. سهمیه نقش‌ها بین دو تیم مشترک نیست.",
+            "en": "Roles do not apply to secondary weapons or to weapons picked up from dead players. Teams do not share the role pool.",
+            "ar": "لا تنطبق الأدوار على الأسلحة الثانوية ولا على الأسلحة المأخوذة من اللاعبين الموتى، ولا يتشارك الفريقان حصة الأدوار." },
+          { "fa": "اگر تیمی نقش‌ها را به‌موقع به مدیریت اعلام نکند، نقش‌های سری قبلی‌اش اعمال می‌شود.",
+            "en": "If a team does not state its roles to Administration promptly, the roles from its previous series are applied.",
+            "ar": "إذا لم يعلن الفريق أدواره للإدارة في الوقت المناسب، تُطبَّق أدواره من السلسلة السابقة." }
+        ] },
+        { "type": "roles", "title": { "fa": "۶ نقش و سهمیه هر تیم", "en": "The 6 roles and each team’s pool", "ar": "الأدوار الستة وحصة كل فريق" }, "items": [
+          { "name": "AR", "n": 3, "fa": "Assault Rifle", "en": "Assault Rifles", "ar": "Assault Rifle" },
+          { "name": "SMG", "n": 3, "fa": "Sub-Machine Gun", "en": "Sub-Machine Guns", "ar": "Sub-Machine Gun" },
+          { "name": "LMG", "n": 1, "fa": "Light-Machine Gun", "en": "Light-Machine Guns", "ar": "Light-Machine Gun" },
+          { "name": "Shotgun", "n": 1, "fa": "Shotgun", "en": "Shotgun", "ar": "Shotgun" },
+          { "name": "Marksman", "n": 1, "fa": "Marksman Rifle", "en": "Marksman Rifle", "ar": "Marksman Rifle" },
+          { "name": "Sniper", "n": 1, "fa": "Sniper", "en": "Sniper", "ar": "Sniper" }
+        ] },
+        { "type": "example", "title": { "fa": "نمونه اعلام نقش‌ها", "en": "Example declaration", "ar": "مثال على إعلان الأدوار" },
+          "items": ["AR / SMG", "SMG / Shotgun", "AR / LMG", "AR / Sniper", "SMG / Marksman"] }
+      ]
+    },
+    {
+      "id": "lobby",
+      "icon": "game",
+      "fa": { "title": "ساخت لابی خصوصی", "summary": "آموزش مرحله‌به‌مرحله ساخت Private Match." },
+      "en": { "title": "Custom Lobby", "summary": "Step-by-step guide to creating a Private Match." },
+      "ar": { "title": "إنشاء غرفة خاصة", "summary": "دليل إنشاء Private Match خطوة بخطوة." },
+      "blocks": [
+        { "type": "sequence", "items": [
+          { "fa": "**اضافه کردن هم‌تیمی‌ها:** در صفحه اصلی بازی، دکمه Friends (بالا سمت راست) → **Add Friends**. با کادر جستجو، بازیکن را با نام کاربری Call of Duty: Mobile پیدا کن. نام‌ها به حروف کوچک و بزرگ حساس‌اند. اگر نتوانستی نام را تایپ کنی (مثلاً به زبان دیگری است)، می‌توانی آن را از یک سایت خارجی کپی و در جستجو Paste کنی.",
+            "en": "**Add your teammates:** on the home screen tap the Friends button (top right) → **Add Friends**. Search for the player by their Call of Duty: Mobile username — usernames are case-sensitive. If you can’t type the name (for example it’s in another language), copy it from an external website and paste it into the search box.",
+            "ar": "**إضافة الزملاء:** من الشاشة الرئيسية اضغط زر Friends (أعلى اليمين) ← **Add Friends**، وابحث عن اللاعب باسم المستخدم في Call of Duty: Mobile. الأسماء حسّاسة لحالة الأحرف. إذا لم تستطع كتابة الاسم (مثلًا لأنه بلغة أخرى) فانسخه من موقع خارجي والصقه في مربع البحث." },
+          { "fa": "**ساخت Private Match:** در صفحه اصلی دکمه **Multiplayer** را بزن تا وارد لابی مولتی‌پلیر شوی. سپس آیکون سه‌خط بالا سمت راست → **Private**. حالا تو هاست بازی هستی. دقت کن: با گروه (Party) نمی‌توان وارد لابی خصوصی شد؛ اول خودت لابی را بساز و بعد دعوت کن.",
+            "en": "**Create the Private Match:** tap **Multiplayer** on the home screen to open the multiplayer lobby, then the three-line icon (top right) → **Private**. You are now the host. Note: you can’t enter a private lobby as a group — create the lobby yourself first, then invite players.",
+            "ar": "**إنشاء Private Match:** اضغط **Multiplayer** في الشاشة الرئيسية لفتح غرفة اللعب الجماعي، ثم أيقونة الخطوط الثلاثة (أعلى اليمين) ← **Private**. أصبحت الآن المضيف. ملاحظة: لا يمكن دخول الغرفة الخاصة كمجموعة؛ أنشئ الغرفة بنفسك أولًا ثم ادعُ اللاعبين." },
+          { "fa": "**دعوت هم‌تیمی‌ها و حریف‌ها:** در لابی خصوصی دکمه **Invite Friends** (بالا سمت راست) را باز کن و کنار نام هر نفر «+» را بزن. هر بازیکن با زدن روی یک خانه خالی تیمش را انتخاب می‌کند؛ هم‌تیمی‌ها در ردیف تو و حریف‌ها در ردیف مقابل. برای جابه‌جایی باید اول Ready خود را بردارند (برای همه به‌جز هاست، دکمه Ready جای Start است).",
+            "en": "**Invite teammates and opponents:** in the private lobby expand **Invite Friends** (top right) and tap “+” next to each name. Invited players pick a team by tapping an empty slot — teammates in your row, opponents in the opposite row. To move, they must un-ready first (everyone except the host sees Ready instead of Start).",
+            "ar": "**دعوة الزملاء والخصوم:** في الغرفة الخاصة افتح **Invite Friends** (أعلى اليمين) واضغط «+» بجانب كل اسم. يختار كل لاعب فريقه بالضغط على خانة فارغة؛ الزملاء في صفّك والخصوم في الصف المقابل. وللتنقّل عليهم إلغاء الجاهزية (Ready) أولًا، إذ يظهر زر Ready بدل Start لكل اللاعبين عدا المضيف." },
+          { "fa": "**تنظیمات بازی:** هاست با دکمه **Match Settings** (سمت چپ صفحه) تنظیمات را طبق بخش «تنظیمات بازی» همین صفحه قرار می‌دهد.",
+            "en": "**Adjust the settings:** the host opens **Match Settings** (left side of the screen) and sets everything as listed in the Game Settings section.",
+            "ar": "**ضبط الإعدادات:** يفتح المضيف **Match Settings** (يسار الشاشة) ويضبط كل شيء كما في قسم إعدادات اللعب." },
+          { "fa": "**انتخاب مود و مپ:** هاست با دکمه مود (پایین سمت راست) وارد انتخاب مپ و مود می‌شود و Hardpoint، Search & Destroy یا Control را از **Core Modes** انتخاب می‌کند؛ به همان ترتیبی که در بخش «ترتیب مود و مپ» و نتیجه وتو آمده. بعد از تنظیم همه‌چیز، **Start** را بزن.",
+            "en": "**Set the mode and map:** the host taps the game-mode button (bottom right) and picks Hardpoint, Search & Destroy or Control from the **Core Modes**, in the order from the Mode & Map Order section and the veto. Once everything is set, tap **Start**.",
+            "ar": "**اختيار الطور والخريطة:** يضغط المضيف زر الطور (أسفل اليمين) ويختار Hardpoint أو Search & Destroy أو Control من **Core Modes** بالترتيب الوارد في قسم ترتيب الأطوار والخرائط ونتيجة الفيتو. وبعد ضبط كل شيء اضغط **Start**." }
+        ] }
+      ]
+    },
+    {
+      "id": "changelog",
+      "icon": "history",
+      "fa": { "title": "تغییرات اخیر", "summary": "آخرین به‌روزرسانی‌های رسمی قوانین در ۲۰۲۶." },
+      "en": { "title": "Changelog", "summary": "The latest official rule updates in 2026." },
+      "ar": { "title": "سجل التغييرات", "summary": "آخر التحديثات الرسمية للقوانين في 2026." },
+      "blocks": [
+        { "type": "changelog", "entries": [
+          { "date": "2026-09-24", "items": [
+            { "fa": "**Static HV** به فهرست اسلحه‌های ممنوع اضافه شد (به‌خاطر Aim Assist بیش از حد).", "en": "**Static HV** added to the weapon restrictions (excessive aim assist).", "ar": "أُضيف **Static HV** إلى قائمة الأسلحة المحظورة (بسبب Aim Assist المفرط)." }
+          ] },
+          { "date": "2026-09-01", "items": [
+            { "fa": "به‌خاطر Aim Assist بیش از حد ممنوع شدند: **.50 GS** و **MW11** (کلت)، **FSS Hurricane** و **Sten** (SMG)، **M21 EBR** (اسنایپر). اگر Aim Assist آن‌ها به سطح رقابتی برگردد، دوباره آزاد می‌شوند.", "en": "Restricted for excessive aim assist: **.50 GS** and **MW11** (pistols), **FSS Hurricane** and **Sten** (SMGs), **M21 EBR** (sniper). They will be unrestricted if their aim assist drops to competitive levels.", "ar": "حُظرت بسبب Aim Assist المفرط: **.50 GS** و**MW11** (مسدسات)، و**FSS Hurricane** و**Sten** (رشاشات خفيفة)، و**M21 EBR** (قنّاصة). وسيُرفع الحظر إذا عاد Aim Assist إلى المستوى التنافسي." },
+            { "fa": "پرک **Slide Stabilizers** و اتچمنت **Semi Automatic Fire** اسلحه Cronen Squall ممنوع شدند.", "en": "**Slide Stabilizers** perk and the Cronen Squall’s **Semi Automatic Fire** attachment restricted.", "ar": "حُظرت مهارة **Slide Stabilizers** وملحق **Semi Automatic Fire** لسلاح Cronen Squall." }
+          ] },
+          { "date": "2026-06-09", "items": [
+            { "fa": "**R9-0** به فهرست ممنوعه اضافه شد.", "en": "**R9-0** added to the restrictions.", "ar": "أُضيف **R9-0** إلى قائمة الحظر." }
+          ] },
+          { "date": "2026-04-30", "items": [
+            { "fa": "**Survival Training** از فهرست ممنوعه حذف شد (آزاد شد).", "en": "**Survival Training** removed from the restrictions (now allowed).", "ar": "أُزيلت **Survival Training** من قائمة الحظر (أصبحت مسموحة)." },
+            { "fa": "اتچمنت‌های مشخصی برای QQ9، Type 63، LAG 53 و .50 GS ممنوع شدند.", "en": "Specific attachments restricted for the QQ9, Type 63, LAG 53 and .50 GS.", "ar": "حُظرت ملحقات محدّدة لأسلحة QQ9 وType 63 وLAG 53 و.50 GS." },
+            { "fa": "**Shrapnel** (پرک)، **Drill Charge** (Lethal)، **Flash Charge** و **Inflatable Decoy** (Tactical) ممنوع شدند.", "en": "**Shrapnel** (perk), **Drill Charge** (lethal), **Flash Charge** and **Inflatable Decoy** (tactical) restricted.", "ar": "حُظرت **Shrapnel** (مهارة)، و**Drill Charge** (قاتلة)، و**Flash Charge** و**Inflatable Decoy** (تكتيكية)." }
+          ] },
+          { "date": "2026-01-23", "items": [
+            { "fa": "مپ‌پول ۲۰۲۶ با رأی بازیکنان حرفه‌ای World Championship 2025 به‌روز شد: **Arsenal**، **Meltdown** و **Crossroads Strike** اضافه شدند؛ Slums به S&D، Standoff به Control و Takeoff به Hardpoint منتقل شدند؛ Apocalypse، Kurohana Metropolis و Crossfire حذف شدند.", "en": "2026 map pool updated by the vote of the 2025 World Championship pros: **Arsenal**, **Meltdown** and **Crossroads Strike** added; Slums moved to S&D, Standoff to Control and Takeoff to Hardpoint; Apocalypse, Kurohana Metropolis and Crossfire removed.", "ar": "حُدّثت مجموعة خرائط 2026 بتصويت محترفي World Championship 2025: أُضيفت **Arsenal** و**Meltdown** و**Crossroads Strike**، ونُقلت Slums إلى S&D وStandoff إلى Control وTakeoff إلى Hardpoint، وأُزيلت Apocalypse وKurohana Metropolis وCrossfire." },
+            { "fa": "سقف برد راند Search & Destroy به **۹** رسید؛ Control مود سوم ماند؛ تایمر راند S&D تغییری نکرد؛ محدودیتی برای صداخفه‌کن (Silencer) گذاشته نشد.", "en": "S&D round win limit raised to **9**; Control stays the third mode; S&D round timer unchanged; no restrictions on silencers.", "ar": "رُفع حد الفوز بالجولات في S&D إلى **9**، وبقي Control الطور الثالث، ولم يتغيّر مؤقّت جولة S&D، ولا قيود على كواتم الصوت." },
+            { "fa": "نقش Marksman به دو نقش **Sniper** و **Marksman** و نقش Heavy به دو نقش **Shotgun** و **LMG** تقسیم شد (هر کدام یک بار).", "en": "The Marksman role was split into **Sniper** and **Marksman**, and the Heavy role into **Shotgun** and **LMG** (each allowed once).", "ar": "قُسّم دور Marksman إلى **Sniper** و**Marksman**، ودور Heavy إلى **Shotgun** و**LMG** (كل منها مرة واحدة)." }
+          ] }
+        ] }
+      ]
+    }
+  ]
+}

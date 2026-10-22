@@ -20,9 +20,9 @@
     },
     {
       "id": "champion",
-      "fa": { "q": "Champion Rules کجا باز می‌شود؟", "a": "Champion Rules صفحه Esports Settings سایت رسمی Call of Duty: Mobile را در یک تب جدید باز می‌کند. محتوای آن صفحه متعلق به همان سایت است.", "outdated": false },
-      "en": { "q": "Where does Champion Rules take me?", "a": "Champion Rules opens the Esports Settings page on the official Call of Duty: Mobile website in a new tab. That page’s content belongs to that website.", "outdated": false },
-      "ar": { "q": "إلى أين ينقلني Champion Rules؟", "a": "يفتح Champion Rules صفحة Esports Settings على الموقع الرسمي للعبة Call of Duty: Mobile في علامة تبويب جديدة. محتوى تلك الصفحة يعود لذلك الموقع.", "outdated": false }
+      "fa": { "q": "Champion Rules چیست؟", "a": "Champion Rules توضیح بخش‌به‌بخش قوانین رسمی مسابقات Call of Duty: Mobile (صفحه Esports Settings سایت Activision) است: تنظیمات بازی، مپ‌پول، وتو، اسلحه‌ها، اتچمنت‌ها، پرک‌ها، اسکوراستریک‌ها و بیشتر. منبع اصلی و ملاک نهایی، همان صفحه رسمی است که لینکش در بالای Champion Rules آمده.", "outdated": false },
+      "en": { "q": "What is Champion Rules?", "a": "Champion Rules is a section-by-section explanation of the official Call of Duty: Mobile esports rules (the Esports Settings page on Activision’s website): game settings, map pool, veto, weapons, attachments, perks, scorestreaks and more. The official page, linked at the top of Champion Rules, is the source and always takes priority.", "outdated": false },
+      "ar": { "q": "ما هو Champion Rules؟", "a": "Champion Rules شرح قسمًا بقسم لقوانين بطولات Call of Duty: Mobile الرسمية (صفحة Esports Settings على موقع Activision): إعدادات اللعب، مجموعة الخرائط، الفيتو، الأسلحة، الملحقات، المهارات، سلاسل النقاط والمزيد. والصفحة الرسمية، المرتبطة أعلى Champion Rules، هي المصدر والمرجع النهائي.", "outdated": false }
     },
     {
       "id": "settings-names",

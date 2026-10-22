@@ -1,7 +1,8 @@
 import { LANGS } from '../i18n/ui.js';
+import champion from '../data/champion.json';
 
 const SITE = 'https://www.kaydarap.com';
-const PAGES = ['', 'rules/', 'rules/android/', 'rules/ios/', 'rooms/', 'faq/', 'settings/'];
+const PAGES = ['', 'rules/', 'rules/android/', 'rules/ios/', 'rooms/', 'faq/', 'settings/', 'champion/', ...champion.sections.map((s) => `champion/${s.id}/`)];
 
 export function GET() {
   const urls = PAGES.flatMap((p) =>

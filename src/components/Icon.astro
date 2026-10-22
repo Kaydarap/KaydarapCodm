@@ -42,6 +42,14 @@ const P: Record<string, string> = {
   users: '<circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0113 0"/><path d="M16 4.5a3.5 3.5 0 010 7M18 14a6.5 6.5 0 013.5 6"/>',
   eye: '<path d="M3 12s3.5-6 9-6 9 6 9 6-3.5 6-9 6-9-6-9-6z"/><circle cx="12" cy="12" r="2.5"/>',
   text: '<path d="M4 7V5h12v2M10 5v14M7 19h6"/><path d="M15 12v-1.5h6V12M18 10.5V19M16.5 19h3"/>',
+  map: '<path d="M3 6l6-2 6 2 6-2v14l-6 2-6-2-6 2z"/><path d="M9 4v14M15 6v14"/>',
+  target: '<circle cx="12" cy="12" r="7.5"/><circle cx="12" cy="12" r="2"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/>',
+  attach: '<path d="M3 10h13l3 2-3 2H3z"/><path d="M7 14v4h3v-4M8 10V7h5v3M19 12h2"/>',
+  grenade: '<circle cx="11" cy="14" r="6.5"/><path d="M9 7.6V5h4v2.6M13 5l3-1.5 2 2"/><path d="M8.5 14h5M11 11.5v5"/>',
+  perk: '<path d="M12 3l2.6 5.6 6 .7-4.5 4.1 1.2 6L12 16.4 6.7 19.4l1.2-6L3.4 9.3l6-.7z"/>',
+  streak: '<path d="M12 2c2 2.5 3 5 3 8v6H9v-6c0-3 1-5.5 3-8z"/><path d="M9 13l-3 3v3l3-1.5M15 13l3 3v3l-3-1.5M11 19.5l1 2.5 1-2.5"/>',
+  skin: '<path d="M8 3l-5 3 2 5 3-1v11h8V10l3 1 2-5-5-3c-.5 1.8-2 3-4 3S8.5 4.8 8 3z"/>',
+  history: '<path d="M4 12a8 8 0 108-8 8 8 0 00-6 2.7L4 9"/><path d="M4 4v5h5M12 8v4l3 2"/>',
 };
 const body = P[name] ?? P.bolt;
 ---

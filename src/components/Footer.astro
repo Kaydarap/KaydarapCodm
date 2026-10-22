@@ -18,11 +18,7 @@ const year = new Date().getFullYear();
     <ul class="footer-links" role="list">
       <li><a href={url(lang, 'rules/android/')}>{t.cards.android.title}</a></li>
       <li><a href={url(lang, 'rules/ios/')}>{t.cards.ios.title}</a></li>
-      <li>
-        <a href={settings.champion.url} target="_blank" rel="noopener noreferrer">
-          <bdi>Champion Rules</bdi> <Icon name="external" size={14} label={t.external} />
-        </a>
-      </li>
+      <li><a href={url(lang, 'champion/')}><bdi>Champion Rules</bdi></a></li>
       <li><a href={url(lang, 'rooms/')}>{t.nav.rooms}</a></li>
       <li><a href={url(lang, 'faq/')}>{t.nav.faq}</a></li>
       <li><a href={url(lang, 'settings/')}>{t.nav.settings}</a></li>

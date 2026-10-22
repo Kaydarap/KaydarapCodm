@@ -22,6 +22,7 @@
 | Open rooms | `src/data/rooms.json` | روم‌ها (زمان، ظرفیت، وضعیت ثبت‌نام، لینک) و اطلاعیه‌ها |
 | FAQ | `src/data/faq.json` | پرسش و پاسخ در سه زبان |
 | Home page | `src/data/home.json` | متن اصلی صفحه خانه، تصویر بنر، نوار اطلاعیه |
+| — (ویرایش مستقیم در GitHub) | `src/data/champion.json` | بخش‌های Champion Rules (تنظیمات، مپ‌ها، وتو، اسلحه‌ها، پرک‌ها، اسکوراستریک‌ها و…) در سه زبان؛ بعد از هر تغییر رسمی، `sourceUpdatedAt` و `checkedAt` را هم به‌روز کنید |
 | Site settings & links | `src/data/settings.json` | لینک Champion Rules، لینک Integrity Check، لینک مایکت، لینک تماس |
 
 هر ذخیره در پنل = یک commit روی شاخه `main` → سایت حدود ۱ تا ۲ دقیقه بعد خودکار به‌روز می‌شود.

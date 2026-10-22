@@ -1,0 +1,170 @@
+---
+import Icon from './Icon.astro';
+import { UI, fmt, num, formatDate, richText } from '../lib/i18n.js';
+import { loc, isPlain } from '../lib/champion.js';
+
+interface Props { lang: 'fa' | 'en' | 'ar'; block: any }
+const { lang, block: b } = Astro.props;
+const t = UI[lang].champ;
+const value = (v) => (typeof v === 'number' ? num(lang, v) : v === 'yes' ? t.yes : v === 'N/A' ? t.na : v);
+const toneIcon = { ban: 'ban', ok: 'ok', map: 'map' };
+const heading = b.mode || loc(b.title, lang);
+---
+{b.type === 'text' && <p class="ch-text" set:html={richText(b[lang], lang)} />}
+
+{b.type === 'points' && (
+  <div class="ch-block">
+    {b.title && <h2 class="ch-h"><Icon name="rules" size={20} />{loc(b.title, lang)}</h2>}
+    <ul class="ch-points" role="list">
+      {b.items.map((it) => <li><span class="ch-dot" aria-hidden="true"></span><p set:html={richText(it[lang], lang)} /></li>)}
+    </ul>
+  </div>
+)}
+
+{b.type === 'settings' && (
+  <section class="ch-card neon">
+    <h2 class="ch-card-h"><Icon name="settings" size={20} /><bdi class="ch-mode">{b.mode}</bdi></h2>
+    <dl class="ch-table">
+      {b.rows.map((r) => (
+        <div class="ch-row">
+          <dt>
+            <span>{r.k[lang]}</span>
+            {lang !== 'en' && <small class="ch-game" dir="ltr" lang="en">{r.game}</small>}
+          </dt>
+          <dd><bdi class={`ch-val ${typeof r.v === 'number' ? 'ch-val-num' : ''}`}>{value(r.v)}</bdi></dd>
+        </div>
+      ))}
+    </dl>
+  </section>
+)}
+
+{b.type === 'names' && (
+  <section class={`ch-card neon ch-tone-${b.tone}`}>
+    <h2 class="ch-card-h">
+      <Icon name={toneIcon[b.tone]} size={20} />
+      {b.mode ? <bdi class="ch-mode">{b.mode}</bdi> : <span>{heading}</span>}
+      <span class={`ch-pill ch-pill-${b.tone}`}>{fmt(t.count[b.tone], { n: num(lang, b.items.length) })}</span>
+    </h2>
+    <ul class={`ch-chips ${b.big ? 'ch-chips-big' : ''}`} role="list">
+      {b.items.map((it) => (
+        <li class={`ch-chip ch-chip-${b.tone}`} dir={isPlain(it) ? 'ltr' : undefined} lang={isPlain(it) ? 'en' : undefined}>{loc(it, lang)}</li>
+      ))}
+    </ul>
+    {b.note && <p class="ch-note"><Icon name="ban" size={16} />{loc(b.note, lang)}</p>}
+  </section>
+)}
+
+{b.type === 'groups' && (
+  <div class="ch-block">
+    <h2 class="ch-h"><Icon name={toneIcon[b.tone]} size={20} />{heading}</h2>
+    <div class="ch-groups">
+      {b.groups.map((g) => (
+        <section class={`ch-group neon ch-tone-${b.tone} ${g.color ? `ch-color-${g.color}` : ''}`}>
+          <h3 class="ch-group-h" dir={isPlain(g.name) ? 'ltr' : undefined}>
+            <span>{loc(g.name, lang)}</span>
+            <span class={`ch-pill ch-pill-${b.tone}`}>{num(lang, g.items.length)}</span>
+          </h3>
+          <ul class="ch-chips" role="list">
+            {g.items.map((it) => (
+              <li class={`ch-chip ch-chip-${b.tone}`} dir={isPlain(it) ? 'ltr' : undefined} lang={isPlain(it) ? 'en' : undefined}>{loc(it, lang)}</li>
+            ))}
+          </ul>
+        </section>
+      ))}
+    </div>
+  </div>
+)}
+
+{b.type === 'alert' && (
+  <div class={`ch-alert ch-alert-${b.tone}`} role="note">
+    <Icon name={b.tone === 'ban' ? 'ban' : 'ok'} size={26} />
+    <div>
+      {b.title && <p class="ch-alert-t" dir="ltr" lang="en">{b.title}</p>}
+      <p set:html={richText(b[lang], lang)} />
+    </div>
+  </div>
+)}
+
+{b.type === 'order' && (
+  <div class="ch-block">
+    <h2 class="ch-h"><Icon name="steps" size={20} />{loc(b.title, lang)}</h2>
+    <ol class="ch-order" role="list">
+      {b.items.map((m, i) => (
+        <li class="neon">
+          <span class="ch-order-n">{fmt(t.mapN, { n: num(lang, i + 1) })}</span>
+          <bdi class="ch-mode">{m}</bdi>
+        </li>
+      ))}
+    </ol>
+  </div>
+)}
+
+{b.type === 'veto' && (
+  <section class="ch-card neon ch-veto">
+    <h2 class="ch-card-h"><Icon name="ban" size={20} /><span>{loc(b.title, lang)}</span></h2>
+    {b.note && <p class="ch-note ch-note-gold"><Icon name="trophy" size={16} />{loc(b.note, lang)}</p>}
+    {b.phases.map((p) => (
+      <div class="ch-phase">
+        <h3 class="ch-phase-h" set:html={fmt(t.veto.phase, { mode: `<bdi class="ch-mode">${p.mode.replace(/&/g, '&amp;')}</bdi>` })} />
+        <ol class="ch-vsteps" role="list">
+          {p.steps.map((s) => (
+            <li class={`ch-vstep ch-vstep-${s.a}`}>
+              <span class="ch-vtag" dir="ltr">{s.a === 'ban' ? 'BAN' : s.a === 'pick' ? 'PICK' : 'LAST'}</span>
+              <span>{fmt(t.veto[s.a], { t: num(lang, s.t ?? 0), o: num(lang, s.t === 1 ? 2 : 1), m: num(lang, s.m ?? 0), s: num(lang, s.s ?? 0) })}</span>
+            </li>
+          ))}
+        </ol>
+      </div>
+    ))}
+  </section>
+)}
+
+{b.type === 'roles' && (
+  <div class="ch-block">
+    <h2 class="ch-h"><Icon name="users" size={20} />{loc(b.title, lang)}</h2>
+    <ul class="ch-roles" role="list">
+      {b.items.map((r) => (
+        <li class="neon">
+          <span class="ch-role-name" dir="ltr">{r.name}</span>
+          <span class="ch-role-full" dir="ltr" lang="en">{r[lang]}</span>
+          <span class="ch-role-n" aria-label={`${t.pool}: ${num(lang, r.n)}`}>×{num(lang, r.n)}</span>
+        </li>
+      ))}
+    </ul>
+  </div>
+)}
+
+{b.type === 'example' && (
+  <section class="ch-card neon">
+    <h2 class="ch-card-h"><Icon name="users" size={20} /><span>{loc(b.title, lang)}</span></h2>
+    <ul class="ch-example" role="list">
+      {b.items.map((r, i) => (
+        <li><span>{fmt(t.player, { n: num(lang, i + 1) })}</span><bdi dir="ltr">{r}</bdi></li>
+      ))}
+    </ul>
+  </section>
+)}
+
+{b.type === 'sequence' && (
+  <ol class="ch-seq" role="list">
+    {b.items.map((it, i) => (
+      <li class="neon">
+        <span class="ch-seq-n" aria-hidden="true">{num(lang, i + 1)}</span>
+        <p set:html={richText(it[lang], lang)} />
+      </li>
+    ))}
+  </ol>
+)}
+
+{b.type === 'changelog' && (
+  <ol class="ch-log" role="list">
+    {b.entries.map((e) => (
+      <li>
+        <time class="ch-log-date" datetime={e.date}>{formatDate(lang, e.date)}</time>
+        <ul class="ch-points" role="list">
+          {e.items.map((it) => <li><span class="ch-dot" aria-hidden="true"></span><p set:html={richText(it[lang], lang)} /></li>)}
+        </ul>
+      </li>
+    ))}
+  </ol>
+)}

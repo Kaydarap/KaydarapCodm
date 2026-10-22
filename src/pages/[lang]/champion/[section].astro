@@ -1,0 +1,78 @@
+---
+import Base from '../../../layouts/Base.astro';
+import Icon from '../../../components/Icon.astro';
+import ChampBlock from '../../../components/ChampBlock.astro';
+import { LANGS, UI, url, fmt, num, formatDate } from '../../../lib/i18n.js';
+import { champion, sections } from '../../../lib/champion.js';
+
+export function getStaticPaths() {
+  return LANGS.flatMap((lang) => sections.map((s) => ({ params: { lang, section: s.id } })));
+}
+const { lang, section: id } = Astro.params;
+const t = UI[lang];
+const c = t.champ;
+const i = sections.findIndex((s) => s.id === id);
+const s = sections[i];
+const prev = sections[i - 1];
+const next = sections[i + 1];
+---
+<Base lang={lang} title={`${s[lang].title} — Champion Rules`} description={s[lang].summary} path={`champion/${id}/`} page="rules">
+  <div class="wrap page champ-page">
+    <nav class="crumbs" aria-label={c.back}>
+      <a href={url(lang, 'champion/')}><Icon name="arrow" size={16} class="flip-ltr" /> <span dir="ltr" lang="en">Champion Rules</span> · {c.back}</a>
+    </nav>
+
+    <nav class="ch-tabs" aria-label={c.jump}>
+      <ul role="list">
+        {sections.map((x) => (
+          <li><a href={url(lang, `champion/${x.id}/`)} aria-current={x.id === id ? 'page' : undefined}><Icon name={x.icon} size={16} />{x[lang].title}</a></li>
+        ))}
+      </ul>
+    </nav>
+
+    <header class="ch-head">
+      <span class="ch-head-icon"><Icon name={s.icon} size={38} /></span>
+      <div>
+        <p class="step-kicker"><Icon name="trophy" size={16} /> <span dir="ltr" lang="en">Champion Rules</span> · {fmt(c.position, { n: num(lang, i + 1), total: num(lang, sections.length) })}</p>
+        <h1 class="page-title">{s[lang].title}</h1>
+        <p class="muted">{s[lang].summary}</p>
+      </div>
+    </header>
+
+    <div class="ch-body">
+      {s.blocks.map((b) => <ChampBlock lang={lang} block={b} />)}
+    </div>
+
+    <nav class="ch-pager" aria-label={c.jump}>
+      {prev ? (
+        <a class="ch-pager-link neon" href={url(lang, `champion/${prev.id}/`)} rel="prev">
+          <small><Icon name="arrow" size={14} class="flip-ltr" /> {c.prev}</small>
+          <span>{prev[lang].title}</span>
+        </a>
+      ) : <span />}
+      {next ? (
+        <a class="ch-pager-link ch-pager-next neon" href={url(lang, `champion/${next.id}/`)} rel="next">
+          <small>{c.next} <Icon name="arrow" size={14} class="flip-rtl" /></small>
+          <span>{next[lang].title}</span>
+        </a>
+      ) : (
+        <a class="ch-pager-link ch-pager-next neon" href={url(lang, 'champion/')}>
+          <small>{c.back} <Icon name="arrow" size={14} class="flip-rtl" /></small>
+          <span dir="ltr" lang="en">Champion Rules</span>
+        </a>
+      )}
+    </nav>
+
+    <div class="ch-foot">
+      <p class="console-note small"><Icon name="shield" size={16} /> {c.disclaimer}</p>
+      <p class="small muted">
+        {c.sourceUpdated}: <time datetime={champion.sourceUpdatedAt}>{formatDate(lang, champion.sourceUpdatedAt)}</time> ·
+        <a class="link-more" href={champion.source} target="_blank" rel="noopener noreferrer">{c.source} <Icon name="external" size={14} label={t.external} /></a>
+      </p>
+    </div>
+  </div>
+  <script>
+    const cur = document.querySelector('.ch-tabs [aria-current="page"]');
+    cur?.scrollIntoView({ block: 'nearest', inline: 'center' });
+  </script>
+</Base>

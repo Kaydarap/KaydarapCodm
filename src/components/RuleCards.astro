@@ -1,6 +1,6 @@
 ---
 import Icon from './Icon.astro';
-import settings from '../data/settings.json';
+import { sections } from '../lib/champion.js';
 import android from '../data/rules-android.json';
 import ios from '../data/rules-ios.json';
 import { UI, url, fmt, num } from '../lib/i18n.js';
@@ -31,19 +31,17 @@ const cards = [
     </li>
   ))}
   <li class="rcard rcard-champion neon reveal" data-platform="champion">
-    <a class="rcard-link" href={settings.champion.url} target="_blank" rel="noopener noreferrer">
+    <a class="rcard-link" href={url(lang, 'champion/')}>
       <span class="rcard-icon"><Icon name="trophy" size={34} /></span>
       <span class="rcard-meta rcard-ext">
-        <Icon name="external" size={14} />
-        {t.externalShort}
+        {fmt(t.cards.champion.sections, { n: num(lang, sections.length) })}
       </span>
       <h3 class="rcard-title" dir="ltr" lang="en">Champion Rules</h3>
       <p class="rcard-desc">{t.cards.champion.desc}</p>
       <span class="btn btn-gold rcard-cta">
         {t.cards.champion.cta}
-        <Icon name="external" size={18} />
+        <Icon name="arrow" size={18} class="flip-rtl" />
       </span>
-      <span class="sr-only">({t.external})</span>
     </a>
   </li>
 </ul>

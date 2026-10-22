@@ -1,0 +1,85 @@
+---
+import Base from '../../../layouts/Base.astro';
+import Icon from '../../../components/Icon.astro';
+import { UI, url, langPaths, num, formatDate } from '../../../lib/i18n.js';
+import { champion, sections, sectionCount, checkIndex } from '../../../lib/champion.js';
+
+export const getStaticPaths = langPaths;
+const { lang } = Astro.params;
+const t = UI[lang];
+const c = t.champ;
+const titles = Object.fromEntries(sections.map((s) => [s.id, s[lang].title]));
+---
+<Base lang={lang} title="Champion Rules" description={c.lead} path="champion/" page="rules">
+  <div class="wrap page champ-page">
+    <nav class="crumbs" aria-label={t.rules.back}>
+      <a href={url(lang, 'rules/')}><Icon name="arrow" size={16} class="flip-ltr" /> {t.rules.back}</a>
+    </nav>
+
+    <header class="ch-hero neon">
+      <div class="ch-hero-in">
+        <span class="ch-hero-badge"><Icon name="trophy" size={44} /></span>
+        <div class="ch-hero-text">
+          <p class="eyebrow"><Icon name="crown" size={16} /> <bdi>{champion.season}</bdi></p>
+          <h1 class="ch-hero-title" dir="ltr" lang="en">Champion Rules</h1>
+          <p class="muted">{c.lead}</p>
+          <p class="rules-meta small">
+            <span>{c.sourceUpdated}: <time datetime={champion.sourceUpdatedAt}>{formatDate(lang, champion.sourceUpdatedAt)}</time></span>
+            <span aria-hidden="true">·</span>
+            <span>{c.checked}: <time datetime={champion.checkedAt}>{formatDate(lang, champion.checkedAt)}</time></span>
+          </p>
+          <a class="btn btn-gold btn-sm ch-src" href={champion.source} target="_blank" rel="noopener noreferrer">
+            <Icon name="external" size={16} /> {c.source}
+            <span class="sr-only">({t.external})</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <section class="ch-check neon" aria-labelledby="ch-check-t">
+      <h2 id="ch-check-t" class="ch-card-h"><Icon name="search" size={20} /><span>{c.checkTitle}</span></h2>
+      <p class="small muted">{c.checkLead}</p>
+      <label class="search-field">
+        <span class="sr-only">{c.checkLabel}</span>
+        <Icon name="search" />
+        <input type="search" data-ch-input placeholder={c.checkPlaceholder} autocomplete="off" enterkeyhint="search" dir="auto" />
+      </label>
+      <ul class="ch-results" role="list" data-ch-results aria-live="polite"></ul>
+      <p class="ch-note" data-ch-none hidden><Icon name="shield" size={16} />{c.checkNone}</p>
+    </section>
+
+    <h2 class="section-title ch-sec-title"><Icon name="rules" />{c.sectionsTitle}</h2>
+    <ol class="ch-tiles" role="list">
+      {sections.map((s, i) => {
+        const cnt = sectionCount(s, lang);
+        return (
+          <li class="ch-tile neon reveal" data-section={s.id}>
+            <a href={url(lang, `champion/${s.id}/`)}>
+              <span class="ch-tile-top">
+                <span class="ch-tile-icon"><Icon name={s.icon} size={28} /></span>
+                <span class="ch-tile-n" dir="ltr">{String(i + 1).padStart(2, '0')}</span>
+              </span>
+              <h3 class="ch-tile-title">{s[lang].title}</h3>
+              <p class="ch-tile-desc">{s[lang].summary}</p>
+              <span class="ch-tile-foot">
+                <span class={`ch-pill ch-pill-${cnt.tone}`}>{cnt.text}</span>
+                <span class="ch-tile-go">{c.open} <Icon name="arrow" size={16} class="flip-rtl" /></span>
+              </span>
+            </a>
+          </li>
+        );
+      })}
+    </ol>
+
+    <p class="console-note small ch-disclaimer"><Icon name="shield" size={16} /> {c.disclaimer}</p>
+  </div>
+  <script type="application/json" id="ch-index" set:html={JSON.stringify({
+    items: checkIndex(lang),
+    titles,
+    base: url(lang, 'champion/'),
+    tone: c.tone,
+  })} />
+  <script>
+    import '../../../scripts/champion.js';
+  </script>
+</Base>
