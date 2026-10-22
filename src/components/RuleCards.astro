@@ -1,0 +1,49 @@
+---
+import Icon from './Icon.astro';
+import settings from '../data/settings.json';
+import android from '../data/rules-android.json';
+import ios from '../data/rules-ios.json';
+import { UI, url, fmt, num } from '../lib/i18n.js';
+
+interface Props { lang: 'fa' | 'en' | 'ar' }
+const { lang } = Astro.props;
+const t = UI[lang];
+const cards = [
+  { key: 'android', icon: 'android', href: url(lang, 'rules/android/'), steps: android.steps.length, ids: android.steps.map((s) => s.id).join(',') },
+  { key: 'ios', icon: 'ios', href: url(lang, 'rules/ios/'), steps: ios.steps.length, ids: ios.steps.map((s) => s.id).join(',') },
+];
+---
+<ul class="rule-cards" role="list">
+  {cards.map((c) => (
+    <li class={`rcard rcard-${c.key} neon reveal`} data-platform={c.key}>
+      <a class="rcard-link" href={c.href}>
+        <span class="rcard-icon"><Icon name={c.icon} size={34} /></span>
+        <span class="rcard-meta" data-progress-badge={c.key} data-ids={c.ids}>
+          {fmt(t.cards.steps, { n: num(lang, c.steps) })}
+        </span>
+        <h3 class="rcard-title">{t.cards[c.key].title}</h3>
+        <p class="rcard-desc">{t.cards[c.key].desc}</p>
+        <span class="btn btn-primary rcard-cta">
+          {t.cards[c.key].cta}
+          <Icon name="arrow" size={18} class="flip-rtl" />
+        </span>
+      </a>
+    </li>
+  ))}
+  <li class="rcard rcard-champion neon reveal" data-platform="champion">
+    <a class="rcard-link" href={settings.champion.url} target="_blank" rel="noopener noreferrer">
+      <span class="rcard-icon"><Icon name="trophy" size={34} /></span>
+      <span class="rcard-meta rcard-ext">
+        <Icon name="external" size={14} />
+        {t.externalShort}
+      </span>
+      <h3 class="rcard-title" dir="ltr" lang="en">Champion Rules</h3>
+      <p class="rcard-desc">{t.cards.champion.desc}</p>
+      <span class="btn btn-gold rcard-cta">
+        {t.cards.champion.cta}
+        <Icon name="external" size={18} />
+      </span>
+      <span class="sr-only">({t.external})</span>
+    </a>
+  </li>
+</ul>

@@ -1,0 +1,59 @@
+---
+import Base from '../../../layouts/Base.astro';
+import Icon from '../../../components/Icon.astro';
+import RuleCards from '../../../components/RuleCards.astro';
+import DeviceHint from '../../../components/DeviceHint.astro';
+import android from '../../../data/rules-android.json';
+import ios from '../../../data/rules-ios.json';
+import { UI, url, langPaths, plain, num, fmt } from '../../../lib/i18n.js';
+
+export const getStaticPaths = langPaths;
+const { lang } = Astro.params;
+const t = UI[lang];
+
+const index = [android, ios].flatMap((set) =>
+  set.steps.map((s, i) => ({
+    p: set.platform,
+    n: num(lang, i + 1),
+    h: url(lang, `rules/${set.platform}/#step-${i + 1}`),
+    title: s[lang].title,
+    text: plain(s[lang].body, lang),
+    pt: set[lang].title,
+  })),
+);
+---
+<Base lang={lang} title={t.rules.hubTitle} description={t.rules.hubLead} path="rules/" page="rules">
+  <div class="wrap page">
+    <header class="page-head">
+      <h1 class="page-title">{t.rules.hubTitle}</h1>
+      <p class="muted">{t.rules.hubLead}</p>
+    </header>
+
+    <DeviceHint lang={lang} />
+
+    <div class="search-box neon" id="search">
+      <label class="search-field">
+        <span class="sr-only">{t.rules.searchLabel}</span>
+        <Icon name="search" />
+        <input type="search" data-search-input placeholder={t.rules.searchPlaceholder} autocomplete="off" enterkeyhint="search" />
+      </label>
+      <div class="seg" role="radiogroup" aria-label={t.rules.filterLabel} data-filter>
+        <label><input type="radio" name="pf" value="all" checked /><span>{t.rules.all}</span></label>
+        <label><input type="radio" name="pf" value="android" /><span><Icon name="android" size={16} /> Android</span></label>
+        <label><input type="radio" name="pf" value="ios" /><span><Icon name="ios" size={16} /> iOS</span></label>
+      </div>
+    </div>
+
+    <section class="search-results" data-search-results hidden aria-live="polite">
+      <p class="small muted" data-search-count data-tpl={t.rules.results}></p>
+      <ul class="results" role="list" data-search-list></ul>
+      <p class="empty-inline" data-search-empty hidden>{t.rules.noResults}</p>
+    </section>
+
+    <RuleCards lang={lang} />
+  </div>
+  <script type="application/json" id="rules-index" set:html={JSON.stringify({ index, stepLabel: t.rules.stepN })} />
+  <script>
+    import '../../../scripts/search.js';
+  </script>
+</Base>

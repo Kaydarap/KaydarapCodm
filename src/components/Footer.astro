@@ -1,0 +1,39 @@
+---
+import Logo from './Logo.astro';
+import Icon from './Icon.astro';
+import settings from '../data/settings.json';
+import { UI, url } from '../lib/i18n.js';
+
+interface Props { lang: 'fa' | 'en' | 'ar' }
+const { lang } = Astro.props;
+const t = UI[lang];
+const year = new Date().getFullYear();
+---
+<footer class="site-footer">
+  <div class="wrap footer-in">
+    <div class="footer-brand">
+      <Logo />
+      <p class="muted small">{t.footer.disclaimer}</p>
+    </div>
+    <ul class="footer-links" role="list">
+      <li><a href={url(lang, 'rules/android/')}>{t.cards.android.title}</a></li>
+      <li><a href={url(lang, 'rules/ios/')}>{t.cards.ios.title}</a></li>
+      <li>
+        <a href={settings.champion.url} target="_blank" rel="noopener noreferrer">
+          <bdi>Champion Rules</bdi> <Icon name="external" size={14} label={t.external} />
+        </a>
+      </li>
+      <li><a href={url(lang, 'rooms/')}>{t.nav.rooms}</a></li>
+      <li><a href={url(lang, 'faq/')}>{t.nav.faq}</a></li>
+      <li><a href={url(lang, 'settings/')}>{t.nav.settings}</a></li>
+      {settings.links.contact && (
+        <li>
+          <a href={settings.links.contact} target="_blank" rel="noopener noreferrer">
+            {t.footer.contact} <Icon name="external" size={14} label={t.external} />
+          </a>
+        </li>
+      )}
+    </ul>
+  </div>
+  <p class="wrap copyright" dir="ltr">© {year} KAYDARAP</p>
+</footer>

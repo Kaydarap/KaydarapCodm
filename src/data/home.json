@@ -1,0 +1,27 @@
+{
+  "heroImage": "",
+  "notice": {
+    "enabled": false,
+    "fa": "",
+    "en": "",
+    "ar": ""
+  },
+  "fa": {
+    "eyebrow": "کامیونیتی Call of Duty: Mobile",
+    "title": "به میدان KAYDARAP خوش آمدی",
+    "subtitle": "قوانین اوپن اپ Android و iOS، اوپن‌ روم‌ها و هر چیزی که قبل از شروع مسابقه لازم داری؛ ساده، سریع و در یک جا.",
+    "outdated": false
+  },
+  "en": {
+    "eyebrow": "Call of Duty: Mobile community",
+    "title": "Welcome to the KAYDARAP arena",
+    "subtitle": "Android and iOS Open App rules, open rooms and everything you need before a match starts — simple, fast and in one place.",
+    "outdated": false
+  },
+  "ar": {
+    "eyebrow": "مجتمع Call of Duty: Mobile",
+    "title": "أهلًا بك في ساحة KAYDARAP",
+    "subtitle": "قوانين Open App لأجهزة Android وiOS، والغرف المفتوحة، وكل ما تحتاجه قبل بدء المباراة — ببساطة وسرعة وفي مكان واحد.",
+    "outdated": false
+  }
+}

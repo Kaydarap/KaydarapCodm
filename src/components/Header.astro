@@ -1,0 +1,60 @@
+---
+import Logo from './Logo.astro';
+import Icon from './Icon.astro';
+import { LANGS, LANG_META, UI, url } from '../lib/i18n.js';
+
+interface Props { lang: 'fa' | 'en' | 'ar'; path: string; page: string }
+const { lang, path, page } = Astro.props;
+const t = UI[lang];
+const items = [
+  { key: 'home', href: url(lang), icon: 'home' },
+  { key: 'rules', href: url(lang, 'rules/'), icon: 'rules' },
+  { key: 'rooms', href: url(lang, 'rooms/'), icon: 'rooms' },
+  { key: 'faq', href: url(lang, 'faq/'), icon: 'faq' },
+  { key: 'settings', href: url(lang, 'settings/'), icon: 'settings' },
+];
+---
+<header class="site-header">
+  <div class="wrap header-in">
+    <a class="brand" href={url(lang)} aria-label={`KAYDARAP — ${t.nav.home}`}>
+      <Logo />
+    </a>
+    <nav class="nav-top" aria-label={t.navLabel}>
+      {items.map((it) => (
+        <a href={it.href} aria-current={page === it.key ? 'page' : undefined}>{t.nav[it.key]}</a>
+      ))}
+    </nav>
+    <details class="lang-menu" data-lang-menu>
+      <summary aria-label={t.changeLanguage}>
+        <Icon name="globe" size={18} />
+        <span>{LANG_META[lang].name}</span>
+      </summary>
+      <ul role="list">
+        {LANGS.map((l) => (
+          <li>
+            <a
+              href={url(l, path)}
+              hreflang={l}
+              lang={l}
+              dir={LANG_META[l].dir}
+              data-lang-switch={l}
+              aria-current={l === lang ? 'true' : undefined}
+            >
+              {LANG_META[l].name}
+              <small dir="ltr">{LANG_META[l].short}</small>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </details>
+  </div>
+</header>
+
+<nav class="nav-bottom" aria-label={t.navLabel}>
+  {items.map((it) => (
+    <a href={it.href} aria-current={page === it.key ? 'page' : undefined}>
+      <Icon name={it.icon} size={22} />
+      <span>{t.nav[it.key]}</span>
+    </a>
+  ))}
+</nav>

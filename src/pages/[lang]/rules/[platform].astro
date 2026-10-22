@@ -1,0 +1,175 @@
+---
+import Base from '../../../layouts/Base.astro';
+import Icon from '../../../components/Icon.astro';
+import android from '../../../data/rules-android.json';
+import ios from '../../../data/rules-ios.json';
+import { LANGS, UI, url, abs, fmt, num, formatDate, richText, plain, resolveLink } from '../../../lib/i18n.js';
+
+export function getStaticPaths() {
+  return LANGS.flatMap((lang) => ['android', 'ios'].map((platform) => ({ params: { lang, platform } })));
+}
+const { lang, platform } = Astro.params;
+const t = UI[lang];
+const set = platform === 'android' ? android : ios;
+const other = platform === 'android' ? 'ios' : 'android';
+const head = set[lang];
+const total = set.steps.length;
+const pageUrl = abs(url(lang, `rules/${platform}/`));
+
+const copyText = [
+  head.title,
+  '',
+  ...set.steps.map((s, i) => {
+    const links = (s.links || []).map((l) => resolveLink(l.url)).filter(Boolean);
+    return `${num(lang, i + 1)}. ${s[lang].title}\n${plain(s[lang].body, lang)}${links.length ? '\n' + links.join('\n') : ''}`;
+  }),
+  '',
+  head.closing,
+  '',
+  pageUrl,
+].join('\n');
+---
+<Base lang={lang} title={head.title} description={`${head.title} — KAYDARAP`} path={`rules/${platform}/`} page="rules">
+  <div class="wrap page rules-page" data-rules data-platform={platform} data-total={total}
+    data-version={set.version} data-url={pageUrl} data-title={head.title}>
+
+    <nav class="crumbs" aria-label={t.rules.back}>
+      <a href={url(lang, 'rules/')}><Icon name="arrow" size={16} class="flip-ltr" /> {t.rules.back}</a>
+    </nav>
+
+    <header class="rules-head">
+      <span class={`rules-badge rules-badge-${platform}`}><Icon name={platform} size={40} /></span>
+      <div>
+        <h1 class="page-title">{head.title}</h1>
+        <p class="rules-meta small">
+          <span>{t.rules.version} <bdi>{set.version}</bdi></span>
+          <span aria-hidden="true">·</span>
+          <span>{t.rules.updated}: <time datetime={set.updatedAt}>{formatDate(lang, set.updatedAt)}</time></span>
+        </p>
+      </div>
+      <div class="seg seg-links" role="group" aria-label={t.rules.filterLabel}>
+        <a href={url(lang, 'rules/android/')} aria-current={platform === 'android' ? 'page' : undefined}><Icon name="android" size={16} /> Android</a>
+        <a href={url(lang, 'rules/ios/')} aria-current={platform === 'ios' ? 'page' : undefined}><Icon name="ios" size={16} /> iOS</a>
+      </div>
+    </header>
+
+    <section class="console neon" aria-label={t.rules.onThisPage}>
+      <div class="console-progress">
+        <div class="bar bar-lg" role="progressbar" aria-valuemin="0" aria-valuemax={total} aria-valuenow="0" data-progressbar
+          aria-label={fmt(t.rules.progress, { done: num(lang, 0), total: num(lang, total) })}>
+          <span class="bar-fill" data-bar></span>
+        </div>
+        <p class="console-count" data-progress-text data-tpl={t.rules.progress}>
+          {fmt(t.rules.progress, { done: num(lang, 0), total: num(lang, total) })}
+        </p>
+      </div>
+      <div class="console-actions">
+        <button class="btn btn-primary btn-sm" type="button" data-continue data-tpl={t.rules.continueFrom} hidden>
+          <Icon name="play" size={16} class="flip-rtl" /> <span></span>
+        </button>
+        <button class="btn btn-ghost btn-sm" type="button" data-guided-toggle aria-pressed="false"
+          data-on={t.rules.showAll} data-off={t.rules.guided}>
+          <Icon name="steps" size={16} /> <span>{t.rules.guided}</span>
+        </button>
+        <button class="btn btn-ghost btn-sm" type="button" data-copy-all data-done={t.rules.copiedAll}>
+          <Icon name="copy" size={16} /> {t.rules.copyAll}
+        </button>
+        <button class="btn btn-ghost btn-sm" type="button" data-share data-done={t.rules.linkCopied}>
+          <Icon name="share" size={16} /> {t.rules.share}
+        </button>
+        <button class="btn btn-ghost btn-sm" type="button" data-qr-open>
+          <Icon name="qr" size={16} /> {t.rules.qr}
+        </button>
+        <button class="btn btn-danger btn-sm" type="button" data-reset data-confirm={t.rules.resetConfirm} data-label={t.rules.reset} data-done={t.rules.resetDone}>
+          <Icon name="reset" size={16} /> <span>{t.rules.reset}</span>
+        </button>
+      </div>
+      <p class="console-note small"><Icon name="shield" size={16} /> {t.rules.disclaimer}</p>
+      {platform === 'android' && <p class="console-note small"><Icon name="eye" size={16} /> {t.rules.androidNote}</p>}
+    </section>
+
+    <ol class="steps" role="list" data-steps>
+      {set.steps.map((s, i) => {
+        const n = i + 1;
+        const links = (s.links || []).map((l) => ({ ...l, href: resolveLink(l.url) })).filter((l) => l.href);
+        return (
+          <li class="step neon reveal" id={`step-${n}`} data-step={s.id} data-index={i}>
+            <div class="step-num" aria-hidden="true"><span>{num(lang, n)}</span></div>
+            <div class="step-body">
+              <p class="step-kicker">
+                <Icon name={s.icon} size={18} />
+                {fmt(t.rules.stepN, { n: num(lang, n) })}
+              </p>
+              <h2 class="step-title">{s[lang].title}</h2>
+              <p class="step-text" set:html={richText(s[lang].body, lang)} />
+              {s.badges?.length > 0 && (
+                <ul class="badges" role="list">
+                  {s.badges.map((b) => (
+                    <li class={`badge badge-${b.tone}`}>
+                      <Icon name={b.tone === 'ban' ? 'ban' : b.tone === 'off' ? 'power' : 'ok'} size={16} />
+                      <bdi class="badge-text">{b.text}</bdi>
+                      <span class="badge-label">{t.rules.badge[b.tone]}</span>
+                    </li>
+                  ))}
+                </ul>
+              )}
+              {links.length > 0 && (
+                <div class="step-links">
+                  {links.map((l) => (
+                    <a class={`store-btn store-${l.kind}`} href={l.href} target="_blank" rel="noopener noreferrer">
+                      <Icon name={l.kind === 'googleplay' ? 'play' : 'game'} size={20} />
+                      <span>{t.rules.link[l.kind] ?? l.href}</span>
+                      <Icon name="external" size={14} label={t.external} />
+                    </a>
+                  ))}
+                  <p class="small muted">{t.rules.link.storeNote}</p>
+                </div>
+              )}
+              <div class="step-foot">
+                <label class="check">
+                  <input type="checkbox" data-check={s.id} />
+                  <span class="check-box" aria-hidden="true"><Icon name="ok" size={16} /></span>
+                  <span>{t.rules.done}</span>
+                </label>
+                <button class="icon-btn" type="button" data-copy-link={`step-${n}`} aria-label={t.rules.stepLink} title={t.rules.stepLink} data-done={t.rules.linkCopied}>
+                  <Icon name="link" size={18} />
+                </button>
+              </div>
+            </div>
+          </li>
+        );
+      })}
+    </ol>
+
+    <div class="guided-nav" data-guided-nav hidden>
+      <button class="btn btn-ghost" type="button" data-guided-prev><Icon name="arrow" size={18} class="flip-ltr" /> {t.rules.prev}</button>
+      <span class="guided-pos" data-guided-pos></span>
+      <button class="btn btn-primary" type="button" data-guided-next>{t.rules.next} <Icon name="arrow" size={18} class="flip-rtl" /></button>
+    </div>
+
+    <div class="closing neon reveal">
+      <Icon name="crown" size={34} />
+      <p class="closing-text">{head.closing}</p>
+      <p class="small muted" data-all-checked hidden>{t.rules.allChecked}</p>
+    </div>
+
+    <nav class="page-end">
+      <a class="btn btn-ghost" href={url(lang, 'rules/')}><Icon name="rules" size={18} /> {t.rules.back}</a>
+      <a class="btn btn-ghost" href={url(lang, `rules/${other}/`)}>
+        <Icon name={other} size={18} /> {fmt(t.rules.switchTo, { p: other === 'ios' ? 'iOS' : 'Android' })}
+      </a>
+    </nav>
+
+    <dialog class="qr-dialog neon" data-qr-dialog aria-labelledby="qr-title">
+      <h2 id="qr-title" class="panel-title">{t.rules.qrTitle}</h2>
+      <canvas data-qr-canvas width="240" height="240" aria-label={`QR: ${pageUrl}`} role="img"></canvas>
+      <p class="small qr-url" dir="ltr">{pageUrl}</p>
+      <form method="dialog"><button class="btn btn-primary" type="submit">{t.close}</button></form>
+    </dialog>
+
+    <template data-copy-source>{copyText}</template>
+  </div>
+  <script>
+    import '../../../scripts/rules.js';
+  </script>
+</Base>

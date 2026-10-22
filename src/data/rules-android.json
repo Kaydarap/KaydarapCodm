@@ -1,0 +1,62 @@
+{
+  "platform": "android",
+  "version": "1.0",
+  "updatedAt": "2026-10-22",
+  "fa": { "title": "قوانین اوپن اپ Android", "closing": "موفق باشید!", "outdated": false },
+  "en": { "title": "Open App Android Rules", "closing": "Good luck!", "outdated": false },
+  "ar": { "title": "قوانين Open App لنظام Android", "closing": "بالتوفيق!", "outdated": false },
+  "steps": [
+    {
+      "id": "serial",
+      "icon": "serial",
+      "badges": [],
+      "links": [],
+      "fa": { "title": "نمایش شماره سریال گوشی", "body": "وارد تنظیمات گوشی شوید و شماره سریال دستگاه، یعنی **Serial Number**، را نشان دهید.", "outdated": false },
+      "en": { "title": "Show your device’s serial number", "body": "Open your phone’s settings and show the device’s **Serial Number**.", "outdated": false },
+      "ar": { "title": "إظهار الرقم التسلسلي للجهاز", "body": "افتح إعدادات الهاتف وأظهر الرقم التسلسلي للجهاز (**Serial Number**).", "outdated": false }
+    },
+    {
+      "id": "dns",
+      "icon": "dns",
+      "badges": [
+        { "text": "DNS: OFF", "tone": "off" },
+        { "text": "MT Manager", "tone": "ban" }
+      ],
+      "links": [],
+      "fa": { "title": "بررسی وضعیت DNS", "body": "وارد بخش **DNS** یا **Private DNS** شوید و از **خاموش بودن** آن اطمینان حاصل کنید. از داشتن برنامه **MT Manager** خودداری کنید.", "outdated": false },
+      "en": { "title": "Check your DNS settings", "body": "Go to **DNS** or **Private DNS** and make sure it is turned **OFF**. Do not have **MT Manager** installed on your device.", "outdated": false },
+      "ar": { "title": "التحقق من إعدادات DNS", "body": "انتقل إلى قسم **DNS** أو **Private DNS** وتأكد من **إيقافه**. يجب ألا يكون تطبيق **MT Manager** مثبتًا على جهازك.", "outdated": false }
+    },
+    {
+      "id": "hidden-apps",
+      "icon": "hidden",
+      "badges": [],
+      "links": [],
+      "fa": { "title": "بررسی برنامه‌های مخفی", "body": "وارد بخش **Hidden Apps** شوید و مطمئن شوید برنامه‌های دستگاه خود را مخفی نکرده‌اید.", "outdated": false },
+      "en": { "title": "Check hidden apps", "body": "Open the **Hidden Apps** section and make sure your apps are not hidden.", "outdated": false },
+      "ar": { "title": "التحقق من التطبيقات المخفية", "body": "افتح قسم **Hidden Apps** (التطبيقات المخفية) وتأكد من عدم إخفاء تطبيقاتك.", "outdated": false }
+    },
+    {
+      "id": "integrity-check",
+      "icon": "check",
+      "badges": [],
+      "links": [
+        { "kind": "googleplay", "url": "@integrityCheck" }
+      ],
+      "fa": { "title": "دانلود و اجرای Integrity Check", "body": "برنامه **Integrity Check** را از **Google Play** دانلود و باز کنید. روی گزینه **Check** بزنید و منتظر بمانید تا بررسی تمام شود.", "outdated": false },
+      "en": { "title": "Download and run Integrity Check", "body": "Download **Integrity Check** from **Google Play** and open it. Tap **Check** and wait for the check to finish.", "outdated": false },
+      "ar": { "title": "تنزيل وتشغيل Integrity Check", "body": "نزّل تطبيق **Integrity Check** من **Google Play** وافتحه. اضغط على **Check** وانتظر حتى ينتهي الفحص.", "outdated": false }
+    },
+    {
+      "id": "myket",
+      "icon": "game",
+      "badges": [],
+      "links": [
+        { "kind": "myket", "url": "@myket" }
+      ],
+      "fa": { "title": "اجرای بازی از مایکت", "body": "بازی **Call of Duty: Mobile** را از **مایکت** باز کنید.", "outdated": false },
+      "en": { "title": "Launch the game from Myket", "body": "Open **Call of Duty: Mobile** from **Myket**.", "outdated": false },
+      "ar": { "title": "تشغيل اللعبة من مايكت", "body": "افتح لعبة **Call of Duty: Mobile** من تطبيق **Myket** (مايكت).", "outdated": false }
+    }
+  ]
+}

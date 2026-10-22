@@ -1,0 +1,50 @@
+---
+// GitHub Pages serves this for any unknown path. The visible language is
+// picked on the client from the URL (/fa/…, /ar/…) or the saved choice.
+import '@fontsource/vazirmatn/400.css';
+import '@fontsource/vazirmatn/700.css';
+import '@fontsource/vazirmatn/900.css';
+import '@fontsource/orbitron/900.css';
+import '../styles/global.css';
+import Background from '../components/Background.astro';
+import Logo from '../components/Logo.astro';
+import { LANGS, LANG_META, UI } from '../lib/i18n.js';
+---
+<!doctype html>
+<html lang="en" dir="ltr" data-fx="balanced" data-reading="off" data-text="m">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <title>404 | KAYDARAP</title>
+    <meta name="theme-color" content="#050507" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <script is:inline>
+      (function () {
+        var d = document.documentElement, l = (location.pathname.split('/')[1] || '').toLowerCase();
+        d.classList.add('js');
+        if (['fa', 'en', 'ar'].indexOf(l) < 0) {
+          try { l = localStorage.getItem('kd:lang') || 'en'; } catch (e) { l = 'en'; }
+        }
+        if (['fa', 'en', 'ar'].indexOf(l) < 0) l = 'en';
+        d.lang = l;
+        d.dir = l === 'en' ? 'ltr' : 'rtl';
+        d.dataset.l = l;
+      })();
+    </script>
+  </head>
+  <body class="welcome-body">
+    <Background />
+    <main class="welcome nf" id="main">
+      <Logo size="lg" />
+      <p class="nf-code" dir="ltr">404</p>
+      {LANGS.map((l) => (
+        <div class="nf-block" data-nf={l} lang={l} dir={LANG_META[l].dir}>
+          <h1 class="page-title">{UI[l].notFound.title}</h1>
+          <p class="muted">{UI[l].notFound.text}</p>
+          <a class="btn btn-primary btn-lg" href={`/${l}/`}>{UI[l].notFound.back}</a>
+        </div>
+      ))}
+    </main>
+  </body>
+</html>

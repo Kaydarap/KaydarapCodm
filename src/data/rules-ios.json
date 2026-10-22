@@ -1,0 +1,69 @@
+{
+  "platform": "ios",
+  "version": "1.0",
+  "updatedAt": "2026-10-22",
+  "fa": { "title": "قوانین اوپن اپ iOS", "closing": "موفق باشید!", "outdated": false },
+  "en": { "title": "Open App iOS Rules", "closing": "Good luck!", "outdated": false },
+  "ar": { "title": "قوانين Open App لنظام iOS", "closing": "بالتوفيق!", "outdated": false },
+  "steps": [
+    {
+      "id": "serial",
+      "icon": "serial",
+      "badges": [],
+      "links": [],
+      "fa": { "title": "نمایش سریال نامبر", "body": "وارد بخش **About** شوید و شماره سریال دستگاه، یعنی **Serial Number**، را نشان دهید.", "outdated": false },
+      "en": { "title": "Show your serial number", "body": "Go to the **About** section and show your device’s **Serial Number**.", "outdated": false },
+      "ar": { "title": "إظهار الرقم التسلسلي", "body": "انتقل إلى قسم **About** (حول) وأظهر الرقم التسلسلي للجهاز (**Serial Number**).", "outdated": false }
+    },
+    {
+      "id": "version",
+      "icon": "version",
+      "badges": [
+        { "text": "iOS 18+", "tone": "ok" },
+        { "text": "iOS Beta", "tone": "ban" }
+      ],
+      "links": [],
+      "fa": { "title": "نمایش نسخه iOS", "body": "نسخه iOS خود را نشان دهید. نسخه **۱۸ یا بالاتر** مورد قبول است. نسخه‌های **iOS Beta به هیچ وجه قابل قبول نیستند.**", "outdated": false },
+      "en": { "title": "Show your iOS version", "body": "Show your iOS version. **iOS 18 or later** is required. **iOS Beta versions are not accepted under any circumstances.**", "outdated": false },
+      "ar": { "title": "إظهار إصدار iOS", "body": "أظهر إصدار iOS الخاص بك. يجب أن يكون الإصدار **18 أو أحدث**. **إصدارات iOS Beta غير مقبولة بأي شكل من الأشكال.**", "outdated": false }
+    },
+    {
+      "id": "developer-mode",
+      "icon": "shield",
+      "badges": [
+        { "text": "Developer Mode: OFF", "tone": "off" }
+      ],
+      "links": [],
+      "fa": { "title": "بررسی Developer Mode و Analytics Data", "body": "در بخش **Privacy & Security** از خاموش بودن **Developer Mode** اطمینان حاصل کنید. سپس در **Analytics Data** کلمه `cod` را جست‌وجو کنید.", "outdated": false },
+      "en": { "title": "Check Developer Mode and Analytics Data", "body": "In **Privacy & Security**, make sure **Developer Mode** is **OFF**. Then search for `cod` in **Analytics Data**.", "outdated": false },
+      "ar": { "title": "التحقق من Developer Mode وAnalytics Data", "body": "في قسم **Privacy & Security** (الخصوصية والأمان)، تأكد من إيقاف **Developer Mode** (وضع المطور). ثم ابحث عن كلمة `cod` في **Analytics Data** (بيانات التحليلات).", "outdated": false }
+    },
+    {
+      "id": "vpn",
+      "icon": "vpn",
+      "badges": [],
+      "links": [],
+      "fa": { "title": "نمایش بخش VPN", "body": "وارد **Settings** شوید و بخش **VPN** را به‌طور کامل نشان دهید.", "outdated": false },
+      "en": { "title": "Show the VPN section", "body": "Go to **Settings** and show the entire **VPN** section.", "outdated": false },
+      "ar": { "title": "إظهار قسم VPN", "body": "انتقل إلى **Settings** (الإعدادات) وأظهر قسم **VPN** بالكامل.", "outdated": false }
+    },
+    {
+      "id": "check-host",
+      "icon": "search",
+      "badges": [],
+      "links": [],
+      "fa": { "title": "جست‌وجوی Check host", "body": "تنظیمات دستگاه را ببندید و وارد مرورگر گوشی شوید. عبارت `Check host` را جست‌وجو کنید و اولین سایت را باز کنید.", "outdated": false },
+      "en": { "title": "Search for Check host", "body": "Close your device settings and open your phone’s browser. Search for `Check host` and open the first website in the results.", "outdated": false },
+      "ar": { "title": "البحث عن Check host", "body": "أغلق إعدادات الجهاز وافتح متصفح الهاتف. ابحث عن عبارة `Check host` وافتح أول موقع في النتائج.", "outdated": false }
+    },
+    {
+      "id": "app-store",
+      "icon": "game",
+      "badges": [],
+      "links": [],
+      "fa": { "title": "اجرای بازی از App Store", "body": "بازی را از **App Store** باز کنید.", "outdated": false },
+      "en": { "title": "Launch the game from the App Store", "body": "Open the game from the **App Store**.", "outdated": false },
+      "ar": { "title": "تشغيل اللعبة من App Store", "body": "افتح اللعبة من **App Store**.", "outdated": false }
+    }
+  ]
+}

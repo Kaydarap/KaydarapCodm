@@ -1,0 +1,46 @@
+{
+  "items": [
+    {
+      "id": "official",
+      "fa": { "q": "آیا تیک زدن مراحل یعنی دستگاه من تأیید شده است؟", "a": "خیر. چک‌لیست فقط به خودتان کمک می‌کند مراحل را مرتب انجام دهید. این سایت گوشی شما را اسکن یا بررسی نمی‌کند و تیک‌ها تأیید رسمی دستگاه یا نتیجه هیچ بررسی‌ای نیستند.", "outdated": false },
+      "en": { "q": "Does ticking the steps mean my device is approved?", "a": "No. The checklist only helps you go through the steps in order. This site does not scan or inspect your phone, and the ticks are not an official device approval or the result of any check.", "outdated": false },
+      "ar": { "q": "هل يعني وضع علامة على الخطوات أن جهازي معتمد؟", "a": "لا. قائمة التحقق تساعدك فقط على تنفيذ الخطوات بالترتيب. هذا الموقع لا يفحص هاتفك، والعلامات ليست اعتمادًا رسميًا للجهاز ولا نتيجة لأي فحص.", "outdated": false }
+    },
+    {
+      "id": "progress",
+      "fa": { "q": "پیشرفت چک‌لیست من کجا ذخیره می‌شود؟", "a": "فقط در مرورگر همین دستگاه. هیچ اطلاعاتی به سرور فرستاده نمی‌شود. پیشرفت Android و iOS جدا ذخیره می‌شوند و هر وقت بخواهید می‌توانید آن‌ها را پاک کنید.", "outdated": false },
+      "en": { "q": "Where is my checklist progress saved?", "a": "Only in this device’s browser. Nothing is sent to a server. Android and iOS progress are saved separately, and you can clear them at any time.", "outdated": false },
+      "ar": { "q": "أين يُحفَظ تقدّمي في قائمة التحقق؟", "a": "في متصفح هذا الجهاز فقط، ولا يُرسَل أي شيء إلى خادم. يُحفَظ تقدّم Android وiOS كلٌّ على حدة، ويمكنك مسحه في أي وقت.", "outdated": false }
+    },
+    {
+      "id": "ios-version",
+      "fa": { "q": "چه نسخه‌ای از iOS قابل قبول است؟", "a": "نسخه ۱۸ یا بالاتر. نسخه‌های iOS Beta به هیچ وجه قابل قبول نیستند.", "outdated": false },
+      "en": { "q": "Which iOS version is accepted?", "a": "iOS 18 or later. iOS Beta versions are not accepted under any circumstances.", "outdated": false },
+      "ar": { "q": "ما إصدار iOS المقبول؟", "a": "الإصدار 18 أو أحدث. إصدارات iOS Beta غير مقبولة بأي شكل من الأشكال.", "outdated": false }
+    },
+    {
+      "id": "champion",
+      "fa": { "q": "Champion Rules کجا باز می‌شود؟", "a": "Champion Rules صفحه Esports Settings سایت رسمی Call of Duty: Mobile را در یک تب جدید باز می‌کند. محتوای آن صفحه متعلق به همان سایت است.", "outdated": false },
+      "en": { "q": "Where does Champion Rules take me?", "a": "Champion Rules opens the Esports Settings page on the official Call of Duty: Mobile website in a new tab. That page’s content belongs to that website.", "outdated": false },
+      "ar": { "q": "إلى أين ينقلني Champion Rules؟", "a": "يفتح Champion Rules صفحة Esports Settings على الموقع الرسمي للعبة Call of Duty: Mobile في علامة تبويب جديدة. محتوى تلك الصفحة يعود لذلك الموقع.", "outdated": false }
+    },
+    {
+      "id": "settings-names",
+      "fa": { "q": "نام بخش‌های تنظیمات گوشی من با راهنما فرق دارد. چه کنم؟", "a": "نام و محل تنظیمات در مدل‌ها و نسخه‌های مختلف اندروید می‌تواند متفاوت باشد. نام انگلیسی هر بخش در راهنما آمده است تا بتوانید آن را در جست‌وجوی تنظیمات گوشی پیدا کنید.", "outdated": false },
+      "en": { "q": "My phone’s settings look different from the guide. What should I do?", "a": "Setting names and locations can differ between Android models and versions. Each section’s English name is shown in the guide so you can find it with your phone’s settings search.", "outdated": false },
+      "ar": { "q": "إعدادات هاتفي تختلف عمّا في الدليل. ماذا أفعل؟", "a": "قد تختلف أسماء الإعدادات وأماكنها بين طرازات Android وإصداراته. يظهر الاسم الإنجليزي لكل قسم في الدليل لتتمكّن من العثور عليه عبر البحث في إعدادات هاتفك.", "outdated": false }
+    },
+    {
+      "id": "account",
+      "fa": { "q": "برای خواندن قوانین باید ثبت‌نام کنم؟", "a": "خیر. همه قوانین و راهنماها بدون ثبت‌نام و بدون ورود در دسترس هستند.", "outdated": false },
+      "en": { "q": "Do I need an account to read the rules?", "a": "No. All rules and guides are available without signing up or logging in.", "outdated": false },
+      "ar": { "q": "هل أحتاج إلى حساب لقراءة القوانين؟", "a": "لا. جميع القوانين والأدلة متاحة دون تسجيل أو تسجيل دخول.", "outdated": false }
+    },
+    {
+      "id": "affiliation",
+      "fa": { "q": "آیا KAYDARAP سایت رسمی بازی است؟", "a": "خیر. KAYDARAP یک کامیونیتی مستقل است و وابستگی رسمی به Activision یا Call of Duty: Mobile ندارد. قوانین این سایت قوانین کامیونیتی KAYDARAP هستند.", "outdated": false },
+      "en": { "q": "Is KAYDARAP an official game website?", "a": "No. KAYDARAP is an independent community and is not affiliated with Activision or Call of Duty: Mobile. The rules on this site are KAYDARAP community rules.", "outdated": false },
+      "ar": { "q": "هل KAYDARAP موقع رسمي للعبة؟", "a": "لا. KAYDARAP مجتمع مستقل وليس تابعًا لشركة Activision أو للعبة Call of Duty: Mobile. القوانين في هذا الموقع هي قوانين مجتمع KAYDARAP.", "outdated": false }
+    }
+  ]
+}

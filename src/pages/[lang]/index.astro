@@ -1,0 +1,122 @@
+---
+import Base from '../../layouts/Base.astro';
+import Icon from '../../components/Icon.astro';
+import RuleCards from '../../components/RuleCards.astro';
+import DeviceHint from '../../components/DeviceHint.astro';
+import RoomList from '../../components/RoomList.astro';
+import home from '../../data/home.json';
+import faq from '../../data/faq.json';
+import android from '../../data/rules-android.json';
+import ios from '../../data/rules-ios.json';
+import { UI, url, langPaths, fmt, num } from '../../lib/i18n.js';
+
+export const getStaticPaths = langPaths;
+const { lang } = Astro.params;
+const t = UI[lang];
+const h = home[lang];
+const tools = [
+  { key: 'search', icon: 'search', href: url(lang, 'rules/#search') },
+  { key: 'guided', icon: 'steps', href: url(lang, 'rules/android/?guided=1') },
+  { key: 'qr', icon: 'qr', href: url(lang, 'rules/ios/?qr=1') },
+  { key: 'settings', icon: 'settings', href: url(lang, 'settings/') },
+];
+const progress = [
+  { key: 'android', icon: 'android', total: android.steps.length, ids: android.steps.map((s) => s.id) },
+  { key: 'ios', icon: 'ios', total: ios.steps.length, ids: ios.steps.map((s) => s.id) },
+];
+---
+<Base lang={lang} page="home">
+  <section class="hero" style={home.heroImage ? `--hero-img:url('${home.heroImage}')` : undefined}>
+    <div class="wrap hero-in">
+      <p class="eyebrow reveal"><Icon name="crown" size={16} /> {h.eyebrow}</p>
+      <h1 class="hero-title reveal">{h.title}</h1>
+      <p class="hero-sub reveal">{h.subtitle}</p>
+      <div class="hero-cta reveal">
+        <a class="btn btn-primary btn-lg" href={url(lang, 'rules/')}>
+          <Icon name="rules" size={20} /> {t.home.openRules}
+        </a>
+        <a class="btn btn-ghost btn-lg" href={url(lang, 'rooms/')}>
+          <Icon name="rooms" size={20} /> {t.home.quickRooms}
+        </a>
+      </div>
+      {home.notice.enabled && home.notice[lang] && (
+        <p class="notice neon reveal"><Icon name="bell" size={18} /> {home.notice[lang]}</p>
+      )}
+    </div>
+    <div class="hero-deco" aria-hidden="true">
+      <span class="hero-ring"></span>
+      <span class="hero-ring hero-ring-2"></span>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <DeviceHint lang={lang} />
+
+    <section class="section" aria-labelledby="rules-h">
+      <header class="section-head">
+        <h2 id="rules-h" class="section-title">{t.home.rulesTitle}</h2>
+        <p class="muted">{t.home.rulesLead}</p>
+      </header>
+      <RuleCards lang={lang} />
+    </section>
+
+    <section class="section split" aria-labelledby="progress-h">
+      <div class="panel neon reveal">
+        <h2 id="progress-h" class="panel-title"><Icon name="check" /> {t.home.progressTitle}</h2>
+        <p class="muted small">{t.home.progressLead}</p>
+        <ul class="mini-progress" role="list">
+          {progress.map((p) => (
+            <li data-mini-progress={p.key} data-total={p.total} data-ids={p.ids.join(',')}>
+              <span class="mini-progress-icon"><Icon name={p.icon} /></span>
+              <span class="mini-progress-body">
+                <span class="mini-progress-label">{t.cards[p.key].title}</span>
+                <span class="bar" aria-hidden="true"><span class="bar-fill" data-bar></span></span>
+                <span class="small muted" data-mini-text data-empty={t.home.notStarted} data-tpl={t.rules.progress}>{t.home.notStarted}</span>
+              </span>
+              <a class="btn btn-ghost btn-sm" href={url(lang, `rules/${p.key}/?continue=1`)}>{t.home.continue}</a>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div class="panel neon reveal">
+        <h2 class="panel-title"><Icon name="bolt" /> {t.home.toolsTitle}</h2>
+        <ul class="tools" role="list">
+          {tools.map((tool) => (
+            <li>
+              <a class="tool" href={tool.href}>
+                <span class="tool-icon"><Icon name={tool.icon} /></span>
+                <span>
+                  <strong>{t.home.tools[tool.key][0]}</strong>
+                  <span class="small muted">{t.home.tools[tool.key][1]}</span>
+                </span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="rooms-h">
+      <header class="section-head section-head-row">
+        <h2 id="rooms-h" class="section-title">{t.home.roomsTitle}</h2>
+        <a class="link-more" href={url(lang, 'rooms/')}>{t.home.allRooms} <Icon name="arrow" size={16} class="flip-rtl" /></a>
+      </header>
+      <RoomList lang={lang} limit={3} />
+    </section>
+
+    <section class="section" aria-labelledby="faq-h">
+      <header class="section-head section-head-row">
+        <h2 id="faq-h" class="section-title">{t.home.faqTitle}</h2>
+        <a class="link-more" href={url(lang, 'faq/')}>{t.home.allFaq} <Icon name="arrow" size={16} class="flip-rtl" /></a>
+      </header>
+      <div class="faq-list">
+        {faq.items.slice(0, 3).map((item) => (
+          <details class="faq-item neon reveal">
+            <summary><span>{item[lang].q}</span><span class="faq-plus" aria-hidden="true"></span></summary>
+            <div class="faq-a"><p>{item[lang].a}</p></div>
+          </details>
+        ))}
+      </div>
+    </section>
+  </div>
+</Base>
