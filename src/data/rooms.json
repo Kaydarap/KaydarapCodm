@@ -1,38 +1,5 @@
 {
-  "staff": [
-    {
-      "role": {
-        "fa": "اسپانسر",
-        "en": "Sponsor",
-        "ar": "الراعي"
-      },
-      "name": "Kaydarap"
-    },
-    {
-      "role": {
-        "fa": "بررسی دستگاه iOS",
-        "en": "iOS device check",
-        "ar": "فحص أجهزة iOS"
-      },
-      "name": "Geto"
-    },
-    {
-      "role": {
-        "fa": "بررسی دستگاه Android",
-        "en": "Android device check",
-        "ar": "فحص أجهزة Android"
-      },
-      "name": "Abner"
-    },
-    {
-      "role": {
-        "fa": "مدیریت",
-        "en": "Management",
-        "ar": "الإدارة"
-      },
-      "name": "Poker"
-    }
-  ],
+  "staff": [],
   "rooms": [
     {
       "id": "stage1-10-23-1",
