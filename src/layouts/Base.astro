@@ -27,7 +27,7 @@ const desc = description ?? t.siteDesc;
 const canonical = abs(`/${lang}/${path}`);
 ---
 <!doctype html>
-<html lang={lang} dir={meta.dir} data-fx="full" data-reading="off" data-text="m">
+<html lang={lang} dir={meta.dir} translate="no" data-fx="full" data-reading="off" data-text="m">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
@@ -48,6 +48,8 @@ const canonical = abs(`/${lang}/${path}`);
     <meta name="description" content={desc} />
     <meta name="theme-color" content="#050507" />
     <meta name="color-scheme" content="dark" />
+    <!-- The site is already in fa/en/ar; stop the browser offering to machine-translate it. -->
+    <meta name="google" content="notranslate" />
     <link rel="canonical" href={canonical} />
     {LANGS.map((l) => <link rel="alternate" hreflang={l} href={abs(`/${l}/${path}`)} />)}
     <link rel="alternate" hreflang="x-default" href={abs('/')} />

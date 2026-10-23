@@ -552,7 +552,7 @@ html[lang='en'] .rcard-title, .rcard-champion .rcard-title { font-family: var(--
 .room-title { font-size: 1.2rem; font-weight: 900; }
 .room-time, .room-cap { display: flex; align-items: center; gap: 8px; color: var(--muted); }
 .room-time .ico, .room-cap .ico { color: var(--red); flex: none; }
-.room-tz { color: var(--gold); font-weight: 700; }
+.room-tz { color: var(--gold); font-weight: 700; margin-inline-start: 6px; white-space: nowrap; }
 .room-count { font-family: var(--font-display); font-weight: 700; color: #fff; letter-spacing: 0.04em; text-shadow: 0 0 12px rgba(255, 22, 60, 0.6); min-height: 1.6em; }
 html[lang='fa'] .room-count, html[lang='ar'] .room-count { font-family: var(--font); }
 .room.is-ended { opacity: 0.55; }
