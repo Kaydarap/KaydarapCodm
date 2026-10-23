@@ -1,7 +1,8 @@
 import champion from '../data/champion.json';
+import images from '../data/champion-images.json';
 import { UI, fmt, num } from './i18n.js';
 
-export { champion };
+export { champion, images };
 export const sections = champion.sections;
 
 /** A value that is either a plain (in-game, untranslated) string or { fa, en, ar }. */
@@ -36,9 +37,9 @@ export function checkIndex(lang) {
   for (const s of sections) {
     for (const b of s.blocks) {
       if (b.type === 'names') {
-        for (const it of b.items) out.push({ n: loc(it, lang), t: b.tone, s: s.id, g: b.mode || loc(b.title, lang) });
+        for (const it of b.items) out.push({ n: loc(it, lang), t: b.tone, s: s.id, g: b.mode || loc(b.title, lang), i: images[it]?.src });
       } else if (b.type === 'groups') {
-        for (const g of b.groups) for (const it of g.items) out.push({ n: loc(it, lang), t: b.tone, s: s.id, g: loc(g.name, lang) });
+        for (const g of b.groups) for (const it of g.items) out.push({ n: loc(it, lang), t: b.tone, s: s.id, g: loc(g.name, lang), i: (images[it] || images[g.name])?.src });
       } else if (b.type === 'alert' && b.title) {
         out.push({ n: b.title, t: b.tone, s: s.id, g: '' });
       }

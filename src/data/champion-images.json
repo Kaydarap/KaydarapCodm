@@ -1,0 +1,426 @@
+{
+ "Summit": {
+  "src": "/img/champ/summit.webp",
+  "credit": "https://callofduty.fandom.com/wiki/File:CODM_Summit.png"
+ },
+ "Hacienda": {
+  "src": "/img/champ/hacienda.webp",
+  "credit": "https://callofduty.fandom.com/wiki/File:Hacienda_Promo_CODM.jpg"
+ },
+ "Combine": {
+  "src": "/img/champ/combine.webp",
+  "credit": "https://callofduty.fandom.com/wiki/File:Combine_Promo_CODM.jpg"
+ },
+ "Takeoff": {
+  "src": "/img/champ/takeoff.webp",
+  "credit": "https://callofduty.fandom.com/wiki/File:Takeoff_CODM.png"
+ },
+ "Arsenal": {
+  "src": "/img/champ/arsenal.webp",
+  "credit": "https://callofduty.fandom.com/wiki/File:Arsenal_Promo_CODM.jpg"
+ },
+ "Tunisia": {
+  "src": "/img/champ/tunisia.webp",
+  "credit": "https://callofduty.fandom.com/wiki/File:Tunisia_CODM.jpg"
+ },
+ "Firing Range": {
+  "src": "/img/champ/firing-range.webp",
+  "credit": "https://callofduty.fandom.com/wiki/File:CODM_Firing_Range.jpg"
+ },
+ "Coastal": {
+  "src": "/img/champ/coastal.webp",
+  "credit": "https://callofduty.fandom.com/wiki/File:Coastal_CODM.jpg"
+ },
+ "Slums": {
+  "src": "/img/champ/slums.webp",
+  "credit": "https://callofduty.fandom.com/wiki/File:Slums_CODM.png"
+ },
+ "Meltdown": {
+  "src": "/img/champ/meltdown.webp",
+  "credit": "https://callofduty.fandom.com/wiki/File:CODM_Meltdown.png"
+ },
+ "Raid": {
+  "src": "/img/champ/raid.webp",
+  "credit": "https://callofduty.fandom.com/wiki/File:Raid_MiniMap_CODM.png"
+ },
+ "Standoff": {
+  "src": "/img/champ/standoff.webp",
+  "credit": "https://callofduty.fandom.com/wiki/File:Standoff_Isolated_CODM.png"
+ },
+ "Annihalator": {
+  "src": "/img/champ/annihalator.webp",
+  "credit": "https://callofduty.fandom.com/wiki/File:Annihilator_model_CoDMobile.png"
+ },
+ "Claw": {
+  "src": "/img/champ/claw.webp",
+  "credit": "https://callofduty.fandom.com/wiki/File:Claw_model_CoDMobile.png"
+ },
+ "Death Machine": {
+  "src": "/img/champ/death-machine.webp",
+  "credit": "https://callofduty.fandom.com/wiki/File:Death_Machine_model_CoDMobile.jpg"
+ },
+ "Equalizer": {
+  "src": "/img/champ/equalizer.webp",
+  "credit": "https://callofduty.fandom.com/wiki/File:Equalizer_model_CoDMobile.png"
+ },
+ "Gravity Spikes": {
+  "src": "/img/champ/gravity-spikes.webp",
+  "credit": "https://callofduty.fandom.com/wiki/File:Gravity_Spikes_model_CoDMobile.png"
+ },
+ "Gravity Vortex Gun": {
+  "src": "/img/champ/gravity-vortex-gun.webp",
+  "credit": "https://callofduty.fandom.com/wiki/File:Gravity_Vortex_Gun_model_CoDMobile.png"
+ },
+ "Purifier": {
+  "src": "/img/champ/purifier.webp",
+  "credit": "https://callofduty.fandom.com/wiki/File:Purifier_model_CoDMobile.png"
+ },
+ "Sparrow": {
+  "src": "/img/champ/sparrow.webp",
+  "credit": "https://callofduty.fandom.com/wiki/File:Sparrow_model_CoDMobile.png"
+ },
+ "Tempest": {
+  "src": "/img/champ/tempest.webp",
+  "credit": "https://callofduty.fandom.com/wiki/File:Tempest_model_CoDMobile.png"
+ },
+ "War Machine": {
+  "src": "/img/champ/war-machine.webp",
+  "credit": "https://callofduty.fandom.com/wiki/File:War_Machine_model_CoDMobile.png"
+ },
+ "Argus": {
+  "src": "/img/champ/argus.webp",
+  "credit": "https://callofduty.fandom.com/wiki/File:Argus_model_CoDMobile.png"
+ },
+ "R9-0": {
+  "src": "/img/champ/r9-0.webp",
+  "credit": "https://callofduty.fandom.com/wiki/File:R9-0_Gunsmith_CoDM.png"
+ },
+ "M21 EBR": {
+  "src": "/img/champ/m21-ebr.webp",
+  "credit": "https://callofduty.fandom.com/wiki/File:M21_EBR_model_CoDMobile.png"
+ },
+ "NA-45": {
+  "src": "/img/champ/na-45.webp",
+  "credit": "https://callofduty.fandom.com/wiki/File:NA-45_Gunsmith_CoDM.png"
+ },
+ "SO14": {
+  "src": "/img/champ/so14.webp",
+  "credit": "https://callofduty.fandom.com/wiki/File:SO-14_Gunsmith_CoDM.png"
+ },
+ "SVD": {
+  "src": "/img/champ/svd.webp",
+  "credit": "https://callofduty.fandom.com/wiki/File:SVD_Gunsmith_CoDM.png"
+ },
+ "XPR": {
+  "src": "/img/champ/xpr.webp",
+  "credit": "https://callofduty.fandom.com/wiki/File:XPR-50_Gunsmith_CoDM.png"
+ },
+ "FSS Hurricane": {
+  "src": "/img/champ/fss-hurricane.webp",
+  "credit": "https://callofduty.fandom.com/wiki/File:FSS_Hurricane_Gunsmith_CoDM.png"
+ },
+ "Static HV": {
+  "src": "/img/champ/static-hv.webp",
+  "credit": "https://callofduty.fandom.com/wiki/File:Static-HV_Gunsmith_CoDM.png"
+ },
+ "Sten": {
+  "src": "/img/champ/sten.webp",
+  "credit": "https://callofduty.fandom.com/wiki/File:Sten_Gunsmith_CoDM.png"
+ },
+ "D13 Sector": {
+  "src": "/img/champ/d13-sector.webp",
+  "credit": "https://callofduty.fandom.com/wiki/File:D13_Sector_model_CoDMobile.png"
+ },
+ "FHJ-18": {
+  "src": "/img/champ/fhj-18.webp",
+  "credit": "https://callofduty.fandom.com/wiki/File:FHJ-18_model_CoDMobile.png"
+ },
+ "SMRS": {
+  "src": "/img/champ/smrs.webp",
+  "credit": "https://callofduty.fandom.com/wiki/File:SMRS_model_CoDMobile.png"
+ },
+ "Thumper": {
+  "src": "/img/champ/thumper.webp",
+  "credit": "https://callofduty.fandom.com/wiki/File:Thumper_model_CoDMobile.png"
+ },
+ ".50 GS": {
+  "src": "/img/champ/50-gs.webp",
+  "credit": "https://callofduty.fandom.com/wiki/File:.50_GS_Gunsmith_CoDM.png"
+ },
+ "50 GS": {
+  "src": "/img/champ/50-gs.webp",
+  "credit": "https://callofduty.fandom.com/wiki/File:.50_GS_Gunsmith_CoDM.png"
+ },
+ "MW11": {
+  "src": "/img/champ/mw11.webp",
+  "credit": "https://callofduty.fandom.com/wiki/File:MW11_Gunsmith_CoDM.png"
+ },
+ "Shorty": {
+  "src": "/img/champ/shorty.webp",
+  "credit": "https://callofduty.fandom.com/wiki/File:Shorty_Gunsmith_CoDM.png"
+ },
+ "3-Line Rifle": {
+  "src": "/img/champ/3-line-rifle.webp",
+  "credit": "https://callofduty.fandom.com/wiki/File:3-Line_Rifle_Gunsmith_CoDM.png"
+ },
+ "AS VAL": {
+  "src": "/img/champ/as-val.webp",
+  "credit": "https://callofduty.fandom.com/wiki/File:AS_VAL_15_Round_FMJ_Gunsmith_CoDM.png"
+ },
+ "BP-50": {
+  "src": "/img/champ/bp-50.webp",
+  "credit": "https://callofduty.fandom.com/wiki/File:BP50_model_CoDMobile.png"
+ },
+ "CR AMAX": {
+  "src": "/img/champ/cr-amax.webp",
+  "credit": "https://callofduty.fandom.com/wiki/File:CR-56_AMAX_Gunsmith_CoDM.png"
+ },
+ "Cronen Squall": {
+  "src": "/img/champ/cronen-squall.webp",
+  "credit": "https://callofduty.fandom.com/wiki/File:Cronen_Squall_Gunsmith_CoDM.png"
+ },
+ "Crossbow": {
+  "src": "/img/champ/crossbow.webp",
+  "credit": "https://callofduty.fandom.com/wiki/File:Crossbow_Gunsmith_CoDM.png"
+ },
+ "CX9": {
+  "src": "/img/champ/cx9.webp",
+  "credit": "https://callofduty.fandom.com/wiki/File:CX-9_Gunsmith_CoDM.png"
+ },
+ "DLQ": {
+  "src": "/img/champ/dlq.webp",
+  "credit": "https://callofduty.fandom.com/wiki/File:DL_Q33_Gunsmith_CoDM.png"
+ },
+ "DRH": {
+  "src": "/img/champ/drh.webp",
+  "credit": "https://callofduty.fandom.com/wiki/File:DR-H_Gunsmith_CoDM.png"
+ },
+ "Hades": {
+  "src": "/img/champ/hades.webp",
+  "credit": "https://callofduty.fandom.com/wiki/File:Hades_model_CoDMobile.png"
+ },
+ "HS0405": {
+  "src": "/img/champ/hs0405.webp",
+  "credit": "https://callofduty.fandom.com/wiki/File:HS0405_Gunsmith_CoDM.png"
+ },
+ "HVK": {
+  "src": "/img/champ/hvk.webp",
+  "credit": "https://callofduty.fandom.com/wiki/File:HVK-30_Gunsmith_CoDM.png"
+ },
+ "LAG 53": {
+  "src": "/img/champ/lag-53.webp",
+  "credit": "https://callofduty.fandom.com/wiki/File:LAG_53_Gunsmith_CoDM.png"
+ },
+ "M4": {
+  "src": "/img/champ/m4.webp",
+  "credit": "https://callofduty.fandom.com/wiki/File:M4_Gunsmith_CoDM.png"
+ },
+ "Machine Pistol": {
+  "src": "/img/champ/machine-pistol.webp",
+  "credit": "https://callofduty.fandom.com/wiki/File:Machine_Pistol_Gunsmith_CoDM.png"
+ },
+ "MG42": {
+  "src": "/img/champ/mg42.webp",
+  "credit": "https://callofduty.fandom.com/wiki/File:MG42_model_CoDMobile.png"
+ },
+ "Oden": {
+  "src": "/img/champ/oden.webp",
+  "credit": "https://callofduty.fandom.com/wiki/File:Oden_Gunsmith_CoDM.png"
+ },
+ "QQ9": {
+  "src": "/img/champ/qq9.webp",
+  "credit": "https://callofduty.fandom.com/wiki/File:QQ9_model_CoDMobile.png"
+ },
+ "Ram7": {
+  "src": "/img/champ/ram7.webp",
+  "credit": "https://callofduty.fandom.com/wiki/File:RAM-7_Gunsmith_CoDM.png"
+ },
+ "RPD": {
+  "src": "/img/champ/rpd.webp",
+  "credit": "https://callofduty.fandom.com/wiki/File:RPD_model_CoDMobile.png"
+ },
+ "SKS": {
+  "src": "/img/champ/sks.webp",
+  "credit": "https://callofduty.fandom.com/wiki/File:SKS_model_CoDMobile.png"
+ },
+ "Type 19": {
+  "src": "/img/champ/type-19.webp",
+  "credit": "https://callofduty.fandom.com/wiki/File:Type_19_model_CoDMobile.png"
+ },
+ "Type 63": {
+  "src": "/img/champ/type-63.webp",
+  "credit": "https://callofduty.fandom.com/wiki/File:Type63_WorldChamps2026_Skin_CoDM.png"
+ },
+ "Tundra": {
+  "src": "/img/champ/tundra.webp",
+  "credit": "https://callofduty.fandom.com/wiki/File:LW3-Tundra_model_CoDMobile.png"
+ },
+ "USS-9": {
+  "src": "/img/champ/uss-9.webp",
+  "credit": "https://callofduty.fandom.com/wiki/File:USS_9_model_CoDMobile.png"
+ },
+ "C4": {
+  "src": "/img/champ/c4.webp",
+  "credit": "https://callofduty.fandom.com/wiki/File:C4_model_CoDMobile.png"
+ },
+ "Cluster Grenade": {
+  "src": "/img/champ/cluster-grenade.webp",
+  "credit": "https://callofduty.fandom.com/wiki/File:Cluster_Grenade_model_CoDMobile.png"
+ },
+ "Contact Grenade": {
+  "src": "/img/champ/contact-grenade.webp",
+  "credit": "https://callofduty.fandom.com/wiki/File:Contact_Grenade_model_CoDMobile.png"
+ },
+ "Drill Charge": {
+  "src": "/img/champ/drill-charge.webp",
+  "credit": "https://callofduty.fandom.com/wiki/File:Drill_Charge_model_CoDMobile.png"
+ },
+ "Molotov Cocktail": {
+  "src": "/img/champ/molotov-cocktail.webp",
+  "credit": "https://callofduty.fandom.com/wiki/File:Molotov_Cocktail_model_CoDMobile.png"
+ },
+ "Thermite": {
+  "src": "/img/champ/thermite.webp",
+  "credit": "https://callofduty.fandom.com/wiki/File:Thermite_model_CoDMobile.png"
+ },
+ "Trip Mine": {
+  "src": "/img/champ/trip-mine.webp",
+  "credit": "https://callofduty.fandom.com/wiki/File:Trip_Mine_model_CoDMobile.png"
+ },
+ "Cryo Bomb": {
+  "src": "/img/champ/cryo-bomb.webp",
+  "credit": "https://callofduty.fandom.com/wiki/File:Cryo_Bomb_model_CoDMobile.png"
+ },
+ "Decoy Grenade": {
+  "src": "/img/champ/decoy-grenade.webp",
+  "credit": "https://callofduty.fandom.com/wiki/File:Decoy_Grenade_model_CoDMobile.png"
+ },
+ "Douser Grenade": {
+  "src": "/img/champ/douser-grenade.webp",
+  "credit": "https://callofduty.fandom.com/wiki/File:Douser_Grenade_model_CoDMobile.png"
+ },
+ "Echo Grenade": {
+  "src": "/img/champ/echo-grenade.webp",
+  "credit": "https://callofduty.fandom.com/wiki/File:Echo_Grenade_Model_CODM.png"
+ },
+ "Flash Drone": {
+  "src": "/img/champ/flash-drone.webp",
+  "credit": "https://callofduty.fandom.com/wiki/File:Flash_Drone_model_CoDMobile.png"
+ },
+ "Heartbeat Sensor": {
+  "src": "/img/champ/heartbeat-sensor.webp",
+  "credit": "https://callofduty.fandom.com/wiki/File:Heartbeat_Sensor_model_CoDMobile.png"
+ },
+ "Inflatable Decoy": {
+  "src": "/img/champ/inflatable-decoy.webp",
+  "credit": "https://callofduty.fandom.com/wiki/File:Inflatable_Decoy_model_CoDM.png"
+ },
+ "Stim Shot": {
+  "src": "/img/champ/stim-shot.webp",
+  "credit": "https://callofduty.fandom.com/wiki/File:Stim_Shot_model_CoDMobile.png"
+ },
+ "Storm Ball": {
+  "src": "/img/champ/storm-ball.webp",
+  "credit": "https://callofduty.fandom.com/wiki/File:Storm_Ball_model_CoDMobile.png"
+ },
+ "Trip Sensor": {
+  "src": "/img/champ/trip-sensor.webp",
+  "credit": "https://callofduty.fandom.com/wiki/File:Trip_Sensor_model_CoDMobile.png"
+ },
+ "Martyrdom": {
+  "src": "/img/champ/martyrdom.webp",
+  "credit": "https://callofduty.fandom.com/wiki/File:Martyrdom_CODM.png"
+ },
+ "Overclock": {
+  "src": "/img/champ/overclock.webp",
+  "credit": "https://callofduty.fandom.com/wiki/File:Overclock_CODM.png"
+ },
+ "Restock": {
+  "src": "/img/champ/restock.webp",
+  "credit": "https://callofduty.fandom.com/wiki/File:Restock_CODM.png"
+ },
+ "Tactician": {
+  "src": "/img/champ/tactician.webp",
+  "credit": "https://callofduty.fandom.com/wiki/File:Tactician_CODM.png"
+ },
+ "Quick Fix": {
+  "src": "/img/champ/quick-fix.webp",
+  "credit": "https://callofduty.fandom.com/wiki/File:Quick_Fix_CODM.png"
+ },
+ "Recon": {
+  "src": "/img/champ/recon.webp",
+  "credit": "https://callofduty.fandom.com/wiki/File:Recon_CODM.png"
+ },
+ "Tracker": {
+  "src": "/img/champ/tracker.webp",
+  "credit": "https://callofduty.fandom.com/wiki/File:Tracker_CODM.png"
+ },
+ "Vulture": {
+  "src": "/img/champ/vulture.webp",
+  "credit": "https://callofduty.fandom.com/wiki/File:Vulture_CODM.png"
+ },
+ "Alert": {
+  "src": "/img/champ/alert.webp",
+  "credit": "https://callofduty.fandom.com/wiki/File:Alert_CODM.png"
+ },
+ "Engineer": {
+  "src": "/img/champ/engineer.webp",
+  "credit": "https://callofduty.fandom.com/wiki/File:Engineer_CODM.png"
+ },
+ "Hardline": {
+  "src": "/img/champ/hardline.webp",
+  "credit": "https://callofduty.fandom.com/wiki/File:Hardline_CODM.png"
+ },
+ "High Alert": {
+  "src": "/img/champ/high-alert.webp",
+  "credit": "https://callofduty.fandom.com/wiki/File:High_Alert_CODM.png"
+ },
+ "Persistence": {
+  "src": "/img/champ/persistence.webp",
+  "credit": "https://callofduty.fandom.com/wiki/File:Persistence_Perk_Tier_1_Icon_CODM.png"
+ },
+ "Demo Expert": {
+  "src": "/img/champ/demo-expert.webp",
+  "credit": "https://callofduty.fandom.com/wiki/File:Demo_Expert_CODM.png"
+ },
+ "Shrapnel": {
+  "src": "/img/champ/shrapnel.webp",
+  "credit": "https://callofduty.fandom.com/wiki/File:Shrapnel_CODM.png"
+ },
+ "Hunter Killer Drone": {
+  "src": "/img/champ/hunter-killer-drone.webp",
+  "credit": "https://callofduty.fandom.com/wiki/File:Hunter_Killer_Drone_model_CoDMobile.png"
+ },
+ "EMP": {
+  "src": "/img/champ/emp.webp",
+  "credit": "https://callofduty.fandom.com/wiki/File:EMP_Systems_model_CoDMobile.png"
+ },
+ "Cosmic Silverback": {
+  "src": "/img/champ/cosmic-silverback.webp",
+  "credit": "https://callofduty.fandom.com/wiki/File:CosmicSilverback_Art_CODM.jpg"
+ },
+ "Death Angel Alice - Trench": {
+  "src": "/img/champ/death-angel-alice-trench.webp",
+  "credit": "https://callofduty.fandom.com/wiki/File:Death_Angel_Alice_Trench_in-game_CODM.jpg"
+ },
+ "Death Angel Alice - Shrouded Maiden": {
+  "src": "/img/champ/death-angel-alice-shrouded-maiden.webp",
+  "credit": "https://callofduty.fandom.com/wiki/File:Death_Angel_Alice_Shrouded_Maiden_in-game_CODM.jpg"
+ },
+ "Grinch - Night Fang": {
+  "src": "/img/champ/grinch-night-fang.webp",
+  "credit": "https://callofduty.fandom.com/wiki/File:Grinch_Nightfang_Uniform_CODM.png"
+ },
+ "Grinch - The Lionheart": {
+  "src": "/img/champ/grinch-the-lionheart.webp",
+  "credit": "https://callofduty.fandom.com/wiki/File:Grinch_The_Lionheart_CODM.jpg"
+ },
+ "Roze - Murk": {
+  "src": "/img/champ/roze-murk.webp",
+  "credit": "https://callofduty.fandom.com/wiki/File:Roze_Murk_Art_CODM.jpg"
+ },
+ "Roze - Rook": {
+  "src": "/img/champ/roze-rook.webp",
+  "credit": "https://callofduty.fandom.com/wiki/File:Roze_Rook_in-game_CODM.png"
+ }
+}

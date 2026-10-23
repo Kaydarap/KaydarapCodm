@@ -1,0 +1,13 @@
+---
+import Icon from './Icon.astro';
+
+interface Props { name: string; img?: { src: string }; tone: string; icon: string; tag: string }
+const { name, img, tone, icon, tag } = Astro.props;
+---
+<li class={`ch-item ch-item-${tone}`}>
+  <span class="ch-item-img">
+    {img ? <img src={img.src} alt="" loading="lazy" decoding="async" /> : <Icon name={icon} size={40} />}
+  </span>
+  <span class="ch-item-name" dir="ltr" lang="en">{name}</span>
+  <span class="ch-item-tag" dir="ltr" aria-hidden="true">{tag}</span>
+</li>

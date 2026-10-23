@@ -1,10 +1,14 @@
 ---
 import Icon from './Icon.astro';
+import ItemCard from './ItemCard.astro';
 import { UI, fmt, num, formatDate, richText } from '../lib/i18n.js';
-import { loc, isPlain } from '../lib/champion.js';
+import { loc, isPlain, images } from '../lib/champion.js';
 
-interface Props { lang: 'fa' | 'en' | 'ar'; block: any }
-const { lang, block: b } = Astro.props;
+interface Props { lang: 'fa' | 'en' | 'ar'; block: any; icon?: string }
+const { lang, block: b, icon = 'bolt' } = Astro.props;
+// Picture cards when at least one item in the list has an image; plain chips otherwise.
+const hasImg = (items) => items.some((it) => isPlain(it) && images[it]);
+const tag = { ban: 'BAN', ok: 'OK', map: 'MAP' };
 const t = UI[lang].champ;
 const value = (v) => (typeof v === 'number' ? num(lang, v) : v === 'yes' ? t.yes : v === 'N/A' ? t.na : v);
 const toneIcon = { ban: 'ban', ok: 'ok', map: 'map' };
@@ -45,11 +49,17 @@ const heading = b.mode || loc(b.title, lang);
       {b.mode ? <bdi class="ch-mode">{b.mode}</bdi> : <span>{heading}</span>}
       <span class={`ch-pill ch-pill-${b.tone}`}>{fmt(t.count[b.tone], { n: num(lang, b.items.length) })}</span>
     </h2>
-    <ul class={`ch-chips ${b.big ? 'ch-chips-big' : ''}`} role="list">
-      {b.items.map((it) => (
-        <li class={`ch-chip ch-chip-${b.tone}`} dir={isPlain(it) ? 'ltr' : undefined} lang={isPlain(it) ? 'en' : undefined}>{loc(it, lang)}</li>
-      ))}
-    </ul>
+    {hasImg(b.items) ? (
+      <ul class={`ch-items ${b.tone === 'map' ? 'ch-items-wide' : ''}`} role="list">
+        {b.items.map((it) => <ItemCard name={loc(it, lang)} img={isPlain(it) ? images[it] : undefined} tone={b.tone} icon={icon} tag={tag[b.tone]} />)}
+      </ul>
+    ) : (
+      <ul class="ch-chips" role="list">
+        {b.items.map((it) => (
+          <li class={`ch-chip ch-chip-${b.tone}`} dir={isPlain(it) ? 'ltr' : undefined} lang={isPlain(it) ? 'en' : undefined}>{loc(it, lang)}</li>
+        ))}
+      </ul>
+    )}
     {b.note && <p class="ch-note"><Icon name="ban" size={16} />{loc(b.note, lang)}</p>}
   </section>
 )}
@@ -59,16 +69,25 @@ const heading = b.mode || loc(b.title, lang);
     <h2 class="ch-h"><Icon name={toneIcon[b.tone]} size={20} />{heading}</h2>
     <div class="ch-groups">
       {b.groups.map((g) => (
-        <section class={`ch-group neon ch-tone-${b.tone} ${g.color ? `ch-color-${g.color}` : ''}`}>
+        <section class={`ch-group neon ch-tone-${b.tone} ${g.color ? `ch-color-${g.color}` : ''} ${hasImg(g.items) ? 'ch-group-wide' : ''}`}>
+          {isPlain(g.name) && images[g.name] && (
+            <span class="ch-group-img"><img src={images[g.name].src} alt="" loading="lazy" decoding="async" /></span>
+          )}
           <h3 class="ch-group-h" dir={isPlain(g.name) ? 'ltr' : undefined}>
             <span>{loc(g.name, lang)}</span>
             <span class={`ch-pill ch-pill-${b.tone}`}>{num(lang, g.items.length)}</span>
           </h3>
-          <ul class="ch-chips" role="list">
-            {g.items.map((it) => (
-              <li class={`ch-chip ch-chip-${b.tone}`} dir={isPlain(it) ? 'ltr' : undefined} lang={isPlain(it) ? 'en' : undefined}>{loc(it, lang)}</li>
-            ))}
-          </ul>
+          {hasImg(g.items) ? (
+            <ul class="ch-items" role="list">
+              {g.items.map((it) => <ItemCard name={loc(it, lang)} img={isPlain(it) ? images[it] : undefined} tone={b.tone} icon={icon} tag={tag[b.tone]} />)}
+            </ul>
+          ) : (
+            <ul class="ch-chips" role="list">
+              {g.items.map((it) => (
+                <li class={`ch-chip ch-chip-${b.tone}`} dir={isPlain(it) ? 'ltr' : undefined} lang={isPlain(it) ? 'en' : undefined}>{loc(it, lang)}</li>
+              ))}
+            </ul>
+          )}
         </section>
       ))}
     </div>

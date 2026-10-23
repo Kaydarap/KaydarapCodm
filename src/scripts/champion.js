@@ -29,6 +29,7 @@ function render() {
   list.innerHTML = hits.map((it) => `
     <li class="ch-result ch-tone-${it.t}">
       <a href="${data.base}${it.s}/">
+        ${it.i ? `<img class="ch-result-img" src="${it.i}" alt="" loading="lazy" decoding="async">` : ''}
         <span class="ch-pill ch-pill-${it.t}"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">${ICON[it.t]}</svg>${esc(data.tone[it.t])}</span>
         <bdi class="ch-result-n">${esc(it.n)}</bdi>
         <small class="muted">${esc(data.titles[it.s])}${it.g ? ` · <bdi>${esc(it.g)}</bdi>` : ''}</small>
