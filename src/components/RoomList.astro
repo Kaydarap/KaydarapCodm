@@ -13,8 +13,8 @@ const list = [...rooms.rooms]
   .sort((a, b) => Date.parse(a.start) - Date.parse(b.start));
 // With `limit`, the client hides ended rooms and keeps the next `limit` ones.
 const shown = list;
-const utc = (iso) =>
-  new Intl.DateTimeFormat(LANG_META[lang].locale, { dateStyle: 'medium', timeStyle: 'short', timeZone: 'UTC' }).format(new Date(iso)) + ' UTC';
+const tehran = (iso) =>
+  new Intl.DateTimeFormat(LANG_META[lang].locale, { dateStyle: 'full', timeStyle: 'short', timeZone: 'Asia/Tehran' }).format(new Date(iso));
 ---
 {shown.length === 0 ? (
   <div class="empty neon reveal">
@@ -43,7 +43,7 @@ const utc = (iso) =>
         )}
         <p class="room-time">
           <Icon name="rooms" size={18} />
-          <time datetime={r.start} data-local-time>{utc(r.start)}</time>
+          <span><time datetime={r.start} data-local-time>{tehran(r.start)}</time> <small class="room-tz">({t.rooms.tehran})</small></span>
         </p>
         <p class="room-count" data-countdown
           data-label-in={t.rooms.startsIn} data-label-started={t.rooms.started} data-label-ended={t.rooms.ended}

@@ -1,19 +1,14 @@
-import { fmt, lang, num } from './lib.js';
+import { lang, num } from './lib.js';
 
 const LOCALE = { fa: 'fa-IR', en: 'en-US', ar: 'ar' };
 
-// Local-time display + countdown for rooms in src/data/rooms.json.
+// Tehran-time display + countdown for rooms in src/data/rooms.json.
+// Matches are scheduled in Iran, so every visitor sees Tehran time.
 export function initRooms() {
   const rooms = [...document.querySelectorAll('[data-room]')];
-  const tzNote = document.querySelector('[data-tz-note]');
-  if (tzNote) {
-    const tz = Intl.DateTimeFormat().resolvedOptions().timeZone || 'UTC';
-    tzNote.textContent = fmt(tzNote.dataset.tpl, { tz });
-    tzNote.hidden = false;
-  }
   if (!rooms.length) return;
 
-  const dtf = new Intl.DateTimeFormat(LOCALE[lang()] || 'en-US', { dateStyle: 'full', timeStyle: 'short' });
+  const dtf = new Intl.DateTimeFormat(LOCALE[lang()] || 'en-US', { dateStyle: 'full', timeStyle: 'short', timeZone: 'Asia/Tehran' });
   rooms.forEach((el) => {
     const t = el.querySelector('[data-local-time]');
     t.textContent = dtf.format(new Date(el.dataset.start));
