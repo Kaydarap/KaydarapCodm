@@ -39,7 +39,7 @@ export function checkIndex(lang) {
       if (b.type === 'names') {
         for (const it of b.items) out.push({ n: loc(it, lang), t: b.tone, s: s.id, g: b.mode || loc(b.title, lang), i: images[it]?.src });
       } else if (b.type === 'groups') {
-        for (const g of b.groups) for (const it of g.items) out.push({ n: loc(it, lang), t: b.tone, s: s.id, g: loc(g.name, lang), i: (images[it] || images[g.name])?.src });
+        for (const g of b.groups) for (const it of g.items) out.push({ n: loc(it, lang), t: b.tone, s: s.id, g: loc(g.name, lang), i: (images[`${g.name}|${it}`] || images[it] || images[g.name])?.src });
       } else if (b.type === 'alert' && b.title) {
         out.push({ n: b.title, t: b.tone, s: s.id, g: '' });
       }

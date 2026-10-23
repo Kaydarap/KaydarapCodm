@@ -2,6 +2,7 @@
 import Base from '../../layouts/Base.astro';
 import Icon from '../../components/Icon.astro';
 import RoomList from '../../components/RoomList.astro';
+import Staff from '../../components/Staff.astro';
 import rooms from '../../data/rooms.json';
 import { UI, langPaths, formatDate } from '../../lib/i18n.js';
 
@@ -19,6 +20,8 @@ const news = [...rooms.announcements]
       <p class="muted">{t.rooms.lead}</p>
       <p class="small muted" data-tz-note data-tpl={t.rooms.tz} hidden></p>
     </header>
+
+    <Staff lang={lang} />
 
     <RoomList lang={lang} />
 

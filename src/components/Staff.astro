@@ -1,0 +1,24 @@
+---
+// Tournament staff from src/data/rooms.json (managed in /admin). Hidden when empty.
+import Icon from './Icon.astro';
+import rooms from '../data/rooms.json';
+import { UI } from '../lib/i18n.js';
+
+interface Props { lang: 'fa' | 'en' | 'ar' }
+const { lang } = Astro.props;
+const t = UI[lang];
+const staff = (rooms.staff || []).filter((p) => p.name && p.role?.[lang]);
+---
+{staff.length > 0 && (
+  <section class="staff neon reveal" aria-labelledby="staff-h">
+    <h2 id="staff-h" class="ch-card-h"><Icon name="crown" size={20} /><span>{t.rooms.staff}</span></h2>
+    <ul class="staff-list" role="list">
+      {staff.map((p, i) => (
+        <li class={i === 0 ? 'staff-lead' : undefined}>
+          <span class="staff-role">{p.role[lang]}</span>
+          <span class="staff-name" dir="ltr" lang="en">{p.name}</span>
+        </li>
+      ))}
+    </ul>
+  </section>
+)}

@@ -118,6 +118,7 @@ export const UI = {
       join: 'لینک ثبت‌نام',
       units: { d: 'روز', h: 'ساعت', m: 'دقیقه', s: 'ثانیه' },
       mode: 'حالت',
+      staff: 'تیم برگزاری',
     },
     champ: {
       lead: 'قوانین رسمی مسابقات Call of Duty: Mobile (Esports Settings) به زبان ساده و بخش‌به‌بخش. روی هر بخش بزن تا قوانینش را ببینی.',
@@ -291,6 +292,7 @@ export const UI = {
       join: 'Registration link',
       units: { d: 'd', h: 'h', m: 'm', s: 's' },
       mode: 'Mode',
+      staff: 'Tournament staff',
     },
     champ: {
       lead: 'The official Call of Duty: Mobile esports settings, explained section by section. Tap a section to see its rules.',
@@ -464,6 +466,7 @@ export const UI = {
       join: 'رابط التسجيل',
       units: { d: 'ي', h: 'س', m: 'د', s: 'ث' },
       mode: 'النمط',
+      staff: 'فريق التنظيم',
     },
     champ: {
       lead: 'إعدادات بطولات Call of Duty: Mobile الرسمية (Esports Settings) مشروحة قسمًا بقسم. اضغط على أي قسم لعرض قوانينه.',

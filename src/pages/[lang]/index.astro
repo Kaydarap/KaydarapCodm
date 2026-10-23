@@ -4,6 +4,7 @@ import Icon from '../../components/Icon.astro';
 import RuleCards from '../../components/RuleCards.astro';
 import DeviceHint from '../../components/DeviceHint.astro';
 import RoomList from '../../components/RoomList.astro';
+import Staff from '../../components/Staff.astro';
 import home from '../../data/home.json';
 import faq from '../../data/faq.json';
 import android from '../../data/rules-android.json';
@@ -101,6 +102,7 @@ const progress = [
         <h2 id="rooms-h" class="section-title">{t.home.roomsTitle}</h2>
         <a class="link-more" href={url(lang, 'rooms/')}>{t.home.allRooms} <Icon name="arrow" size={16} class="flip-rtl" /></a>
       </header>
+      <Staff lang={lang} />
       <RoomList lang={lang} limit={3} />
     </section>
 

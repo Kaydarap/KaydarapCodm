@@ -27,10 +27,20 @@ const utc = (iso) =>
     {shown.map((r) => (
       <li class="room neon reveal" data-room data-start={r.start} data-end={r.end || ''}>
         <div class="room-top">
-          <span class={`tag tag-${r.registration || 'soon'}`}>{t.rooms.reg[r.registration] ?? t.rooms.reg.soon}</span>
-          {r.mode && <span class="tag tag-plain" dir="auto">{r.mode}</span>}
+          {r.registration && <span class={`tag tag-${r.registration}`}>{t.rooms.reg[r.registration] ?? t.rooms.reg.soon}</span>}
+          {r.stage && <span class="tag tag-stage" dir="ltr">{r.stage}</span>}
+          {r.mode && <span class="tag tag-plain" dir="ltr">{r.mode}</span>}
+          {r.map && <span class="tag tag-plain"><Icon name="map" size={14} /> <bdi>{r.map}</bdi></span>}
         </div>
-        <h3 class="room-title">{r.title?.[lang] || r.title?.en}</h3>
+        {r.teams?.length === 2 ? (
+          <h3 class="room-vs" dir="ltr" lang="en">
+            <span class="vs-team">{r.teams[0]}</span>
+            <span class="vs-x" aria-label="vs">VS</span>
+            <span class="vs-team">{r.teams[1]}</span>
+          </h3>
+        ) : (
+          <h3 class="room-title">{r.title?.[lang] || r.title?.en}</h3>
+        )}
         <p class="room-time">
           <Icon name="rooms" size={18} />
           <time datetime={r.start} data-local-time>{utc(r.start)}</time>

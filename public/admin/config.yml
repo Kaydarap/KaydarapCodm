@@ -122,17 +122,29 @@ collections:
             fields:
               - { name: id, label: ID, widget: string, pattern: ['^[a-z0-9-]+$', 'Lowercase letters, numbers and dashes only'] }
               - { name: title, label: Title, widget: object, fields: *tri_string }
-              - { name: mode, label: 'Mode (optional, e.g. 5v5 S&D)', widget: string, required: false }
+              - { name: teams, label: 'Teams (optional — exactly two, shown as A VS B)', widget: list, required: false, field: { name: team, label: Team, widget: string } }
+              - { name: stage, label: 'Stage (optional, e.g. Stage 1)', widget: string, required: false }
+              - { name: mode, label: 'Mode (optional, e.g. Best of 1 · TDM)', widget: string, required: false }
+              - { name: map, label: 'Map (optional)', widget: string, required: false }
               - { name: start, label: Start time, widget: datetime, hint: 'Visitors see it converted to their own time zone.' }
               - { name: end, label: End time (optional), widget: datetime, required: false }
               - name: registration
                 label: Registration status
                 widget: select
+                required: false
                 options: [{ label: Open, value: open }, { label: Closed, value: closed }, { label: Full, value: full }, { label: Coming soon, value: soon }]
               - { name: capacity, label: Capacity (optional — leave empty if unknown), widget: number, value_type: int, required: false }
               - { name: registered, label: Registered so far (optional — only real numbers), widget: number, value_type: int, required: false }
               - { name: link, label: Registration link (optional), widget: string, required: false }
               - { name: note, label: Note, widget: object, required: false, fields: *tri_text }
+          - name: staff
+            label: Tournament staff
+            widget: list
+            required: false
+            summary: '{{fields.role.en}}: {{fields.name}}'
+            fields:
+              - { name: role, label: Role, widget: object, fields: *tri_string }
+              - { name: name, label: Name, widget: string }
           - name: announcements
             label: Announcements
             widget: list

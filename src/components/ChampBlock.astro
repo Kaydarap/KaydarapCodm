@@ -7,7 +7,10 @@ import { loc, isPlain, images } from '../lib/champion.js';
 interface Props { lang: 'fa' | 'en' | 'ar'; block: any; icon?: string }
 const { lang, block: b, icon = 'bolt' } = Astro.props;
 // Picture cards when at least one item in the list has an image; plain chips otherwise.
-const hasImg = (items) => items.some((it) => isPlain(it) && images[it]);
+// Attachment images are keyed "Gun|Attachment" because names like Recoil Booster repeat.
+const img = (it, gun?) => (isPlain(it) ? (gun && images[`${gun}|${it}`]) || images[it] : undefined);
+const hasImg = (items, gun?) => items.some((it) => img(it, gun));
+const gunOf = (g) => (isPlain(g.name) ? g.name : undefined);
 const tag = { ban: 'BAN', ok: 'OK', map: 'MAP' };
 const t = UI[lang].champ;
 const value = (v) => (typeof v === 'number' ? num(lang, v) : v === 'yes' ? t.yes : v === 'N/A' ? t.na : v);
@@ -51,7 +54,7 @@ const heading = b.mode || loc(b.title, lang);
     </h2>
     {hasImg(b.items) ? (
       <ul class={`ch-items ${b.tone === 'map' ? 'ch-items-wide' : ''}`} role="list">
-        {b.items.map((it) => <ItemCard name={loc(it, lang)} img={isPlain(it) ? images[it] : undefined} tone={b.tone} icon={icon} tag={tag[b.tone]} />)}
+        {b.items.map((it) => <ItemCard name={loc(it, lang)} img={img(it)} tone={b.tone} icon={icon} tag={tag[b.tone]} />)}
       </ul>
     ) : (
       <ul class="ch-chips" role="list">
@@ -69,7 +72,7 @@ const heading = b.mode || loc(b.title, lang);
     <h2 class="ch-h"><Icon name={toneIcon[b.tone]} size={20} />{heading}</h2>
     <div class="ch-groups">
       {b.groups.map((g) => (
-        <section class={`ch-group neon ch-tone-${b.tone} ${g.color ? `ch-color-${g.color}` : ''} ${hasImg(g.items) ? 'ch-group-wide' : ''}`}>
+        <section class={`ch-group neon ch-tone-${b.tone} ${g.color ? `ch-color-${g.color}` : ''} ${hasImg(g.items) && !gunOf(g) ? 'ch-group-wide' : ''}`}>
           {isPlain(g.name) && images[g.name] && (
             <span class="ch-group-img"><img src={images[g.name].src} alt="" loading="lazy" decoding="async" /></span>
           )}
@@ -77,9 +80,9 @@ const heading = b.mode || loc(b.title, lang);
             <span>{loc(g.name, lang)}</span>
             <span class={`ch-pill ch-pill-${b.tone}`}>{num(lang, g.items.length)}</span>
           </h3>
-          {hasImg(g.items) ? (
+          {hasImg(g.items, gunOf(g)) ? (
             <ul class="ch-items" role="list">
-              {g.items.map((it) => <ItemCard name={loc(it, lang)} img={isPlain(it) ? images[it] : undefined} tone={b.tone} icon={icon} tag={tag[b.tone]} />)}
+              {g.items.map((it) => <ItemCard name={loc(it, lang)} img={img(it, gunOf(g))} tone={b.tone} icon={icon} tag={tag[b.tone]} />)}
             </ul>
           ) : (
             <ul class="ch-chips" role="list">

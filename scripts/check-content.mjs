@@ -72,9 +72,15 @@ const rooms = read('rooms.json');
   const w = `rooms ${i + 1} (${r.id})`;
   if (Number.isNaN(Date.parse(r.start))) err(`${w}: invalid start time`);
   if (r.end && Number.isNaN(Date.parse(r.end))) err(`${w}: invalid end time`);
-  if (!['open', 'closed', 'full', 'soon'].includes(r.registration)) err(`${w}: invalid registration status`);
+  if (r.registration && !['open', 'closed', 'full', 'soon'].includes(r.registration)) err(`${w}: invalid registration status`);
   for (const l of LANGS) if (!filled(r.title?.[l])) err(`${w}: [${l}] title missing`);
   if (r.link && !isUrl(r.link)) err(`${w}: link invalid`);
+  if (r.teams && (r.teams.length !== 2 || !r.teams.every(filled))) err(`${w}: teams must be two names`);
+});
+
+(rooms.staff || []).forEach((p, i) => {
+  if (!filled(p.name)) err(`staff ${i + 1}: name missing`);
+  for (const l of LANGS) if (!filled(p.role?.[l])) err(`staff ${i + 1}: [${l}] role missing`);
 });
 
 for (const w of warnings) console.warn(`⚠  ${w}`);

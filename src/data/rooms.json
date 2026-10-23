@@ -1,4 +1,327 @@
 {
-  "announcements": [],
-  "rooms": []
+  "staff": [
+    {
+      "role": {
+        "fa": "اسپانسر",
+        "en": "Sponsor",
+        "ar": "الراعي"
+      },
+      "name": "Kaydarap"
+    },
+    {
+      "role": {
+        "fa": "بررسی دستگاه iOS",
+        "en": "iOS device check",
+        "ar": "فحص أجهزة iOS"
+      },
+      "name": "Geto"
+    },
+    {
+      "role": {
+        "fa": "بررسی دستگاه Android",
+        "en": "Android device check",
+        "ar": "فحص أجهزة Android"
+      },
+      "name": "Abner"
+    },
+    {
+      "role": {
+        "fa": "مدیریت",
+        "en": "Management",
+        "ar": "الإدارة"
+      },
+      "name": "Poker"
+    }
+  ],
+  "rooms": [
+    {
+      "id": "stage1-10-23-1",
+      "title": {
+        "fa": "Ego vs Step Brothers",
+        "en": "Ego vs Step Brothers",
+        "ar": "Ego vs Step Brothers"
+      },
+      "teams": [
+        "Ego",
+        "Step Brothers"
+      ],
+      "stage": "Stage 1",
+      "mode": "Best of 1 · TDM",
+      "map": "Shipment",
+      "start": "2026-10-23T20:00:00+03:30",
+      "end": "",
+      "registration": ""
+    },
+    {
+      "id": "stage1-10-23-2",
+      "title": {
+        "fa": "Or Fury vs CFD Fearless",
+        "en": "Or Fury vs CFD Fearless",
+        "ar": "Or Fury vs CFD Fearless"
+      },
+      "teams": [
+        "Or Fury",
+        "CFD Fearless"
+      ],
+      "stage": "Stage 1",
+      "mode": "Best of 1 · TDM",
+      "map": "Shipment",
+      "start": "2026-10-23T20:30:00+03:30",
+      "end": "",
+      "registration": ""
+    },
+    {
+      "id": "stage1-10-23-3",
+      "title": {
+        "fa": "3dudes0IQ vs Rank Players",
+        "en": "3dudes0IQ vs Rank Players",
+        "ar": "3dudes0IQ vs Rank Players"
+      },
+      "teams": [
+        "3dudes0IQ",
+        "Rank Players"
+      ],
+      "stage": "Stage 1",
+      "mode": "Best of 1 · TDM",
+      "map": "Shipment",
+      "start": "2026-10-23T21:00:00+03:30",
+      "end": "",
+      "registration": ""
+    },
+    {
+      "id": "stage1-10-23-4",
+      "title": {
+        "fa": "iLegolas vs 18 19 Dey",
+        "en": "iLegolas vs 18 19 Dey",
+        "ar": "iLegolas vs 18 19 Dey"
+      },
+      "teams": [
+        "iLegolas",
+        "18 19 Dey"
+      ],
+      "stage": "Stage 1",
+      "mode": "Best of 1 · TDM",
+      "map": "Shipment",
+      "start": "2026-10-23T21:30:00+03:30",
+      "end": "",
+      "registration": ""
+    },
+    {
+      "id": "stage1-10-23-5",
+      "title": {
+        "fa": "3men with large penises vs Shield",
+        "en": "3men with large penises vs Shield",
+        "ar": "3men with large penises vs Shield"
+      },
+      "teams": [
+        "3men with large penises",
+        "Shield"
+      ],
+      "stage": "Stage 1",
+      "mode": "Best of 1 · TDM",
+      "map": "Shipment",
+      "start": "2026-10-23T22:00:00+03:30",
+      "end": "",
+      "registration": ""
+    },
+    {
+      "id": "stage1-10-23-6",
+      "title": {
+        "fa": "Last Warriors vs Yakuza",
+        "en": "Last Warriors vs Yakuza",
+        "ar": "Last Warriors vs Yakuza"
+      },
+      "teams": [
+        "Last Warriors",
+        "Yakuza"
+      ],
+      "stage": "Stage 1",
+      "mode": "Best of 1 · TDM",
+      "map": "Shipment",
+      "start": "2026-10-23T22:30:00+03:30",
+      "end": "",
+      "registration": ""
+    },
+    {
+      "id": "stage1-10-24-1",
+      "title": {
+        "fa": "Underrated vs Retired N*****",
+        "en": "Underrated vs Retired N*****",
+        "ar": "Underrated vs Retired N*****"
+      },
+      "teams": [
+        "Underrated",
+        "Retired N*****"
+      ],
+      "stage": "Stage 1",
+      "mode": "Best of 1 · TDM",
+      "map": "Shipment",
+      "start": "2026-10-24T20:00:00+03:30",
+      "end": "",
+      "registration": ""
+    },
+    {
+      "id": "stage1-10-24-2",
+      "title": {
+        "fa": "Delta vs Gavan Ha",
+        "en": "Delta vs Gavan Ha",
+        "ar": "Delta vs Gavan Ha"
+      },
+      "teams": [
+        "Delta",
+        "Gavan Ha"
+      ],
+      "stage": "Stage 1",
+      "mode": "Best of 1 · TDM",
+      "map": "Shipment",
+      "start": "2026-10-24T20:30:00+03:30",
+      "end": "",
+      "registration": ""
+    },
+    {
+      "id": "stage1-10-24-3",
+      "title": {
+        "fa": "Zairo vs Tree Little Bottoms",
+        "en": "Zairo vs Tree Little Bottoms",
+        "ar": "Zairo vs Tree Little Bottoms"
+      },
+      "teams": [
+        "Zairo",
+        "Tree Little Bottoms"
+      ],
+      "stage": "Stage 1",
+      "mode": "Best of 1 · TDM",
+      "map": "Shipment",
+      "start": "2026-10-24T21:00:00+03:30",
+      "end": "",
+      "registration": ""
+    },
+    {
+      "id": "stage1-10-24-4",
+      "title": {
+        "fa": "Elite Team vs Retired Junior",
+        "en": "Elite Team vs Retired Junior",
+        "ar": "Elite Team vs Retired Junior"
+      },
+      "teams": [
+        "Elite Team",
+        "Retired Junior"
+      ],
+      "stage": "Stage 1",
+      "mode": "Best of 1 · TDM",
+      "map": "Shipment",
+      "start": "2026-10-24T21:30:00+03:30",
+      "end": "",
+      "registration": ""
+    },
+    {
+      "id": "stage1-10-24-5",
+      "title": {
+        "fa": "30bil vs Zarbat",
+        "en": "30bil vs Zarbat",
+        "ar": "30bil vs Zarbat"
+      },
+      "teams": [
+        "30bil",
+        "Zarbat"
+      ],
+      "stage": "Stage 1",
+      "mode": "Best of 1 · TDM",
+      "map": "Shipment",
+      "start": "2026-10-24T22:00:00+03:30",
+      "end": "",
+      "registration": ""
+    },
+    {
+      "id": "stage1-10-24-6",
+      "title": {
+        "fa": "Xenon Gay vs Maram",
+        "en": "Xenon Gay vs Maram",
+        "ar": "Xenon Gay vs Maram"
+      },
+      "teams": [
+        "Xenon Gay",
+        "Maram"
+      ],
+      "stage": "Stage 1",
+      "mode": "Best of 1 · TDM",
+      "map": "Shipment",
+      "start": "2026-10-24T22:30:00+03:30",
+      "end": "",
+      "registration": ""
+    },
+    {
+      "id": "stage1-10-25-1",
+      "title": {
+        "fa": "Straight vs Golden",
+        "en": "Straight vs Golden",
+        "ar": "Straight vs Golden"
+      },
+      "teams": [
+        "Straight",
+        "Golden"
+      ],
+      "stage": "Stage 1",
+      "mode": "Best of 1 · TDM",
+      "map": "Shipment",
+      "start": "2026-10-25T20:00:00+03:30",
+      "end": "",
+      "registration": ""
+    },
+    {
+      "id": "stage1-10-25-2",
+      "title": {
+        "fa": "Your Lips vs Lavat Team",
+        "en": "Your Lips vs Lavat Team",
+        "ar": "Your Lips vs Lavat Team"
+      },
+      "teams": [
+        "Your Lips",
+        "Lavat Team"
+      ],
+      "stage": "Stage 1",
+      "mode": "Best of 1 · TDM",
+      "map": "Shipment",
+      "start": "2026-10-25T20:30:00+03:30",
+      "end": "",
+      "registration": ""
+    },
+    {
+      "id": "stage1-10-25-3",
+      "title": {
+        "fa": "T1 Team vs Hashashin",
+        "en": "T1 Team vs Hashashin",
+        "ar": "T1 Team vs Hashashin"
+      },
+      "teams": [
+        "T1 Team",
+        "Hashashin"
+      ],
+      "stage": "Stage 1",
+      "mode": "Best of 1 · TDM",
+      "map": "Shipment",
+      "start": "2026-10-25T21:00:00+03:30",
+      "end": "",
+      "registration": ""
+    },
+    {
+      "id": "stage1-10-25-4",
+      "title": {
+        "fa": "Lavatimaaa vs Tree Lovers from UHK",
+        "en": "Lavatimaaa vs Tree Lovers from UHK",
+        "ar": "Lavatimaaa vs Tree Lovers from UHK"
+      },
+      "teams": [
+        "Lavatimaaa",
+        "Tree Lovers from UHK"
+      ],
+      "stage": "Stage 1",
+      "mode": "Best of 1 · TDM",
+      "map": "Shipment",
+      "start": "2026-10-25T21:30:00+03:30",
+      "end": "",
+      "registration": ""
+    }
+  ],
+  "announcements": []
 }
