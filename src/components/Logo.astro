@@ -1,10 +1,21 @@
 ---
+import { scopeOf } from '../lib/i18n.js';
+
 interface Props { size?: 'sm' | 'lg' | 'xl' }
 const { size = 'sm' } = Astro.props;
+// Inside the Nanato section the brand mark is Nanato's own logo.
+const nanato = scopeOf(Astro.url) !== '';
 ---
-<span class={`logo logo-${size}`} dir="ltr">
-  <svg class="logo-crown" viewBox="0 0 32 22" aria-hidden="true">
-    <path d="M2 6l7 6 7-10 7 10 7-6-3 14H5z" />
-  </svg>
-  <span class="logo-word">KAY<span>DARAP</span></span>
-</span>
+{nanato ? (
+  <span class={`logo logo-nanato logo-${size}`} dir="ltr">
+    <img src="/img/nanato/nanato-64.webp" srcset="/img/nanato/nanato-64.webp 1x, /img/nanato/nanato-128.webp 2x" width="38" height="38" alt="" />
+    <span class="logo-word">NANATO<small>CODM</small></span>
+  </span>
+) : (
+  <span class={`logo logo-${size}`} dir="ltr">
+    <svg class="logo-crown" viewBox="0 0 32 22" aria-hidden="true">
+      <path d="M2 6l7 6 7-10 7 10 7-6-3 14H5z" />
+    </svg>
+    <span class="logo-word">KAY<span>DARAP</span></span>
+  </span>
+)}

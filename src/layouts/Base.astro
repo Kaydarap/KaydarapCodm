@@ -26,7 +26,7 @@ const nanato = scopeOf(Astro.url) !== '';
 const path = (nanato ? 'nanato/' : '') + pagePath;
 const t = UI[lang];
 const meta = LANG_META[lang];
-const site = nanato ? 'Nanato | KAYDARAP' : 'KAYDARAP';
+const site = nanato ? 'Codm Nanato' : 'KAYDARAP';
 const fullTitle = title ? `${title} | ${site}` : site;
 const desc = description ?? t.siteDesc;
 const canonical = abs(`/${lang}/${path}`);
@@ -78,7 +78,7 @@ const canonical = abs(`/${lang}/${path}`);
     <Background />
     <Header lang={lang} path={path} page={page} />
     <main id="main" tabindex="-1">
-      {nanato && <NanatoBanner lang={lang} path={pagePath} />}
+      {nanato && pagePath !== '' && <NanatoBanner lang={lang} path={pagePath} />}
       <slot />
     </main>
     <Footer lang={lang} />

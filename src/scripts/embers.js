@@ -11,6 +11,7 @@ export function startEmbers() {
   let h = 0;
   const ctx = canvas.getContext('2d');
   const dpr = Math.min(window.devicePixelRatio || 1, 2);
+  const sparkle = document.body.dataset.scope === 'nanato'; // diamond-white sparkles instead of embers
 
   const enabled = () => html.dataset.fx !== 'low' && html.dataset.reading !== 'on' && !reduced.matches;
   const count = () => (html.dataset.fx === 'full' ? 34 : 16);
@@ -39,8 +40,9 @@ export function startEmbers() {
       p.x += p.vx + Math.sin(p.y / 60) * 0.12;
       if (p.y < -10) Object.assign(p, spawn(false));
       ctx.beginPath();
-      ctx.fillStyle = `hsla(${p.hue}, 100%, 60%, ${p.a * Math.min(1, p.y / h + 0.25)})`;
-      ctx.shadowColor = `hsla(${p.hue}, 100%, 55%, .9)`;
+      const sat = sparkle ? 0 : 100;
+      ctx.fillStyle = `hsla(${p.hue}, ${sat}%, ${sparkle ? 96 : 60}%, ${p.a * Math.min(1, p.y / h + 0.25)})`;
+      ctx.shadowColor = `hsla(${p.hue}, ${sat}%, ${sparkle ? 100 : 55}%, .9)`;
       ctx.shadowBlur = 8;
       ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
       ctx.fill();

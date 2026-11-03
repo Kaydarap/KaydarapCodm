@@ -9,8 +9,9 @@ import home from '../../data/home.json';
 import faq from '../../data/faq.json';
 import android from '../../data/rules-android.json';
 import ios from '../../data/rules-ios.json';
-import { UI, langPaths, fmt, num, scoped } from '../../lib/i18n.js';
+import { scopeOf, UI, langPaths, fmt, num, scoped } from '../../lib/i18n.js';
 const url = scoped(Astro);
+const nanato = scopeOf(Astro.url) !== '';
 
 export const getStaticPaths = langPaths;
 const { lang } = Astro.params;
@@ -30,8 +31,9 @@ const progress = [
 <Base lang={lang} page="home">
   <section class="hero" style={home.heroImage ? `--hero-img:url('${home.heroImage}')` : undefined}>
     <div class="wrap hero-in">
-      <p class="eyebrow reveal"><Icon name="crown" size={16} /> {h.eyebrow}</p>
-      <h1 class="hero-title reveal">{h.title}</h1>
+      {nanato && <img class="nanato-hero-logo reveal" src="/img/nanato/nanato-320.webp" width="240" height="242" alt="Codm Nanato" fetchpriority="high" />}
+      <p class="eyebrow reveal"><Icon name="crown" size={16} /> {nanato ? t.nanato.eyebrow : h.eyebrow}</p>
+      <h1 class="hero-title reveal">{nanato ? t.nanato.heroTitle : h.title}</h1>
       <p class="hero-sub reveal">{h.subtitle}</p>
       <div class="hero-cta reveal">
         <a class="btn btn-primary btn-lg" href={url(lang, 'rules/')}>
