@@ -1,11 +1,13 @@
 ---
 import Logo from './Logo.astro';
 import Icon from './Icon.astro';
-import { LANGS, LANG_META, UI, url } from '../lib/i18n.js';
+import { LANGS, LANG_META, UI, scoped, scopeOf } from '../lib/i18n.js';
+const url = scoped(Astro);
 
 interface Props { lang: 'fa' | 'en' | 'ar'; path: string; page: string }
 const { lang, path, page } = Astro.props;
 const t = UI[lang];
+const inNanato = scopeOf(Astro.url) !== '';
 const items = [
   { key: 'home', href: url(lang), icon: 'home' },
   { key: 'rules', href: url(lang, 'rules/'), icon: 'rules' },
@@ -24,16 +26,22 @@ const items = [
         <a href={it.href} aria-current={page === it.key ? 'page' : undefined}>{t.nav[it.key]}</a>
       ))}
     </nav>
+    <a class="nanato-link" href={`/${lang}/nanato/`} aria-current={inNanato ? 'true' : undefined}>
+      <img src="/img/nanato/nanato-64.webp" srcset="/img/nanato/nanato-64.webp 1x, /img/nanato/nanato-128.webp 2x" width="26" height="26" alt="" />
+      <span class="nanato-link-full">{t.nanato.link}</span>
+      <span class="nanato-link-short" dir="ltr">{t.nanato.short}</span>
+    </a>
     <details class="lang-menu" data-lang-menu>
       <summary aria-label={t.changeLanguage}>
         <Icon name="globe" size={18} />
-        <span>{LANG_META[lang].name}</span>
+        <span class="lang-name">{LANG_META[lang].name}</span>
+        <span class="lang-short" dir="ltr">{LANG_META[lang].short}</span>
       </summary>
       <ul role="list">
         {LANGS.map((l) => (
           <li>
             <a
-              href={url(l, path)}
+              href={`/${l}/${path}`}
               hreflang={l}
               lang={l}
               dir={LANG_META[l].dir}

@@ -1,0 +1,23 @@
+---
+// Shown on top of every page in the Nanato section (/{lang}/nanato/…).
+import Icon from './Icon.astro';
+import { UI } from '../lib/i18n.js';
+
+interface Props { lang: 'fa' | 'en' | 'ar'; path: string }
+const { lang, path } = Astro.props;
+const t = UI[lang].nanato;
+---
+<div class="wrap">
+  <div class="nanato-banner neon">
+    <a class="nanato-banner-brand" href={`/${lang}/nanato/`}>
+      <img src="/img/nanato/nanato-128.webp" srcset="/img/nanato/nanato-128.webp 1x, /img/nanato/nanato-320.webp 2.5x" width="56" height="56" alt="Nanato" />
+      <span>
+        <strong>{t.title}</strong>
+        <small>{t.lead}</small>
+      </span>
+    </a>
+    <a class="nanato-banner-back" href={`/${lang}/${path}`}>
+      <Icon name="arrow" size={16} class="flip-ltr" /> {t.back} <span dir="ltr">KAYDARAP</span>
+    </a>
+  </div>
+</div>

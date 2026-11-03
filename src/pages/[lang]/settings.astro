@@ -1,7 +1,8 @@
 ---
 import Base from '../../layouts/Base.astro';
 import Icon from '../../components/Icon.astro';
-import { LANGS, LANG_META, UI, langPaths } from '../../lib/i18n.js';
+import { LANGS, LANG_META, UI, langPaths, scoped } from '../../lib/i18n.js';
+const url = scoped(Astro);
 
 export const getStaticPaths = langPaths;
 const { lang } = Astro.params;
@@ -19,7 +20,7 @@ const s = t.settings;
       <h2 class="panel-title"><Icon name="globe" /> {t.language}</h2>
       <div class="lang-grid">
         {LANGS.map((l) => (
-          <a class="lang-opt" href={`/${l}/settings/`} lang={l} dir={LANG_META[l].dir} data-lang-switch={l}
+          <a class="lang-opt" href={url(l, 'settings/')} lang={l} dir={LANG_META[l].dir} data-lang-switch={l}
             aria-current={l === lang ? 'true' : undefined}>
             <span>{LANG_META[l].name}</span><small dir="ltr">{LANG_META[l].short}</small>
           </a>

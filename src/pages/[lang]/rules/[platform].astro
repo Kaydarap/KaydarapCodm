@@ -3,7 +3,8 @@ import Base from '../../../layouts/Base.astro';
 import Icon from '../../../components/Icon.astro';
 import android from '../../../data/rules-android.json';
 import ios from '../../../data/rules-ios.json';
-import { LANGS, UI, url, abs, fmt, num, formatDate, richText, plain, resolveLink } from '../../../lib/i18n.js';
+import { LANGS, UI, abs, fmt, num, formatDate, richText, plain, resolveLink, scoped } from '../../../lib/i18n.js';
+const url = scoped(Astro);
 
 export function getStaticPaths() {
   return LANGS.flatMap((lang) => ['android', 'ios'].map((platform) => ({ params: { lang, platform } })));

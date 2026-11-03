@@ -5,7 +5,8 @@ import RuleCards from '../../../components/RuleCards.astro';
 import DeviceHint from '../../../components/DeviceHint.astro';
 import android from '../../../data/rules-android.json';
 import ios from '../../../data/rules-ios.json';
-import { UI, url, langPaths, plain, num, fmt } from '../../../lib/i18n.js';
+import { UI, langPaths, plain, num, fmt, scoped } from '../../../lib/i18n.js';
+const url = scoped(Astro);
 
 export const getStaticPaths = langPaths;
 const { lang } = Astro.params;

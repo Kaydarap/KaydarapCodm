@@ -23,6 +23,17 @@ export function formatDate(lang, iso) {
 
 /** `rest` is the path after the language, e.g. "rules/android/". */
 export const url = (lang, rest = '') => `/${lang}/${rest}`;
+
+/**
+ * Pages are also served under /{lang}/nanato/… (the Nanato section).
+ * `scopeOf` tells which section a page belongs to; `scoped(Astro)` gives a
+ * `url()` that keeps links inside that section.
+ */
+export const scopeOf = (u) => (/^\/[a-z]{2}\/nanato\//.test(u.pathname) ? 'nanato/' : '');
+export const scoped = (Astro) => {
+  const scope = scopeOf(Astro.url);
+  return (lang, rest = '') => `/${lang}/${scope}${rest}`;
+};
 export const abs = (path) => new URL(path, settings.siteUrl).href;
 
 /** Resolve "@key" references to settings.links. Empty string = not configured. */

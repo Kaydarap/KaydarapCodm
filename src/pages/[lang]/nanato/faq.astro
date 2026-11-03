@@ -1,0 +1,7 @@
+---
+// Nanato section: the real faq page, rendered under /{lang}/nanato/.
+import Page from '../faq.astro';
+import { langPaths } from '../../../lib/i18n.js';
+export const getStaticPaths = langPaths;
+---
+<Page />

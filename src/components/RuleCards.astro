@@ -3,7 +3,8 @@ import Icon from './Icon.astro';
 import { sections } from '../lib/champion.js';
 import android from '../data/rules-android.json';
 import ios from '../data/rules-ios.json';
-import { UI, url, fmt, num } from '../lib/i18n.js';
+import { UI, fmt, num, scoped } from '../lib/i18n.js';
+const url = scoped(Astro);
 
 interface Props { lang: 'fa' | 'en' | 'ar' }
 const { lang } = Astro.props;

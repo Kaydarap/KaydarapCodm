@@ -1,0 +1,9 @@
+---
+// Nanato section: the real Android / iOS rules, rendered under /{lang}/nanato/rules/.
+import Page from '../../rules/[platform].astro';
+import { LANGS } from '../../../../lib/i18n.js';
+export function getStaticPaths() {
+  return LANGS.flatMap((lang) => ['android', 'ios'].map((platform) => ({ params: { lang, platform } })));
+}
+---
+<Page />

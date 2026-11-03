@@ -1,0 +1,7 @@
+---
+// Nanato section: the real home page, rendered under /{lang}/nanato/.
+import Page from '../index.astro';
+import { langPaths } from '../../../lib/i18n.js';
+export const getStaticPaths = langPaths;
+---
+<Page />

@@ -1,0 +1,10 @@
+---
+// Nanato section: the real Champion Rules sections, rendered under /{lang}/nanato/champion/.
+import Page from '../../champion/[section].astro';
+import { LANGS } from '../../../../lib/i18n.js';
+import { sections } from '../../../../lib/champion.js';
+export function getStaticPaths() {
+  return LANGS.flatMap((lang) => sections.map((s) => ({ params: { lang, section: s.id } })));
+}
+---
+<Page />

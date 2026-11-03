@@ -2,8 +2,9 @@
 import Base from '../../../layouts/Base.astro';
 import Icon from '../../../components/Icon.astro';
 import ChampBlock from '../../../components/ChampBlock.astro';
-import { LANGS, UI, url, fmt, num, formatDate } from '../../../lib/i18n.js';
+import { LANGS, UI, fmt, num, formatDate, scoped } from '../../../lib/i18n.js';
 import { champion, sections } from '../../../lib/champion.js';
+const url = scoped(Astro);
 
 export function getStaticPaths() {
   return LANGS.flatMap((lang) => sections.map((s) => ({ params: { lang, section: s.id } })));

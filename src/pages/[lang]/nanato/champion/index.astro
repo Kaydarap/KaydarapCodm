@@ -1,0 +1,7 @@
+---
+// Nanato section: the real Champion Rules hub, rendered under /{lang}/nanato/champion/.
+import Page from '../../champion/index.astro';
+import { langPaths } from '../../../../lib/i18n.js';
+export const getStaticPaths = langPaths;
+---
+<Page />

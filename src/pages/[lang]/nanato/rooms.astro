@@ -1,0 +1,7 @@
+---
+// Nanato section: the real rooms page, rendered under /{lang}/nanato/.
+import Page from '../rooms.astro';
+import { langPaths } from '../../../lib/i18n.js';
+export const getStaticPaths = langPaths;
+---
+<Page />

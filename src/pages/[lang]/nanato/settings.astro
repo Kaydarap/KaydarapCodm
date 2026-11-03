@@ -1,0 +1,7 @@
+---
+// Nanato section: the real settings page, rendered under /{lang}/nanato/.
+import Page from '../settings.astro';
+import { langPaths } from '../../../lib/i18n.js';
+export const getStaticPaths = langPaths;
+---
+<Page />

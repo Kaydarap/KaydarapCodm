@@ -182,6 +182,13 @@ export const UI = {
       disclaimer: 'KAYDARAP یک کامیونیتی مستقل است و وابستگی رسمی به Activision یا Call of Duty: Mobile ندارد. نام‌ها و نشان‌های بازی متعلق به صاحبان آن‌هاست.',
       contact: 'ارتباط با ما',
     },
+    nanato: {
+      link: 'قوانین Nanato',
+      short: 'Nanato',
+      title: 'بخش Nanato',
+      lead: 'همه قوانین، راهنماها و صفحات سایت در بخش Nanato.',
+      back: 'سایت اصلی',
+    },
     welcomeEnter: 'ورود',
   },
 
@@ -357,6 +364,13 @@ export const UI = {
       disclaimer: 'KAYDARAP is an independent community and is not affiliated with Activision or Call of Duty: Mobile. Game names and marks belong to their owners.',
       contact: 'Contact us',
     },
+    nanato: {
+      link: 'Nanato Rules',
+      short: 'Nanato',
+      title: 'Nanato section',
+      lead: 'All of the site’s rules, guides and pages, in the Nanato section.',
+      back: 'Main site',
+    },
     welcomeEnter: 'Enter',
   },
 
@@ -531,6 +545,13 @@ export const UI = {
     footer: {
       disclaimer: 'KAYDARAP مجتمع مستقل وليس تابعًا لشركة Activision أو للعبة Call of Duty: Mobile. أسماء اللعبة وعلاماتها ملك لأصحابها.',
       contact: 'تواصل معنا',
+    },
+    nanato: {
+      link: 'قوانين Nanato',
+      short: 'Nanato',
+      title: 'قسم Nanato',
+      lead: 'جميع قوانين الموقع وأدلّته وصفحاته في قسم Nanato.',
+      back: 'الموقع الرئيسي',
     },
     welcomeEnter: 'دخول',
   },

@@ -9,7 +9,8 @@ import home from '../../data/home.json';
 import faq from '../../data/faq.json';
 import android from '../../data/rules-android.json';
 import ios from '../../data/rules-ios.json';
-import { UI, url, langPaths, fmt, num } from '../../lib/i18n.js';
+import { UI, langPaths, fmt, num, scoped } from '../../lib/i18n.js';
+const url = scoped(Astro);
 
 export const getStaticPaths = langPaths;
 const { lang } = Astro.params;

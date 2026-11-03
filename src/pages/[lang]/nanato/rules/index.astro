@@ -1,0 +1,7 @@
+---
+// Nanato section: the real rules hub, rendered under /{lang}/nanato/rules/.
+import Page from '../../rules/index.astro';
+import { langPaths } from '../../../../lib/i18n.js';
+export const getStaticPaths = langPaths;
+---
+<Page />

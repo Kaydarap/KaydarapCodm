@@ -1,7 +1,8 @@
 ---
 // Optional suggestion based on a rough user-agent guess. Never redirects.
 import Icon from './Icon.astro';
-import { UI, url } from '../lib/i18n.js';
+import { UI, scoped } from '../lib/i18n.js';
+const url = scoped(Astro);
 
 interface Props { lang: 'fa' | 'en' | 'ar' }
 const { lang } = Astro.props;

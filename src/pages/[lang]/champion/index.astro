@@ -1,8 +1,9 @@
 ---
 import Base from '../../../layouts/Base.astro';
 import Icon from '../../../components/Icon.astro';
-import { UI, url, langPaths, num, formatDate } from '../../../lib/i18n.js';
+import { UI, langPaths, num, formatDate, scoped } from '../../../lib/i18n.js';
 import { champion, sections, sectionCount, checkIndex } from '../../../lib/champion.js';
+const url = scoped(Astro);
 
 export const getStaticPaths = langPaths;
 const { lang } = Astro.params;
