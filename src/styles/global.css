@@ -219,6 +219,13 @@ html[data-reading='on'] .bg-glow { opacity: 0.18; }
   .nanato-link-full, .lang-name { display: none; }
   .nanato-link-short, .lang-short { display: inline; }
   .lang-menu summary { padding-inline: 12px; gap: 6px; }
+}
+@media (max-width: 400px) {
+  .site-header .logo { font-size: 0.82rem; }
+}
+@media (max-width: 340px) {
+  .nanato-link .nanato-link-short { display: none; }
+  .nanato-link { padding: 5px 7px !important; }
   .logo-word { font-size: 0.95em; }
 }
 

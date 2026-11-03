@@ -184,6 +184,7 @@ export const UI = {
     },
     nanato: {
       link: 'قوانین Nanato',
+      toMain: 'قوانین {brand}',
       short: 'Nanato',
       title: 'بخش Nanato',
       lead: 'همه قوانین، راهنماها و صفحات سایت در بخش Nanato.',
@@ -368,6 +369,7 @@ export const UI = {
     },
     nanato: {
       link: 'Nanato Rules',
+      toMain: '{brand} Rules',
       short: 'Nanato',
       title: 'Nanato section',
       lead: 'All of the site’s rules, guides and pages, in the Nanato section.',
@@ -552,6 +554,7 @@ export const UI = {
     },
     nanato: {
       link: 'قوانين Nanato',
+      toMain: 'قوانين {brand}',
       short: 'Nanato',
       title: 'قسم Nanato',
       lead: 'جميع قوانين الموقع وأدلّته وصفحاته في قسم Nanato.',

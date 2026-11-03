@@ -101,4 +101,18 @@ html[data-fx='full'] .neon::before, html[data-fx='balanced'] .neon:hover::before
 .hero-ring { border-color: rgba(226, 229, 238, 0.3); background: repeating-conic-gradient(from 0deg, rgba(226, 229, 238, 0.14) 0 2deg, transparent 2deg 12deg); box-shadow: 0 0 60px -10px rgba(170, 14, 40, 0.6), inset 0 0 60px -20px rgba(255, 255, 255, 0.3); }
 .nanato-link[aria-current='true'] { color: #fff; border-color: rgba(255, 255, 255, 0.65); }
 .copyright { color: #9a9daa; }
+
+/* header toggle back to the main site, in KAYDARAP's colours */
+.kd-link { border-color: rgba(255, 22, 60, 0.6); background: rgba(10, 2, 4, 0.85); }
+[dir='rtl'] .kd-link { padding: 5px 10px 5px 14px; }
+.kd-link:not(:dir(rtl)) { padding: 5px 14px 5px 10px; }
+.kd-link:hover { border-color: #ff163c; box-shadow: 0 0 0 1px rgba(255, 22, 60, 0.6), 0 0 22px -6px rgba(255, 22, 60, 0.9); }
+.kd-link-crown { width: 24px; height: auto; flex: none; fill: #ff163c; filter: drop-shadow(0 0 6px rgba(255, 22, 60, 0.85)); }
+.kd-word { font-family: 'Orbitron', sans-serif; font-weight: 900; letter-spacing: 0.06em; color: #fff; }
+.kd-word span { color: #ff163c; text-shadow: 0 0 12px rgba(255, 22, 60, 0.75); }
+@media (max-width: 460px) {
+  .site-header .logo-nanato .logo-word { display: none; }
+  .kd-link .kd-word { font-size: 0.82rem; letter-spacing: 0.03em; }
+  .kd-link-crown { width: 20px; }
+}
 `;

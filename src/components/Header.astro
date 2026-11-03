@@ -26,11 +26,21 @@ const items = [
         <a href={it.href} aria-current={page === it.key ? 'page' : undefined}>{t.nav[it.key]}</a>
       ))}
     </nav>
-    <a class="nanato-link" href={`/${lang}/nanato/`} aria-current={inNanato ? 'true' : undefined}>
-      <img src="/img/nanato/nanato-64.webp" srcset="/img/nanato/nanato-64.webp 1x, /img/nanato/nanato-128.webp 2x" width="26" height="26" alt="" />
-      <span class="nanato-link-full">{t.nanato.link}</span>
-      <span class="nanato-link-short" dir="ltr">{t.nanato.short}</span>
-    </a>
+    {inNanato ? (
+      // Toggle back: from any Nanato page to the KAYDARAP home page.
+      // The brand is split over two spans so the Nanato rebranding leaves it alone.
+      <a class="nanato-link kd-link" href={`/${lang}/`}>
+        <svg class="kd-link-crown" viewBox="0 0 32 22" aria-hidden="true"><path d="M2 6l7 6 7-10 7 10 7-6-3 14H5z" /></svg>
+        <span class="nanato-link-full" set:html={t.nanato.toMain.replace('{brand}', '<bdi class="kd-word">KAY<span>DARAP</span></bdi>')} />
+        <span class="nanato-link-short kd-word" dir="ltr">KAY<span>DARAP</span></span>
+      </a>
+    ) : (
+      <a class="nanato-link" href={`/${lang}/nanato/`}>
+        <img src="/img/nanato/nanato-64.webp" srcset="/img/nanato/nanato-64.webp 1x, /img/nanato/nanato-128.webp 2x" width="26" height="26" alt="" />
+        <span class="nanato-link-full">{t.nanato.link}</span>
+        <span class="nanato-link-short" dir="ltr">{t.nanato.short}</span>
+      </a>
+    )}
     <details class="lang-menu" data-lang-menu>
       <summary aria-label={t.changeLanguage}>
         <Icon name="globe" size={18} />
